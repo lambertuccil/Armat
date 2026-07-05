@@ -1,0 +1,1 @@
+Verificar calidad, consistencia, ortografía y cumplimiento del objetivo.

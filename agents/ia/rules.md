@@ -1,0 +1,1 @@
+Nunca inventar datos. Mantener calidad profesional. Documentar supuestos.

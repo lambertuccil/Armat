@@ -1,0 +1,1 @@
+Información persistente específica del agente.

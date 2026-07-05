@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENTANYQ — Folleto</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --navy: #1B2A4A;
+            --grafito: #2D3436;
+            --negro: #1A1A1A;
+            --dorado: #C9A96E;
+            --blanco: #FFFFFF;
+            --gris-bg: #F5F5F5;
+            --gris-medio: #6B7280;
+            --gris-claro: #E5E7EB;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #888;
+            color: var(--grafito);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .page-label {
+            text-align: center;
+            padding: 12px;
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #fff;
+            background: #555;
+        }
+
+        /* ============================================
+           LADO EXTERIOR
+           ============================================ */
+        .exterior {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            width: 990px;
+            margin: 15px auto;
+            background: var(--blanco);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+        }
+
+        /* PANEL TRASERO */
+        .panel-trasero {
+            background: var(--gris-bg);
+            padding: 35px 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .trasero-top {
+            text-align: center;
+        }
+
+        .trasero-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .trasero-logo-text {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            color: var(--negro);
+        }
+
+        .trasero-frase {
+            font-size: 13px;
+            font-weight: 300;
+            color: var(--gris-medio);
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .trasero-contacto {
+            text-align: center;
+        }
+
+        .trasero-contacto-item {
+            margin-bottom: 15px;
+        }
+
+        .trasero-contacto-label {
+            font-size: 7px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--dorado);
+            margin-bottom: 4px;
+        }
+
+        .trasero-contacto-valor {
+            font-size: 11px;
+            font-weight: 400;
+            color: var(--grafito);
+        }
+
+        .trasero-instagram {
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--navy);
+            margin-top: 15px;
+        }
+
+        /* PANEL CENTRAL TRASERO */
+        .panel-central-back {
+            background: var(--navy);
+            padding: 35px 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .central-back-tagline {
+            font-size: 8px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--dorado);
+            margin-bottom: 18px;
+        }
+
+        .central-back-frase {
+            font-size: 18px;
+            font-weight: 300;
+            color: var(--blanco);
+            line-height: 1.5;
+            max-width: 240px;
+        }
+
+        .central-back-frase strong {
+            font-weight: 600;
+            color: var(--dorado);
+        }
+
+        .central-back-linea {
+            width: 30px;
+            height: 2px;
+            background: var(--dorado);
+            margin: 20px 0;
+        }
+
+        .central-back-contacto {
+            font-size: 10px;
+            font-weight: 300;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.8;
+        }
+
+        /* PANEL PORTADA */
+        .panel-portada {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .panel-portada-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .panel-portada-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(27,42,74,0.15) 0%, rgba(27,42,74,0.55) 100%);
+        }
+
+        .panel-portada-contenido {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 30px 25px;
+            z-index: 2;
+        }
+
+        .panel-portada-label {
+            font-size: 7px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--dorado);
+            margin-bottom: 8px;
+        }
+
+        .panel-portada-titulo {
+            font-size: 38px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--blanco);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .panel-portada-linea {
+            width: 30px;
+            height: 3px;
+            background: var(--dorado);
+            margin-bottom: 8px;
+        }
+
+        .panel-portada-ubicacion {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .panel-portada-ubicacion-icono {
+            width: 12px;
+            height: 12px;
+        }
+
+        .panel-portada-ubicacion-texto {
+            font-size: 10px;
+            font-weight: 400;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .panel-portada-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--dorado);
+            color: var(--navy);
+            padding: 12px 16px;
+            text-align: center;
+            z-index: 2;
+        }
+
+        .panel-portada-badge-numero {
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .panel-portada-badge-texto {
+            font-size: 7px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 2px;
+        }
+
+        /* ============================================
+           LADO INTERIOR
+           ============================================ */
+        .interior {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            width: 990px;
+            margin: 15px auto;
+            background: var(--blanco);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+        }
+
+        /* PANEL IZQUIERDO */
+        .panel-izq {
+            background: var(--blanco);
+            padding: 30px 25px;
+        }
+
+        .panel-izq-label {
+            font-size: 8px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--dorado);
+            margin-bottom: 12px;
+        }
+
+        .panel-izq-titulo {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--negro);
+            line-height: 1.2;
+            margin-bottom: 12px;
+        }
+
+        .panel-izq-texto {
+            font-size: 10px;
+            font-weight: 400;
+            color: var(--gris-medio);
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+
+        .panel-izq-img {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            margin-top: 12px;
+        }
+
+        /* PANEL CENTRAL */
+        .panel-central {
+            background: var(--gris-bg);
+            padding: 30px 25px;
+        }
+
+        .panel-central-label {
+            font-size: 8px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--dorado);
+            margin-bottom: 18px;
+        }
+
+        .tipo-card {
+            background: var(--blanco);
+            padding: 16px;
+            margin-bottom: 12px;
+            border-left: 3px solid var(--navy);
+        }
+
+        .tipo-card:last-child {
+            margin-bottom: 0;
+        }
+
+        .tipo-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 6px;
+        }
+
+        .tipo-card-nombre {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--negro);
+        }
+
+        .tipo-card-precio {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .tipo-card-detalles {
+            font-size: 9px;
+            font-weight: 400;
+            color: var(--gris-medio);
+            line-height: 1.5;
+        }
+
+        /* PANEL DERECHO */
+        .panel-der {
+            background: var(--negro);
+            padding: 30px 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .panel-der-top {
+            text-align: center;
+        }
+
+        .panel-der-label {
+            font-size: 8px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--dorado);
+            margin-bottom: 15px;
+        }
+
+        .panel-der-titulo {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--blanco);
+            margin-bottom: 20px;
+        }
+
+        .beneficio-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .beneficio-check {
+            width: 14px;
+            height: 14px;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .beneficio-check svg {
+            width: 100%;
+            height: 100%;
+            stroke: var(--dorado);
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .beneficio-texto {
+            font-size: 10px;
+            font-weight: 300;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.4;
+        }
+
+        .panel-der-cta {
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        .panel-der-cta-texto {
+            font-size: 8px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--dorado);
+            margin-bottom: 10px;
+        }
+
+        .panel-der-cta-boton {
+            display: inline-block;
+            padding: 10px 28px;
+            background: var(--dorado);
+            color: var(--navy);
+            font-size: 8px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+
+        .panel-der-contacto {
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(201,169,110,0.2);
+        }
+
+        .panel-der-contacto-item {
+            margin-bottom: 8px;
+        }
+
+        .panel-der-contacto-label {
+            font-size: 7px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--dorado);
+            margin-bottom: 2px;
+        }
+
+        .panel-der-contacto-valor {
+            font-size: 10px;
+            font-weight: 300;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .disclaimer {
+            font-size: 7px;
+            color: var(--gris-medio);
+            text-align: center;
+            padding: 10px;
+            background: var(--gris-bg);
+            width: 990px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-label">Lado Exterior — Imprimir por este lado</div>
+
+    <!-- LADO EXTERIOR -->
+    <div class="exterior">
+        <!-- Panel Trasero -->
+        <div class="panel-trasero">
+            <div class="trasero-top">
+                <div class="trasero-logo">
+                    <svg width="18" height="18" viewBox="0 0 40 40" fill="none">
+                        <rect x="2" y="14" width="10" height="24" fill="#C9A96E"/>
+                        <rect x="15" y="6" width="10" height="32" fill="#C9A96E"/>
+                        <rect x="28" y="10" width="10" height="28" fill="#C9A96E"/>
+                    </svg>
+                    <span class="trasero-logo-text">ARMAT</span>
+                </div>
+                <p class="trasero-frase">
+                    Desarrolladora inmobiliaria comprometida con la calidad y la satisfacción del cliente.
+                </p>
+            </div>
+            <div class="trasero-contacto">
+                <div class="trasero-contacto-item">
+                    <p class="trasero-contacto-label">Teléfono</p>
+                    <p class="trasero-contacto-valor">299 508-9366 / 299 580-6377</p>
+                </div>
+                <div class="trasero-contacto-item">
+                    <p class="trasero-contacto-label">Email</p>
+                    <p class="trasero-contacto-valor">info@armat.com.ar</p>
+                </div>
+                <p class="trasero-instagram">@ARMAT.DESARROLLOS</p>
+            </div>
+        </div>
+
+        <!-- Panel Central Trasero -->
+        <div class="panel-central-back">
+            <p class="central-back-tagline">ENTANYQ</p>
+            <p class="central-back-frase">
+                Departamentos nuevos con <strong>diseño moderno</strong> y <strong>funcionalidad</strong> en Centenario, Neuquén.
+            </p>
+            <div class="central-back-linea"></div>
+            <p class="central-back-contacto">
+                299 508-9366<br>
+                @ARMAT.DESARROLLOS
+            </p>
+        </div>
+
+        <!-- Panel Portada -->
+        <div class="panel-portada">
+            <img class="panel-portada-img" src="img/render/render_111924_AM_(2).jpeg" alt="ENTANYQ">
+            <div class="panel-portada-overlay"></div>
+            <div class="panel-portada-badge">
+                <div class="panel-portada-badge-numero">50%</div>
+                <div class="panel-portada-badge-texto">Vendido</div>
+            </div>
+            <div class="panel-portada-contenido">
+                <p class="panel-portada-label">Desarrollo en Venta</p>
+                <h1 class="panel-portada-titulo">ENTANYQ</h1>
+                <div class="panel-portada-linea"></div>
+                <div class="panel-portada-ubicacion">
+                    <svg class="panel-portada-ubicacion-icono" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <span class="panel-portada-ubicacion-texto">Centenario, Neuquén</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="disclaimer">Los renders son ilustrativos. Los acabados finales pueden variar según memoria descriptiva firmada.</div>
+
+    <div class="page-label">Lado Interior — Imprimir por este lado</div>
+
+    <!-- LADO INTERIOR -->
+    <div class="interior">
+        <!-- Panel Izquierdo -->
+        <div class="panel-izq">
+            <p class="panel-izq-label">La Empresa</p>
+            <h2 class="panel-izq-titulo">Familias que ya eligieron ARMAT</h2>
+            <p class="panel-izq-texto">
+                En ARMAT somos una desarrolladora inmobiliaria joven, innovadora y disruptiva, comprometida con la satisfacción de nuestros clientes.
+            </p>
+            <p class="panel-izq-texto">
+                Nuestro equipo multidisciplinario y la experiencia de más de 10 años en el rubro nos respaldan en cada proyecto que emprendemos.
+            </p>
+            <img class="panel-izq-img" src="img/render/render_111924_AM_(9).jpeg" alt="ARMAT">
+        </div>
+
+        <!-- Panel Central -->
+        <div class="panel-central">
+            <p class="panel-central-label">Unidades Disponibles</p>
+
+            <div class="tipo-card">
+                <div class="tipo-card-header">
+                    <span class="tipo-card-nombre">1 Dormitorio</span>
+                    <span class="tipo-card-precio">USD 85.000</span>
+                </div>
+                <p class="tipo-card-detalles">
+                    Superficie total: 34.14 m² · Cubierta: 34.04 m²<br>
+                    Balcón: 5.11 m² · Planta: 2° alta
+                </p>
+            </div>
+
+            <div class="tipo-card">
+                <div class="tipo-card-header">
+                    <span class="tipo-card-nombre">Monoambiente</span>
+                    <span class="tipo-card-precio">USD 60.000</span>
+                </div>
+                <p class="tipo-card-detalles">
+                    Superficie total: 45.03 m² · Cubierta: 38.79 m²<br>
+                    Balcón: 6.24 m² · Planta: baja
+                </p>
+            </div>
+
+            <div class="tipo-card">
+                <div class="tipo-card-header">
+                    <span class="tipo-card-nombre">Cochera</span>
+                    <span class="tipo-card-precio">Desde USD 7.500</span>
+                </div>
+                <p class="tipo-card-detalles">
+                    Cocheras cubiertas y descubiertas<br>
+                    Ubicación: planta baja
+                </p>
+            </div>
+        </div>
+
+        <!-- Panel Derecho -->
+        <div class="panel-der">
+            <div class="panel-der-top">
+                <p class="panel-der-label">Características</p>
+                <h2 class="panel-der-titulo">Inversión con respaldo</h2>
+
+                <div class="beneficio-item">
+                    <div class="beneficio-check">
+                        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <span class="beneficio-texto">Construcción nueva, sin antigüedad</span>
+                </div>
+                <div class="beneficio-item">
+                    <div class="beneficio-check">
+                        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <span class="beneficio-texto">Orientación Este-Oeste</span>
+                </div>
+                <div class="beneficio-item">
+                    <div class="beneficio-check">
+                        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <span class="beneficio-texto">Terminaciones de primer nivel</span>
+                </div>
+                <div class="beneficio-item">
+                    <div class="beneficio-check">
+                        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <span class="beneficio-texto">50% vendido, pocas unidades</span>
+                </div>
+
+                <div class="panel-der-cta">
+                    <p class="panel-der-cta-texto">Solicitar información</p>
+                    <a href="https://wa.me/5492995089366" class="panel-der-cta-boton">Contactar</a>
+                </div>
+            </div>
+
+            <div class="panel-der-contacto">
+                <div class="panel-der-contacto-item">
+                    <p class="panel-der-contacto-label">Teléfono</p>
+                    <p class="panel-der-contacto-valor">299 508-9366 / 299 580-6377</p>
+                </div>
+                <div class="panel-der-contacto-item">
+                    <p class="panel-der-contacto-label">Instagram</p>
+                    <p class="panel-der-contacto-valor">@ARMAT.DESARROLLOS</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+{
+  "mcp": {
+    "gmail": {
+      "enabled": true,
+      "type": "remote",
+      "url": "https://mcp.gmail.com/mcp"
+    },
+    "gdrive": {
+      "enabled": true,
+      "type": "remote",
+      "url": "https://mcp.gdrive.com/mcp"
+    },
+    "whatsapp": {
+      "enabled": false,
+      "type": "remote",
+      "url": "https://mcp.whatsapp.com/mcp"
+    },
+    "gcalendar": {
+      "enabled": true,
+      "type": "remote",
+      "url": "https://mcp.gcalendar.com/mcp"
+    },
+    "gsheets": {
+      "enabled": true,
+      "type": "remote",
+      "url": "https://mcp.gsheets.com/mcp"
+    },
+    "slack": {
+      "enabled": false,
+      "type": "remote",
+      "url": "https://mcp.slack.com/mcp"
+    }
+  }
+}

@@ -1,0 +1,1 @@
+Objetivo, responsabilidades, límites, proceso de trabajo.
