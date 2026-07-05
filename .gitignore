@@ -1,6 +1,15 @@
 # Archivos de envío (autocontenidos con base64)
 *-enviar.html
 
+# Videos (archivos grandes)
+*.mov
+*.MOV
+*.mp4
+*.avi
+*.wmv
+*.mkv
+*.webm
+
 # Archivos temporales
 *.tmp
 *.log
