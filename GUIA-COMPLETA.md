@@ -1,4 +1,4 @@
-# ARMAT — Guía Completa de Capacidades
+# ARMAT — Guía Completa del Sistema
 
 ## Sistema de Agentes Inteligentes para Desarrolladora Inmobiliaria
 
@@ -7,12 +7,17 @@
 ## Tabla de Contenidos
 
 1. [Resumen del Sistema](#resumen-del-sistema)
-2. [Agentes por Departamento](#agentes-por-departamento)
-3. [Skills Disponibles](#skills-disponibles)
-4. [Workflows Automatizados](#workflows-automatizados)
-5. [Materiales de Marketing](#materiales-de-marketing)
-6. [Cómo Usar el Sistema](#cómo-usar-el-sistema)
-7. [Próximos Pasos](#próximos-pasos)
+2. [Estructura del Proyecto](#estructura-del-proyecto)
+3. [Agentes por Departamento](#agentes-por-departamento)
+4. [Skills Disponibles](#skills-disponibles)
+5. [Workflows Automatizados](#workflows-automatizados)
+6. [Base de Conocimiento Legal](#base-de-conocimiento-legal)
+7. [Plantillas y Contratos](#plantillas-y-contratos)
+8. [Integraciones](#integraciones)
+9. [Materiales de Marketing](#materiales-de-marketing)
+10. [Configuración](#configuración)
+11. [Cómo Usar el Sistema](#cómo-usar-el-sistema)
+12. [Próximos Pasos](#próximos-pasos)
 
 ---
 
@@ -23,29 +28,148 @@
 | **Agentes** | 17 |
 | **Skills** | 98 |
 | **Workflows** | 4 |
-| **Templates** | 4 |
+| **Plantillas** | 10+ |
 | **Documentos de Marketing** | 3 (brochure, flyer, folleto) |
+| **Base de Conocimiento Legal** | 2 documentos |
+| **Integraciones** | 4 (WhatsApp, Gmail, Drive, Calendar) |
 
 ### Arquitectura
 
 ```
 CEO (Orquestador)
-├── Comercial
-├── Marketing
-├── Obras
-├── Finanzas
-├── Legal
-├── Administración
-├── Calidad
-├── Clientes
-├── Compras
-├── IA
-├── Presupuestos
-├── RRHH
-├── IT
-├── Postventa
-├── Proveedores
-└── Data
+├── Comercial (Ventas)
+├── Marketing (Comunicación)
+├── Obras (Construcción)
+├── Finanzas (Gestión Financiera)
+├── Legal (Asesoría Jurídica)
+├── Administración (Trámites)
+├── Calidad (Control)
+├── Clientes (Postventa)
+├── Compras (Adquisiciones)
+├── IA (Tecnología)
+├── Presupuestos (Costos)
+├── RRHH (Personal)
+├── IT (Sistemas)
+├── Postventa (Garantías)
+├── Proveedores (Relación)
+└── Data (Analítica)
+```
+
+---
+
+## Estructura del Proyecto
+
+```
+Armat/
+├── README.md                      # Documentación principal
+├── GUIA-COMPLETA.md               # Esta guía
+├── .env.example                   # Variables de entorno
+├── .gitignore                     # Exclusiones de git
+│
+├── agents/                        # 17 agentes especializados
+│   ├── administracion/
+│   ├── calidad/
+│   ├── ceo/
+│   ├── clientes/
+│   ├── comercial/
+│   ├── compras/
+│   ├── data/
+│   ├── finanzas/
+│   ├── ia/
+│   ├── it/
+│   ├── legal/
+│   ├── marketing/
+│   ├── obras/
+│   ├── postventa/
+│   ├── presupuestos/
+│   ├── proveedores/
+│   └── rrhh/
+│
+├── skills/                        # 98 skills organizados
+│   ├── administracion/
+│   ├── calidad/
+│   ├── clientes/
+│   ├── comercial/
+│   ├── compras/
+│   ├── data/
+│   ├── finanzas/
+│   ├── ia/
+│   ├── it/
+│   ├── legal/
+│   ├── marketing/
+│   ├── obras/
+│   ├── postventa/
+│   ├── presupuestos/
+│   ├── proveedores/
+│   ├── rrhh/
+│   └── shared/
+│
+├── base-conocimiento/             # Base de conocimiento
+│   ├── construccion/
+│   ├── legislacion/
+│   │   └── neuquen/
+│   │       ├── arancel-cajn.md
+│   │       └── leyes-provinciales-clave.md
+│   ├── marketing/
+│   └── ventas/
+│
+├── plantillas/                    # Plantillas reutilizables
+│   ├── branding/
+│   │   ├── guia-voz-marca.md
+│   │   ├── manual-marca.md
+│   │   ├── paleta-colores.md
+│   │   └── tipografia.md
+│   ├── contratos/
+│   │   ├── compraventa-inmueble.md
+│   │   ├── convenio-confidencialidad.md
+│   │   └── comision-venta.md
+│   ├── emails/
+│   ├── marketing/
+│   │   ├── articulo-blog.md
+│   │   ├── newsletter-mensual.md
+│   │   └── post-instagram-legal.md
+│   ├── presupuestos/
+│   ├── propuestas/
+│   └── publicaciones/
+│
+├── workflows/                     # Workflows automatizados
+│
+├── config/                        # Configuración del sistema
+│   ├── agentes.json
+│   ├── alertas.json
+│   ├── integraciones.json
+│   ├── permisos.json
+│   └── mcp-config.json
+│
+├── integrations/                  # Integraciones externas
+│   ├── calendar/
+│   ├── gmail/
+│   ├── google-drive/
+│   └── whatsapp/
+│
+├── marketing/                     # Materiales de marketing
+│   ├── brochures/
+│   │   ├── brochure-entanyq-v2.html
+│   │   └── brochure-entanyq-v2-enviar.html
+│   ├── flyers/
+│   │   ├── flyer-entanyq-v2.html
+│   │   └── flyer-entanyq.html
+│   ├── folletos/
+│   │   ├── folleto-entanyq-v2.html
+│   │   └── folleto-entanyq.html
+│   └── GUIA-COMPLETA-ARMAT.html
+│
+├── Documentacion/                 # Documentación estratégica
+│   ├── 01_Analisis_Mercado_ENTANYQ.md
+│   ├── 02_Estrategia_Ventas_ENTANYQ.md
+│   ├── 03_Proyecciones_Financieras_ENTANYQ.md
+│   └── 04_Observaciones_y_Mejoras.md
+│
+├── brand/                         # Identidad visual
+├── img/                           # Recursos visuales
+│   └── render/                    # 18 renders
+├── documentos_entregados/         # Documentos originales
+└── memory/                        # Memoria persistente
 ```
 
 ---
@@ -55,11 +179,12 @@ CEO (Orquestador)
 ### 1. CEO — Director General
 **Función**: Orquesta todas las operaciones, toma decisiones estratégicas y coordina entre departamentos.
 
-**Skills**:
-- Coordinar equipos
-- Tomar decisiones estratégicas
-- Comunicar visión
-- Evaluar desempeño
+**Responsabilidades**:
+- Recibir y analizar peticiones del usuario
+- Determinar complejidad: simple (ejecuto inline) vs compleja (delego)
+- Seleccionar el agente correcto para cada tarea
+- Supervisar calidad de entregables
+- Sintetizar resultados
 
 ---
 
@@ -99,305 +224,319 @@ CEO (Orquestador)
 
 ---
 
-### 4. Obras — Construcción y Supervisión
-**Función**: Controla avance de obra, calidad constructiva y cumplimiento de plazos.
+### 4. Obras — Construcción
+**Función**: Supervisa la construcción, controla avance de obra y gestiona proveedores.
 
 **Skills**:
 | Skill | Descripción |
 |-------|-------------|
 | `calcular_avance_obra` | Calcula porcentaje de avance |
-| `controlar_presupuesto` | Monetiza gastos vs presupuesto |
-| `generar_reporte_avance` | Crea informes de avance |
-| `programar_actividades` | Planifica cronograma de obra |
-| `registrar_bitacora_diaria` | Documenta actividad diaria |
-| `verificar_calidad` | Inspecciona calidad constructiva |
+| `controlar_calidad` | Verifica calidad de constructiva |
+| `generar_bitacora` | Crea reporte diario de obra |
+| `gestionar_proveedores` | Administra relación con proveedores |
+| `planificar_entregas` | Programa entregas de materiales |
+| `supervisar_obras` | Supervisa trabajos en sitio |
 
 ---
 
 ### 5. Finanzas — Gestión Financiera
-**Función**: Controla flujo de caja, costos, rentabilidad y reportes financieros.
+**Función**: Controla finanzas, presupuestos, flujo de caja e inversiones.
 
 **Skills**:
 | Skill | Descripción |
 |-------|-------------|
-| `analizar_costos` | Descompone costos por rubro |
-| `analizar_rentabilidad` | Calcula margen de ganancia |
-| `calcular_flujo_caja` | Proyecta entradas y salidas |
-| `calcular_impuestos` | Calcula obligaciones fiscales |
-| `conciliar_cuentas` | Verifica movimientos bancarios |
-| `evaluar_inversion` | Analiza viabilidad de proyecto |
-| `generar_estado_financiero` | Crea estados contables |
-| `generar_reporte_ejecutivo` | Informe para dirección |
-| `presupuestar_proyecto` | Crea presupuesto de obra |
-| `proyectar_ventas` | Estima ventas futuras |
+| `analizar_rentabilidad` | Calcula ROI y rentabilidad |
+| `calcular_impuestos` | Estima impuestos |
+| `controlar_caja` | Monitorea flujo de caja |
+| `generar_reporte_financiero` | Crea reportes financieros |
+| `gestionar_pagos` | Administra pagos a proveedores |
+| `presupuestar_obra` | Elabora presupuestos de construcción |
 
 ---
 
-### 6. Legal — Asesoramiento Jurídico
-**Función**: Gestiona contratos, permisos, cumplimiento normativo y aspectos legales.
+### 6. Legal — Asesoría Jurídica
+**Función**: Asesora en temas legales, contratos, regulaciones y permisos.
 
 **Skills**:
 | Skill | Descripción |
 |-------|-------------|
-| `consultar_normativa` | Busca leyes y regulaciones |
-| `generar_informe_legal` | Crea informes jurídicos |
-| `gestionar_contratos` | Administra contratos vigentes |
-| `gestionar_litigios` | Maneja conflictos legales |
-| `redactar_contrato` | Elabora contratos nuevos |
-| `revisar_cumplimiento` | Verifica cumplimiento normativo |
-| `validar_propiedad` | Verifica documentación de inmueble |
-| `verificar_permisos` | Consulta permisos de construcción |
+| `asesorar_legalmente` | Brinda asesoramiento legal |
+| `calcular_honorarios` | Calcula honorarios profesionales |
+| `generar_contrato` | Crea contratos |
+| `revisar_documentacion` | Verifica documentación legal |
+| `verificar_permisos` | Gestiona permisos y habilitaciones |
 
 ---
 
-### 7. Administración — Gestión Operativa
-**Función**: Administra recursos, proveedores, contratos y operaciones diarias.
+### 7. Administración — Gestión Administrativa
+**Función**: Gestiona trámites administrativos, habilitaciones y documentación.
 
 **Skills**:
 | Skill | Descripción |
 |-------|-------------|
-| `controlar_inventario` | Gestiona stock de materiales |
-| `coordinar_logistica` | Organiza transporte y entrega |
-| `elaborar_contratos` | Redacta contratos con proveedores |
-| `gestionar_nomina` | Administra pagos a empleados |
-| `gestionar_proveedores` | Evalúa y administra proveedores |
-| `manejar_correspondencia` | Procesa documentos y emails |
-| `organizar_oficina` | Gestiona recursos de oficina |
-| `programar_reuniones` | Organiza reuniones y agendas |
+| `gestionar_habilitaciones` | Tramita habilitaciones |
+| `organizar_documentacion` | Organiza documentos |
+| `seguir_tramites` | Da seguimiento a trámites |
 
 ---
 
-### 8. Calidad — Control de Calidad
-**Función**: Asegura estándares de calidad en construcción y procesos.
+### 8. Calidad — Control
+**Función**: Supervisa la calidad constructiva y de terminaciones.
 
 **Skills**:
 | Skill | Descripción |
 |-------|-------------|
-| `auditar_proceso` | Realiza auditorías de calidad |
-| `generar_informe_calidad` | Crea informes de inspección |
-| `inspeccionar_obra` | Visita técnica a obra |
-| `verificar_materiales` | Controla calidad de materiales |
+| `auditar_calidad` | Realiza auditorías de calidad |
+| `controlar_materiales` | Verifica calidad de materiales |
+| `generar_informe_calidad` | Crea informes de calidad |
+| `supervisar_terminaciones` | Revisa terminaciones |
 
 ---
 
-### 9. Clientes — Atención al Cliente
-**Función**: Gestiona relación con clientes, satisfaction y soporte post-venta.
+### 9. Clientes — Postventa
+**Función**: Gestiona la relación con clientes, postventa y reclamos.
 
 **Skills**:
 | Skill | Descripción |
 |-------|-------------|
-| `calificar_satisfaccion` | Mide satisfacción del cliente |
-| `gestionar_crm` | Administra base de datos de clientes |
-| `registrar_lead` | Captura nuevos prospectos |
-| `seguir_cliente` | Realiza seguimiento post-venta |
+| `atender_cliente` | Atiende consultas de clientes |
+| `gestionar_reclamos` | Administra reclamos |
+| `realizar_seguimiento` | Da seguimiento postventa |
+| `responder_cliente` | Responde consultas |
 
 ---
 
 ### 10. Compras — Adquisiciones
-**Función**: Gestiona compras de materiales, cotizaciones y relación con proveedores.
+**Función**: Gestiona compras de materiales y negociación con proveedores.
 
 **Skills**:
 | Skill | Descripción |
 |-------|-------------|
-| `comparar_cotizaciones` | Evalúa opciones de precio |
-| `evaluar_proveedor` | Califica proveedores |
-| `generar_orden_compra` | Emite órdenes de compra |
-| `solicitar_cotizacion` | Pide precios a proveedores |
+| `calcular_materiales` | Estima materiales necesarios |
+| `comparar_precios` | Compara precios de proveedores |
+| `gestionar_compras` | Administra proceso de compra |
+| `negociar_proveedores` | Negocia condiciones |
 
 ---
 
-### 11. IA — Inteligencia Artificial
-**Función**: Aplica análisis de datos, automatización y optimización de procesos.
+### 11. IA / Tecnología — Soporte Tecnológico
+**Función**: Gestiona herramientas de IA, automatización y sistemas.
 
 **Skills**:
 | Skill | Descripción |
 |-------|-------------|
-| `analizar_datos` | Procesa datos del negocio |
-| `automatizar_tarea` | Crea flujos automatizados |
-| `optimizar_procesos` | Mejora eficiencia operativa |
-| `predecir_tendencias` | Anticipa comportamientos del mercado |
+| `automatizar_tareas` | Automatiza procesos |
+| `configurar_herramientas` | Configura herramientas IA |
+| `integrar_sistemas` | Integra diferentes sistemas |
 
 ---
 
-### 12. Presupuestos — Control de Costos
-**Función**: Crea y controla presupuestos de obra y operaciones.
+### 12. Presupuestos — Estimación de Costos
+**Función**: Elabora presupuestos de obras y estimación de costos.
 
 **Skills**:
 | Skill | Descripción |
 |-------|-------------|
-| `controlar_costos` | Monetiza gastos reales vs plan |
-| `crear_presupuesto_obra` | Elabora presupuesto detallado |
-| `generar_avance_financiero` | Reporta avance económico |
-| `proyectar_cierre` | Estima cierre financiero |
+| `elaborar_presupuesto` | Crea presupuestos detallados |
+| `estimar_costos` | Estima costos de construcción |
+| `hacer_presupuesto` | Genera presupuestos |
 
 ---
 
-### 13. RRHH — Recursos Humanos
-**Función**: Gestiona personal, selección, capacitación y evaluación.
+### 13. RRHH — Gestión de Personal
+**Función**: Gestiona personal, contrataciones y capacitación.
 
 **Skills**:
 | Skill | Descripción |
 |-------|-------------|
-| `calcular_nomina` | Calcula sueldos y cargas |
-| `evaluar_desempeno` | Realiza evaluaciones de personal |
-| `programar_capacitacion` | Organiza cursos y entrenamientos |
-| `reclutar_personal` | Busca y selecciona candidatos |
+| `capacitar_personal` | Organiza capacitaciones |
+| `contratar_personal` | Gestiona contrataciones |
+| `gestionar_nomina` | Administra nómina |
 
 ---
 
-### 14. IT — Tecnología
-**Función**: Gestiona infraestructura tecnológica, seguridad y soporte.
+### 14. IT / Sistemas — Soporte Informático
+**Función**: Gestiona infraestructura tecnológica, redes y sistemas.
 
 **Skills**:
 | Skill | Descripción |
 |-------|-------------|
-| `administrar_sistemas` | Gestiona servidores y aplicaciones |
-| `configurar_red` | Administra infraestructura de red |
-| `gestionar_seguridad` | Protege datos y sistemas |
-| `soporte_tecnico` | Resuelve problemas técnicos |
+| `configurar_redes` | Configura redes |
+| `mantener_sistemas` | Mantiene sistemas |
+| `soporte_tecnico` | Brinda soporte técnico |
 
 ---
 
-### 15. Postventa — Servicio Post-Venta
-**Función**: Atiende reclamos, garantías y mantenimiento.
+### 15. Postventa — Garantías
+**Función**: Gestiona servicio postventa, garantías y mantenimiento.
 
 **Skills**:
 | Skill | Descripción |
 |-------|-------------|
-| `atender_reclamacion` | Gestiona quejas de clientes |
-| `emitir_garantia` | Emite documentos de garantía |
-| `medir_satisfaccion` | Evalúa experiencia del cliente |
-| `programar_mantenimiento` | Agenda mantenimientos |
+| `gestionar_garantias` | Administra garantías |
+| `programar_mantenimiento` | Programa mantenimiento |
+| `responder_postventa` | Responde consultas postventa |
 
 ---
 
-### 16. Proveedores — Gestión de Proveedores
-**Función**: Evalúa, negocia y administra relación con proveedores.
+### 16. Proveedores — Relación
+**Función**: Gestiona relación con proveedores, contratos y pagos.
 
 **Skills**:
 | Skill | Descripción |
 |-------|-------------|
-| `buscar_proveedor` | Localiza nuevos proveedores |
-| `evaluarProveedor` | Califica proveedores existentes |
-| `negociar_contrato` | Negocia condiciones comerciales |
-| `seguir_pedido` | Rastrea estado de pedidos |
+| `administrar_proveedores` | Administra proveedores |
+| `evaluar_proveedores` | Evalúa desempeño |
+| `negociar_contratos` | Negocia contratos |
 
 ---
 
-### 17. Data — Análisis de Datos
-**Función**: Genera reportes, dashboards y análisis de datos del negocio.
+### 17. Data / Analítica — Análisis de Datos
+**Función**: Gestiona datos, reportes y analítica de negocio.
 
 **Skills**:
 | Skill | Descripción |
 |-------|-------------|
-| `analizar_ventas` | Analiza performance de ventas |
-| `generar_dashboard` | Crea paneles de control |
-| `predecir_demanda` | Estima demanda futura |
-| `reportar_kpis` | Reporta indicadores clave |
+| `analizar_datos` | Analiza datos de negocio |
+| `generar_dashboards` | Crea dashboards |
+| `generar_reportes` | Genera reportes |
+| `predecir_tendencias` | Predice tendencias |
 
 ---
 
-## Workflows Automatizados
+## Base de Conocimiento Legal
 
-### 1. Onboarding de Cliente
-**Trigger**: Nuevo lead registrado
-**Pasos**:
-1. Registrar datos del lead
-2. Calificar interés y capacidad de compra
-3. Asignar vendedor responsable
-4. Enviar información del proyecto
-5. Programar primera reunión
-6. Seguimiento en 48 horas
+### Legislación de Neuquén
 
----
+| Documento | Contenido |
+|-----------|-----------|
+| `leyes-provinciales-clave.md` | Leyes provinciales relevantes para construcciones |
+| `arancel-cajn.md` | Arancel del Colegio de Abogados de Neuquén |
 
-### 2. Control de Obra
-**Trigger**: Seguimiento semanal de obra
-**Pasos**:
-1. Registrar avance en bitácora
-2. Verificar calidad constructiva
-3. Controlar presupuesto
-4. Generar reporte de avance
-5. Actualizar cronograma
-6. Notificar a dirección
+### Leyes Relevantes
+
+- **Ley 1920**: Código Procesal Civil y Comercial
+- **Ley 6.839**: Mediación Obligatoria
+- **Ley 3.017**: Arbitraje
+- **Ley 5.853**: Código del Trabajo Provincial
+- **Ley 5.908**: Riesgos del Trabajo
+- **Ley 17.565**: Código Civil y Comercial de la Nación
 
 ---
 
-### 3. Compra de Materiales
-**Trigger**: Necesidad de material
-**Pasos**:
-1. Verificar stock actual
-2. Solicitar cotizaciones a proveedores
-3. Comparar opciones
-4. Generar orden de compra
-5. Seguir entrega
-6. Verificar calidad al recibir
+## Plantillas y Contratos
+
+### Contratos
+
+| Plantilla | Uso |
+|-----------|-----|
+| `compraventa-inmueble.md` | Contrato de compra de departamentos |
+| `convenio-confidencialidad.md` | NDA para proveedores |
+| `comision-venta.md` | Comisiones para corredores |
+
+### Branding
+
+| Plantilla | Uso |
+|-----------|-----|
+| `guia-voz-marca.md` | Tono y voz de comunicación |
+| `manual-marca.md` | Manual de identidad |
+| `paleta-colores.md` | Sistema de colores |
+| `tipografia.md` | Guía tipográfica |
+
+### Marketing
+
+| Plantilla | Uso |
+|-----------|-----|
+| `post-instagram-legal.md` | Estructura para posts |
+| `newsletter-mensual.md` | Formato newsletter |
+| `articulo-blog.md` | Artículos de blog |
 
 ---
 
-### 4. Pipeline de Ventas
-**Trigger**: Nuevo lead en sistema
-**Pasos**:
-1. Capturar datos del lead
-2. Calificar interés
-3. Enviar información
-4. Agendar visita
-5. Realizar propuesta
-6. Negociar
-7. Cerrar venta
-8. Post-venta
+## Integraciones
+
+| Integración | Estado | Agentes que la usan |
+|-------------|--------|---------------------|
+| **WhatsApp** | Pendiente | CEO, Comercial, Clientes, Marketing |
+| **Gmail** | Pendiente | CEO, Comercial, Marketing, Clientes |
+| **Google Drive** | Pendiente | Legal, Administración, Obras |
+| **Google Calendar** | Pendiente | CEO, Comercial, Obras |
+
+### Configurar Integraciones
+
+Ver `integrations/` para guías detalladas de cada integración.
 
 ---
 
 ## Materiales de Marketing
 
 ### Brochure ENTANYQ
-- **Formato**: HTML vertical (430px)
-- **Contenido**: Hero, descripción, empresa, datos, galería, unidades, pago, ubicación
-- **Versiones**: Original + V2 corporativo
-- **Archivos**: `brochure-entanyq.html`, `brochure-entanyq-v2.html`
+
+| Archivo | Tipo |
+|---------|------|
+| `brochure-entanyq-v2.html` | Editable (rutas relativas) |
+| `brochure-entanyq-v2-enviar.html` | Autocontenido (base64) |
 
 ### Flyer ENTANYQ
-- **Formato**: HTML vertical (430px)
-- **Contenido**: Hero, precio, galería, datos, beneficios, pago, contacto
-- **Versiones**: Original + V2 corporativo
-- **Archivos**: `flyer-entanyq.html`, `flyer-entanyq-v2.html`
+
+| Archivo | Tipo |
+|---------|------|
+| `flyer-entanyq-v2.html` | Editable |
+| `flyer-entanyq.html` | Versión anterior |
 
 ### Folleto ENTANYQ
-- **Formato**: HTML horizontal plegable (990px)
-- **Contenido**: Exterior (portada, central, trasero) + Interior (empresa, unidades, beneficios)
-- **Versiones**: Original + V2 corporativo
-- **Archivos**: `folleto-entanyq.html`, `folleto-entanyq-v2.html`
 
-### Versiones para Envío
-Todos los materiales tienen versiones autocontenidas con imágenes embebidas (base64):
-- `brochure-entanyq-v2-enviar.html`
-- `flyer-entanyq-v2-enviar.html`
-- `folleto-entanyq-v2-enviar.html`
+| Archivo | Tipo |
+|---------|------|
+| `folleto-entanyq-v2.html` | Editable |
+| `folleto-entanyq.html` | Versión anterior |
+
+### Guía Visual
+
+| Archivo | Descripción |
+|---------|-------------|
+| `GUIA-COMPLETA-ARMAT.html` | Guía visual del sistema |
+
+---
+
+## Configuración
+
+### Archivos de Configuración
+
+| Archivo | Descripción |
+|---------|-------------|
+| `agentes.json` | Configuración de los 17 agentes |
+| `alertas.json` | Sistema de alertas escalonadas |
+| `integraciones.json` | Integraciones disponibles |
+| `permisos.json` | Perfiles de acceso |
+| `mcp-config.json` | Configuración MCP |
+
+### Variables de Entorno
+
+Ver `.env.example` para las variables necesarias.
 
 ---
 
 ## Cómo Usar el Sistema
 
-### Ejemplo 1: Generar propuesta de venta
+### Ejemplo 1: Cotizar un departamento
 
 ```
-Usuario: "Generá una propuesta de venta para un departamento de 1 dormitorio 
-          al comprador Juan Pérez, con financiación en 12 cuotas"
+Usuario: "¿Cuánto sale el departamento de 1 dormitorio?"
 
-Agente Comercial: 
+CEO → Comercial:
 1. Verifica disponibilidad
-2. Calcula financiamiento
-3. Genera propuesta personalizada
-4. Reserva unidad
+2. Calcula precio
+3. Genera cotización
+4. Presenta opciones de pago
 ```
 
 ### Ejemplo 2: Reporte de avance de obra
 
 ```
-Usuario: "Necesito un reporte de avance de obra de la semana"
+Usuario: "¿Cómo va la obra?"
 
-Agente Obras:
+CEO → Obras:
 1. Recopila bitácora diaria
 2. Calcula porcentaje de avance
 3. Verifica calidad
@@ -410,7 +549,7 @@ Agente Obras:
 ```
 Usuario: "Haceme un post para Instagram mostrando el avance de obra"
 
-Agente Marketing:
+CEO → Marketing:
 1. Selecciona mejores fotos
 2. Escribe copy atractivo
 3. Genera hashtags relevantes
@@ -422,7 +561,7 @@ Agente Marketing:
 ```
 Usuario: "Analizá la rentabilidad del proyecto ENTANYQ"
 
-Agente Data:
+CEO → Data:
 1. Recopila datos de ventas
 2. Calcula ROI proyectado
 3. Genera dashboard
@@ -434,9 +573,10 @@ Agente Data:
 ## Próximos Pasos
 
 ### Corto Plazo (1-2 semanas)
-- [ ] Agregar testimonios de compradores al brochure
-- [ ] Incluir planos de unidades
-- [ ] Agregar marcas de materiales
+- [x] Agregar testimonios de compradores al brochure
+- [x] Incluir planos de unidades
+- [x] Agregar marcas de materiales
+- [x] Agregar datos legales
 - [ ] Configurar acceso a Google Drive
 
 ### Mediano Plazo (1-2 meses)
@@ -450,44 +590,6 @@ Agente Data:
 - [ ] Configurar chatbot para WhatsApp
 - [ ] Crear app móvil para clientes
 - [ ] Implementar IA predictiva de ventas
-
----
-
-## Estructura del Proyecto
-
-```
-Armat/
-├── agents/                    # 17 agentes especializados
-│   ├── administracion/
-│   ├── calidad/
-│   ├── ceo/
-│   ├── clientes/
-│   ├── comercial/
-│   ├── compras/
-│   ├── data/
-│   ├── finanzas/
-│   ├── ia/
-│   ├── it/
-│   ├── legal/
-│   ├── marketing/
-│   ├── obras/
-│   ├── postventa/
-│   ├── presupuestos/
-│   ├── proveedores/
-│   └── rrhh/
-├── skills/                    # 98 skills organizados
-├── workflows/                 # 4 workflows automatizados
-├── templates/                 # 4 templates reutilizables
-├── brand/                     # Identidad visual
-├── knowledge/                 # Base de conocimiento
-├── config/                    # Configuración MCP
-├── img/render/                # 18 renders
-├── documentos_entregados/     # Documentos originales
-├── brochure-entanyq-v2.html   # Brochure V2
-├── flyer-entanyq-v2.html      # Flyer V2
-├── folleto-entanyq-v2.html    # Folleto V2
-└── README.md                  # Documentación principal
-```
 
 ---
 
