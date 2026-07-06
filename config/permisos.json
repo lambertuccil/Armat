@@ -1,0 +1,52 @@
+{
+  "version": "1.0",
+  "perfiles": {
+    "director": {
+      "descripcion": "Director/Dueño de ARMAT Desarrollos",
+      "acceso_total": true,
+      "puede_aprobar_ventas": true,
+      "puede_aprobar_obras": true,
+      "puede_ver_finanzas": true,
+      "puede_modificar_config": true,
+      "agentes_acceso": ["ceo", "comercial", "marketing", "obras", "finanzas", "legal", "administracion", "calidad", "clientes", "compras", "ia", "presupuestos", "rrhh", "it", "postventa", "proveedores", "data"]
+    },
+    "gerente": {
+      "descripcion": "Gerente de proyecto",
+      "acceso_total": false,
+      "puede_aprobar_ventas": true,
+      "puede_aprobar_obras": true,
+      "puede_ver_finanzas": true,
+      "puede_modificar_config": false,
+      "agentes_acceso": ["comercial", "marketing", "obras", "calidad", "clientes", "compras", "presupuestos"]
+    },
+    "vendedor": {
+      "descripcion": "Agente de ventas",
+      "acceso_total": false,
+      "puede_aprobar_ventas": false,
+      "puede_aprobar_obras": false,
+      "puede_ver_finanzas": false,
+      "puede_modificar_config": false,
+      "agentes_acceso": ["comercial", "clientes"]
+    },
+    "administrativo": {
+      "descripcion": "Personal administrativo",
+      "acceso_total": false,
+      "puede_aprobar_ventas": false,
+      "puede_aprobar_obras": false,
+      "puede_ver_finanzas": true,
+      "puede_modificar_config": false,
+      "agentes_acceso": ["administracion", "compras", "proveedores"]
+    },
+    "cliente": {
+      "descripcion": "Cliente externo (acceso limitado)",
+      "acceso_total": false,
+      "puede_aprobar_ventas": false,
+      "puede_aprobar_obras": false,
+      "puede_ver_finanzas": false,
+      "puede_modificar_config": false,
+      "agentes_acceso": [],
+      "puede_ver_estado_compra": true,
+      "puede_ver_avance_obra": true
+    }
+  }
+}

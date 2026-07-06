@@ -1,0 +1,40 @@
+{
+  "version": "1.0",
+  "alertas": {
+    "ventas": {
+      "cliente_sin_seguimiento": "48_horas",
+      "presupuesto_pendiente": "7_dias",
+      "contrato_pendiente_firma": "15_dias",
+      "pago_pendiente": "30_dias"
+    },
+    "obras": {
+      "avance_obra": "semanal",
+      "retraso_entrega": "inmediato",
+      "problema_calidad": "inmediato",
+      "falta_material": "24_horas"
+    },
+    "finanzas": {
+      "flujo_caja_negativo": "inmediato",
+      "pago_proveedor_pendiente": "7_dias",
+      "cuota_cliente_pendiente": "30_dias",
+      "presupuesto_superado": "inmediato"
+    },
+    "clientes": {
+      "reclamo_recibido": "inmediato",
+      "seguimiento_postventa": "30_dias",
+      "encuesta_satisfaccion": "60_dias"
+    },
+    "marketing": {
+      "campania_proxima": "7_dias",
+      "contenido_redes": "diaria",
+      "metricas_rendimiento": "semanal"
+    }
+  },
+  "priorizacion": [
+    {"prioridad": 1, "tipo": "urgente_ventas", "agente_notificar": ["ceo", "comercial"]},
+    {"prioridad": 2, "tipo": "problema_obra", "agente_notificar": ["ceo", "obras", "calidad"]},
+    {"prioridad": 3, "tipo": "problema_financiero", "agente_notificar": ["ceo", "finanzas"]},
+    {"prioridad": 4, "tipo": "reclamo_cliente", "agente_notificar": ["ceo", "clientes"]},
+    {"prioridad": 5, "tipo": "oportunidad_venta", "agente_notificar": ["comercial"]}
+  ]
+}

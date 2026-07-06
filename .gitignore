@@ -25,3 +25,32 @@ Desktop.ini
 # Archivos de Node.js
 node_modules/
 package-lock.json
+
+# ==========================================
+# CREDENCIALES Y SECRETO
+# ==========================================
+*.env
+.env.local
+.env.*.local
+credentials.json
+token.json
+*.key
+*.pem
+*.cert
+*.p12
+*.pfx
+
+# Google OAuth
+client_secret*.json
+
+# ==========================================
+# INTEGRACIONES (credenciales locales)
+# ==========================================
+integrations/gmail/credentials.json
+integrations/google-drive/credentials.json
+integrations/whatsapp/credentials.json
+integrations/calendar/credentials.json
+
+# Configuración local del emprendimiento (no compartir datos sensibles)
+config/local.json
+config/secrets.json

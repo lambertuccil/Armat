@@ -1,0 +1,181 @@
+{
+  "version": "1.0",
+  "empresa": {
+    "nombre": "ARMAT Desarrollos",
+    "rubro": "Desarrollo Inmobiliario",
+    "jurisdiccion": "Neuquén, Argentina",
+    "emprendimiento": "ENTANYQ"
+  },
+  "agentes": [
+    {
+      "id": "ceo",
+      "nombre": "CEO / Director General",
+      "carpeta": "ceo",
+      "rol": "triage-y-delegacion",
+      "descripcion": "Recibe pedidos, clasifica y delega a los agentes correspondientes",
+      "puede_delegar": true,
+      "puede_aprobar_entregas": true,
+      "depende_de": []
+    },
+    {
+      "id": "comercial",
+      "nombre": "Comercial",
+      "carpeta": "comercial",
+      "rol": "ventas-y-negociacion",
+      "descripcion": "Gestiona la venta de unidades, negocia con clientes, cierra operaciones",
+      "puede_delegar": false,
+      "puede_aprobar_entregas": false,
+      "depende_de": ["ceo"]
+    },
+    {
+      "id": "marketing",
+      "nombre": "Marketing",
+      "carpeta": "marketing",
+      "rol": "comunicacion-y-publicidad",
+      "descripcion": "Gestiona campañas de marketing, redes sociales, materiales promocionales",
+      "puede_delegar": false,
+      "puede_aprobar_entregas": false,
+      "depende_de": ["ceo"]
+    },
+    {
+      "id": "obras",
+      "nombre": "Obras",
+      "carpeta": "obras",
+      "rol": "supervision-y-construccion",
+      "descripcion": "Supervisa la construcción, controla avance de obra, gestiona proveedores",
+      "puede_delegar": false,
+      "puede_aprobar_entregas": false,
+      "depende_de": ["ceo"]
+    },
+    {
+      "id": "finanzas",
+      "nombre": "Finanzas",
+      "carpeta": "finanzas",
+      "rol": "gestion-financiera",
+      "descripcion": "Controla finanzas, presupuestos, flujo de caja, inversiones",
+      "puede_delegar": false,
+      "puede_aprobar_entregas": false,
+      "depende_de": ["ceo"]
+    },
+    {
+      "id": "legal",
+      "nombre": "Legal",
+      "carpeta": "legal",
+      "rol": "asesoria-juridica",
+      "descripcion": "Asesora en temas legales, contratos, regulaciones, permisos",
+      "puede_delegar": false,
+      "puede_aprobar_entregas": false,
+      "depende_de": ["ceo"]
+    },
+    {
+      "id": "administracion",
+      "nombre": "Administración",
+      "carpeta": "administracion",
+      "rol": "gestion-administrativa",
+      "descripcion": "Gestiona trámites administrativos, habilitaciones, documentación",
+      "puede_delegar": false,
+      "puede_aprobar_entregas": false,
+      "depende_de": ["ceo"]
+    },
+    {
+      "id": "calidad",
+      "nombre": "Calidad",
+      "carpeta": "calidad",
+      "rol": "control-de-calidad",
+      "descripcion": "Supervisa la calidad de constructiva y de terminaciones",
+      "puede_delegar": false,
+      "puede_aprobar_entregas": false,
+      "depende_de": ["ceo"]
+    },
+    {
+      "id": "clientes",
+      "nombre": "Clientes",
+      "carpeta": "clientes",
+      "rol": "atencion-al-cliente",
+      "descripcion": "Gestiona la relación con clientes, postventa, reclamos",
+      "puede_delegar": false,
+      "puede_aprobar_entregas": false,
+      "depende_de": ["ceo"]
+    },
+    {
+      "id": "compras",
+      "nombre": "Compras",
+      "carpeta": "compras",
+      "rol": "adquisiciones",
+      "descripcion": "Gestiona compras de materiales, negociación con proveedores",
+      "puede_delegar": false,
+      "puede_aprobar_entregas": false,
+      "depende_de": ["ceo"]
+    },
+    {
+      "id": "ia",
+      "nombre": "IA / Tecnología",
+      "carpeta": "ia",
+      "rol": "soporte-tecnologico",
+      "descripcion": "Gestiona herramientas de IA, automatización, sistemas",
+      "puede_delegar": false,
+      "puede_aprobar_entregas": false,
+      "depende_de": ["ceo"]
+    },
+    {
+      "id": "presupuestos",
+      "nombre": "Presupuestos",
+      "carpeta": "presupuestos",
+      "rol": "estimacion-de-costos",
+      "descripcion": "Elabora presupuestos de obras, estimación de costos",
+      "puede_delegar": false,
+      "puede_aprobar_entregas": false,
+      "depende_de": ["ceo"]
+    },
+    {
+      "id": "rrhh",
+      "nombre": "Recursos Humanos",
+      "carpeta": "rrhh",
+      "rol": "gestion-de-personal",
+      "descripcion": "Gestiona personal, contrataciones, capacitación",
+      "puede_delegar": false,
+      "puede_aprobar_entregas": false,
+      "depende_de": ["ceo"]
+    },
+    {
+      "id": "it",
+      "nombre": "IT / Sistemas",
+      "carpeta": "it",
+      "rol": "soporte-informatico",
+      "descripcion": "Gestiona infraestructura tecnológica, redes, sistemas",
+      "puede_delegar": false,
+      "puede_aprobar_entregas": false,
+      "depende_de": ["ceo"]
+    },
+    {
+      "id": "postventa",
+      "nombre": "Postventa",
+      "carpeta": "postventa",
+      "rol": "servicio-postventa",
+      "descripcion": "Gestiona servicio postventa, garantías, mantenimiento",
+      "puede_delegar": false,
+      "puede_aprobar_entregas": false,
+      "depende_de": ["ceo"]
+    },
+    {
+      "id": "proveedores",
+      "nombre": "Proveedores",
+      "carpeta": "proveedores",
+      "rol": "gestion-de-proveedores",
+      "descripcion": "Gestiona relación con proveedores, contratos, pagos",
+      "puede_delegar": false,
+      "puede_aprobar_entregas": false,
+      "depende_de": ["ceo"]
+    },
+    {
+      "id": "data",
+      "nombre": "Data / Analítica",
+      "carpeta": "data",
+      "rol": "analisis-de-datos",
+      "descripcion": "Gestiona datos, reportes, analítica de negocio",
+      "puede_delegar": false,
+      "puede_aprobar_entregas": false,
+      "depende_de": ["ceo"]
+    }
+  ]
+}

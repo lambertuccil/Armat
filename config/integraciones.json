@@ -1,0 +1,41 @@
+{
+  "version": "1.0",
+  "integraciones": {
+    "gmail": {
+      "habilitada": false,
+      "descripcion": "Lectura y envío de correos electrónicos",
+      "config_requerida": ["email", "credenciales"],
+      "agentes_usuarios": ["ceo", "comercial", "marketing", "clientes"]
+    },
+    "google_drive": {
+      "habilitada": false,
+      "descripcion": "Almacenamiento y gestión de documentos en la nube",
+      "config_requerida": ["credenciales", "carpeta_raiz"],
+      "agentes_usuarios": ["legal", "administracion", "obras"]
+    },
+    "whatsapp": {
+      "habilitada": false,
+      "descripcion": "Comunicación con clientes por WhatsApp",
+      "config_requerida": ["numero", "credenciales"],
+      "agentes_usuarios": ["ceo", "comercial", "clientes", "marketing"]
+    },
+    "calendar": {
+      "habilitada": false,
+      "descripcion": "Sincronización con calendario del emprendimiento",
+      "config_requerida": ["credenciales", "calendario_id"],
+      "agentes_usuarios": ["ceo", "comercial", "obras"]
+    },
+    "instagram": {
+      "habilitada": false,
+      "descripcion": "Gestión de contenido en Instagram",
+      "config_requerida": ["token", "cuenta_id"],
+      "agentes_usuarios": ["marketing"]
+    },
+    "google_analytics": {
+      "habilitada": false,
+      "descripcion": "Analítica de tráfico web",
+      "config_requerida": ["tracking_id", "credenciales"],
+      "agentes_usuarios": ["marketing", "data"]
+    }
+  }
+}

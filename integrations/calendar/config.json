@@ -1,0 +1,14 @@
+{
+  "server": "google-calendar",
+  "transport": "stdio",
+  "command": "npx",
+  "args": ["-y", "@modelcontextprotocol/server-google-calendar"],
+  "env": {
+    "GOOGLE_CLIENT_ID": "",
+    "GOOGLE_CLIENT_SECRET": "",
+    "GOOGLE_REFRESH_TOKEN": "",
+    "CALENDAR_ID": "primary"
+  },
+  "habilitada": false,
+  "notas": "Sincroniza con Google Calendar del estudio para plazos procesales y audiencias"
+}

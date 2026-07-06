@@ -1,0 +1,12 @@
+{
+  "server": "whatsapp",
+  "transport": "stdio",
+  "command": "npx",
+  "args": ["-y", "@modelcontextprotocol/server-whatsapp"],
+  "env": {
+    "WHATSAPP_PHONE_ID": "",
+    "WHATSAPP_TOKEN": ""
+  },
+  "habilitada": false,
+  "notas": "Requiere WhatsApp Business API o integración similar. Verificar normativa de messaging para estudio jurídico."
+}

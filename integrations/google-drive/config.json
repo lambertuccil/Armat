@@ -1,0 +1,14 @@
+{
+  "server": "google-drive",
+  "transport": "stdio",
+  "command": "npx",
+  "args": ["-y", "@modelcontextprotocol/server-google-drive"],
+  "env": {
+    "GOOGLE_CLIENT_ID": "",
+    "GOOGLE_CLIENT_SECRET": "",
+    "GOOGLE_REFRESH_TOKEN": "",
+    "GOOGLE_FOLDER_ID": ""
+  },
+  "habilitada": false,
+  "notas": "Requiere credenciales de Google Cloud Console con Drive API habilitada. GOOGLE_FOLDER_ID es la carpeta raíz del estudio en Drive."
+}
