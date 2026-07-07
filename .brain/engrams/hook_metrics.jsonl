@@ -1,0 +1,4 @@
+{"timestamp": "2026-07-05T22:20:14.637874", "event_type": "session_started", "outcome": "ADD", "latency_ms": 15.0, "engram_key": "session_814", "error": null}
+{"timestamp": "2026-07-05T22:23:08.732931", "event_type": "session_started", "outcome": "ADD", "latency_ms": 24.01, "engram_key": "session_988", "error": null}
+{"timestamp": "2026-07-07T19:33:15.529143", "event_type": "session_started", "outcome": "ADD", "latency_ms": 25.55, "engram_key": "session_63595", "error": null}
+{"timestamp": "2026-07-07T19:53:27.294475", "event_type": "session_started", "outcome": "ADD", "latency_ms": 13.0, "engram_key": "session_64807", "error": null}

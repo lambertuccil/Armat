@@ -1,0 +1,72 @@
+{
+  "cycle_id": 1,
+  "week_start": "2026-06-29",
+  "days": {
+    "2026-06-29": {
+      "action": "GAP_ANALYSIS",
+      "planned": true,
+      "completed": false,
+      "score_at_start": null,
+      "score_at_end": null
+    },
+    "2026-06-30": {
+      "action": "BUILD",
+      "planned": true,
+      "completed": false,
+      "score_at_start": null,
+      "score_at_end": null
+    },
+    "2026-07-01": {
+      "action": "TEST",
+      "planned": true,
+      "completed": false,
+      "score_at_start": null,
+      "score_at_end": null
+    },
+    "2026-07-02": {
+      "action": "REFLECT",
+      "planned": true,
+      "completed": false,
+      "score_at_start": null,
+      "score_at_end": null
+    },
+    "2026-07-03": {
+      "action": "SHIP",
+      "planned": true,
+      "completed": false,
+      "score_at_start": null,
+      "score_at_end": null
+    },
+    "2026-07-04": {
+      "action": "AUDIT",
+      "planned": true,
+      "completed": false,
+      "score_at_start": null,
+      "score_at_end": null
+    },
+    "2026-07-05": {
+      "action": "CONSOLIDATE",
+      "planned": true,
+      "completed": false,
+      "score_at_start": null,
+      "score_at_end": null
+    }
+  },
+  "weekly_score_start": 10,
+  "weekly_score_start_v0": 52,
+  "weekly_score_start_v2": {
+    "v2_score": 10,
+    "band": "COLD",
+    "dimensions": {
+      "knowledge_metabolism": 0,
+      "frontier_health": 0,
+      "velocity": 10,
+      "continuity": 0,
+      "training_signal": 0
+    },
+    "v0_score": 52
+  },
+  "weekly_score_end": null,
+  "weekly_delta": null,
+  "previous_cycles": []
+}

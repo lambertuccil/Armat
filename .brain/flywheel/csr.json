@@ -1,0 +1,9 @@
+{
+  "claims_total": 1,
+  "claims_survived": 1,
+  "claims_unsurvived": 0,
+  "ratio": 1.0,
+  "first_claim_at": "2026-07-06T01:20:15.057246+00:00",
+  "last_updated": "2026-07-06T01:20:15.057246+00:00",
+  "recent_claims": []
+}

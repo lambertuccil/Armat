@@ -1,0 +1,14 @@
+{
+  "last_event": {
+    "event_id": "evt-1783464807-a857dbd9",
+    "timestamp": "2026-07-07T22:53:27.263471Z",
+    "type": "session_started",
+    "emitter": "mcp_server",
+    "data": {
+      "session_id": "mcp-1783464807-16468817"
+    },
+    "description": ""
+  },
+  "updated_at": "2026-07-07T22:53:27.263471Z",
+  "event_count": 4
+}
