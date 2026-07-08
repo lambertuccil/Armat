@@ -56,11 +56,12 @@ Sistema completo de agentes IA para la gestión integral de una desarrolladora i
 ```
 C:\IA\Armat\
 ├── README.md                      # Este archivo
+├── GUIA-COMPLETA-ARMAT.html       # Guía visual del sistema (12 páginas)
 ├── GUIA-COMPLETA.md               # Guía completa del sistema
 ├── .env.example                   # Variables de entorno
 ├── .gitignore                     # Exclusiones de git
 │
-├── agents/                        # 17 agentes especializados
+├── agents/                        # 17 agentes especializados (COMPARTIDO)
 │   ├── administracion/            # Gestión administrativa
 │   ├── calidad/                   # Control de calidad
 │   ├── ceo/                       # Director ejecutivo
@@ -79,7 +80,7 @@ C:\IA\Armat\
 │   ├── proveedores/               # Relación
 │   └── rrhh/                      # Personal
 │
-├── skills/                        # 98 skills organizados
+├── skills/                        # 98 skills organizados (COMPARTIDO)
 │   ├── administracion/
 │   ├── calidad/
 │   ├── clientes/
@@ -98,8 +99,9 @@ C:\IA\Armat\
 │   ├── rrhh/
 │   └── shared/
 │
-├── base-conocimiento/             # Base de conocimiento
+├── base-conocimiento/             # Base de conocimiento (COMPARTIDO)
 │   ├── construccion/
+│   │   └── materiales-rendimientos.md  # Tabla de materiales Neuquén
 │   ├── legislacion/
 │   │   └── neuquen/
 │   │       ├── arancel-cajn.md
@@ -107,7 +109,7 @@ C:\IA\Armat\
 │   ├── marketing/
 │   └── ventas/
 │
-├── plantillas/                    # Plantillas reutilizables
+├── plantillas/                    # Plantillas reutilizables (COMPARTIDO)
 │   ├── branding/
 │   │   ├── guia-voz-marca.md
 │   │   ├── manual-marca.md
@@ -126,43 +128,42 @@ C:\IA\Armat\
 │   ├── propuestas/
 │   └── publicaciones/
 │
-├── workflows/                     # Workflows automatizados
+├── workflows/                     # Workflows automatizados (COMPARTIDO)
 │
-├── config/                        # Configuración del sistema
+├── config/                        # Configuración del sistema (COMPARTIDO)
 │   ├── agentes.json
 │   ├── alertas.json
 │   ├── integraciones.json
 │   ├── permisos.json
 │   └── mcp-config.json
 │
-├── integrations/                  # Integraciones externas
+├── integrations/                  # Integraciones externas (COMPARTIDO)
 │   ├── calendar/
 │   ├── gmail/
 │   ├── google-drive/
 │   └── whatsapp/
 │
-├── marketing/                     # Materiales de marketing
-│   ├── brochures/
-│   │   ├── brochure-entanyq-v2.html
-│   │   └── brochure-entanyq-v2-enviar.html
-│   ├── flyers/
-│   │   ├── flyer-entanyq-v2.html
-│   │   └── flyer-entanyq.html
-│   ├── folletos/
-│   │   ├── folleto-entanyq-v2.html
-│   │   └── folleto-entanyq.html
-│   └── GUIA-COMPLETA-ARMAT.html
+├── brand/                         # Identidad visual ARMAT (COMPARTIDO)
 │
-├── Documentacion/                 # Documentación estratégica
-│   ├── 01_Analisis_Mercado_ENTANYQ.md
-│   ├── 02_Estrategia_Ventas_ENTANYQ.md
-│   ├── 03_Proyecciones_Financieras_ENTANYQ.md
-│   └── 04_Observaciones_y_Mejoras.md
+├── proyectos/                     # PROYECTOS DE DESARROLLO
+│   ├── entanyq/                   # Proyecto ENTANYQ (Centenario)
+│   │   ├── marketing/             # Materiales de marketing
+│   │   │   ├── brochures/
+│   │   │   ├── flyers/
+│   │   │   └── folletos/
+│   │   ├── documentacion/         # Documentación estratégica
+│   │   │   ├── 01_Analisis_Mercado.md
+│   │   │   ├── 02_Estrategia_Ventas.md
+│   │   │   ├── 03_Proyecciones_Financieras.md
+│   │   │   └── 04_Observaciones_y_Mejoras.md
+│   │   ├── img/                   # Renders, fotos, videos
+│   │   │   ├── render/
+│   │   │   └── Video/
+│   │   └── documentos/            # Documentos originales
+│   │
+│   ├── [proyecto-2]/              # Próximo proyecto
+│   └── [proyecto-3]/              # Futuro proyecto
 │
-├── brand/                         # Identidad visual
-├── img/                           # Recursos visuales
-│   └── render/                    # 18 renders
-├── documentos_entregados/         # Documentos originales
 └── memory/                        # Memoria persistente
 ```
 
@@ -323,17 +324,17 @@ C:\IA\Armat\
 
 ## Materiales de Marketing
 
-### ENTANYQ — Desarrollo en Centenario, Neuquén
+### Proyecto ENTANYQ — Centenario, Neuquén
 
 | Material | Archivo | Tipo |
 |----------|---------|------|
-| **Brochure** | `brochure-entanyq-v2.html` | Editable |
-| **Brochure (enviar)** | `brochure-entanyq-v2-enviar.html` | Autocontenido |
-| **Flyer** | `flyer-entanyq-v2.html` | Editable |
-| **Folleto** | `folleto-entanyq-v2.html` | Editable |
+| **Brochure** | `proyectos/entanyq/marketing/brochures/brochure-entanyq-v2.html` | Editable |
+| **Brochure (enviar)** | `proyectos/entanyq/marketing/brochures/brochure-entanyq-v2-enviar.html` | Autocontenido |
+| **Flyer** | `proyectos/entanyq/marketing/flyers/flyer-entanyq-v2.html` | Editable |
+| **Folleto** | `proyectos/entanyq/marketing/folletos/folleto-entanyq-v2.html` | Editable |
 | **Guía Visual** | `GUIA-COMPLETA-ARMAT.html` | Guía del sistema |
 
-### Datos del Proyecto
+### Datos del Proyecto ENTANYQ
 
 - **Tipo**: Departamentos nuevos
 - **Ubicación**: Centenario, Neuquén
@@ -341,9 +342,18 @@ C:\IA\Armat\
 - **Cocheras**: Desde USD 7.500
 - **Estado**: 50% vendido (8 unidades disponibles)
 
+### Cómo Crear Materiales para un Nuevo Proyecto
+
+1. Crear carpeta: `proyectos/[nombre-proyecto]/`
+2. Copiar estructura de ENTANYQ como template
+3. Actualizar datos del proyecto (precios, ubicación, renders)
+4. Los agentes de marketing generarán materiales automáticamente
+
 ---
 
 ## Documentación Estratégica
+
+### Proyecto ENTANYQ
 
 | Documento | Contenido |
 |-----------|-----------|
@@ -351,6 +361,15 @@ C:\IA\Armat\
 | **02_Estrategia_Ventas** | Pipeline, fuentes de leads, métricas |
 | **03_Proyecciones_Financieras** | Costos, ingresos, rentabilidad, ROI |
 | **04_Observaciones_y_Mejoras** | Análisis de materiales, mejoras priorizadas |
+
+**Ubicación**: `proyectos/entanyq/documentacion/`
+
+### Para Nuevo Proyecto
+
+1. Crear carpeta: `proyectos/[nombre-proyecto]/documentacion/`
+2. Usar plantillas de documentación existentes
+3. Adaptar análisis de mercado a nueva ubicación
+4. Calcular proyecciones financieras propias
 
 ---
 
