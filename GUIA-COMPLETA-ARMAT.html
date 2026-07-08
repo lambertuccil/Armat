@@ -3,50 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARMAT — Guía del Sistema</title>
+    <title>ARMAT — Sistema Operativo</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
         :root {
-            --navy: #0f172a;
-            --navy-light: #1e293b;
-            --accent: #d4a853;
-            --accent-light: #f5e6c8;
+            --navy: #0c1222;
+            --navy-mid: #162032;
+            --accent: #c8a45c;
+            --accent-soft: #f7edd8;
             --white: #ffffff;
-            --gray-50: #f8fafc;
-            --gray-100: #f1f5f9;
-            --gray-200: #e2e8f0;
-            --gray-300: #cbd5e1;
-            --gray-400: #94a3b8;
-            --gray-500: #64748b;
-            --gray-600: #475569;
-            --gray-700: #334155;
-            --gray-800: #1e293b;
-            --gray-900: #0f172a;
-            --green: #10b981;
-            --green-light: #d1fae5;
-            --red: #ef4444;
-            --red-light: #fee2e2;
-            --blue: #3b82f6;
-            --blue-light: #dbeafe;
-            --radius: 12px;
-            --radius-sm: 8px;
-            --radius-lg: 16px;
-            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
-            --shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
-            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
-            --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1);
+            --off-white: #fafaf9;
+            --gray-50: #f5f5f4;
+            --gray-100: #e7e5e4;
+            --gray-200: #d6d3d1;
+            --gray-300: #a8a29e;
+            --gray-400: #78716c;
+            --gray-500: #57534e;
+            --gray-600: #44403c;
+            --gray-700: #292524;
+            --gray-800: #1c1917;
+            --green: #16a34a;
+            --green-soft: #dcfce7;
+            --red: #dc2626;
+            --red-soft: #fee2e2;
+            --blue: #2563eb;
+            --blue-soft: #dbeafe;
+            --amber: #d97706;
+            --amber-soft: #fef3c7;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Inter', sans-serif;
             color: var(--gray-800);
             background: var(--gray-100);
             line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
         }
 
         .page {
@@ -54,8 +48,8 @@
             min-height: 297mm;
             margin: 32px auto;
             background: var(--white);
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-xl);
+            border-radius: 16px;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15);
             overflow: hidden;
             page-break-after: always;
             position: relative;
@@ -69,10 +63,9 @@
         /* ============ PORTADA ============ */
         .portada {
             height: 297mm;
+            background: var(--navy);
             display: flex;
             flex-direction: column;
-            background: var(--navy);
-            color: var(--white);
             position: relative;
             overflow: hidden;
         }
@@ -80,27 +73,26 @@
         .portada::before {
             content: '';
             position: absolute;
-            top: -300px;
-            right: -300px;
-            width: 800px;
-            height: 800px;
+            top: -150px;
+            right: -150px;
+            width: 500px;
+            height: 500px;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(212,168,83,0.15) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(200,164,92,0.12) 0%, transparent 70%);
         }
 
         .portada::after {
             content: '';
             position: absolute;
-            bottom: -200px;
-            left: -200px;
-            width: 600px;
-            height: 600px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(212,168,83,0.08) 0%, transparent 70%);
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 300px;
+            background: linear-gradient(to top, rgba(0,0,0,0.4), transparent);
         }
 
         .portada-top {
-            padding: 48px 64px;
+            padding: 40px 56px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -111,28 +103,24 @@
         .portada-logo {
             display: flex;
             align-items: center;
-            gap: 16px;
+            gap: 14px;
         }
 
-        .portada-logo svg {
-            width: 36px;
-            height: 36px;
-        }
+        .portada-logo svg { width: 32px; height: 32px; }
 
         .portada-logo-text {
             font-family: 'DM Sans', sans-serif;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 700;
             letter-spacing: 6px;
             color: var(--white);
         }
 
         .portada-badge {
-            background: rgba(212,168,83,0.15);
-            border: 1px solid rgba(212,168,83,0.3);
-            padding: 8px 20px;
+            background: rgba(200,164,92,0.15);
+            border: 1px solid rgba(200,164,92,0.3);
+            padding: 6px 16px;
             border-radius: 100px;
-            font-family: 'DM Sans', sans-serif;
             font-size: 11px;
             font-weight: 600;
             letter-spacing: 2px;
@@ -145,67 +133,59 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding: 0 80px;
+            padding: 0 72px;
             position: relative;
             z-index: 2;
         }
 
-        .portada-label {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 12px;
+        .portada-eyebrow {
+            font-size: 11px;
             font-weight: 600;
             letter-spacing: 8px;
             text-transform: uppercase;
             color: var(--accent);
-            margin-bottom: 24px;
+            margin-bottom: 20px;
         }
 
         .portada h1 {
             font-family: 'DM Sans', sans-serif;
-            font-size: 56px;
+            font-size: 52px;
             font-weight: 700;
             line-height: 1.1;
-            margin-bottom: 24px;
+            color: var(--white);
         }
 
-        .portada h1 span { 
-            display: block;
-            color: var(--accent); 
-            font-size: 48px;
+        .portada h1 em {
+            font-style: italic;
+            color: var(--accent);
         }
 
-        .portada-divider {
-            width: 64px;
+        .portada-rule {
+            width: 48px;
             height: 3px;
             background: var(--accent);
-            margin: 32px 0;
+            margin: 28px 0;
             border-radius: 2px;
         }
 
-        .portada-subtitle {
-            font-size: 17px;
-            font-weight: 400;
-            color: var(--gray-400);
-            max-width: 520px;
-            line-height: 1.8;
+        .portada-sub {
+            font-size: 16px;
+            color: var(--gray-300);
+            max-width: 480px;
+            line-height: 1.7;
         }
 
         .portada-stats {
             display: flex;
-            gap: 48px;
-            margin-top: 48px;
-        }
-
-        .portada-stat {
-            text-align: center;
+            gap: 40px;
+            margin-top: 40px;
         }
 
         .portada-stat .num {
             font-family: 'DM Sans', sans-serif;
-            font-size: 48px;
+            font-size: 44px;
             font-weight: 700;
             color: var(--accent);
-            display: block;
             line-height: 1;
         }
 
@@ -213,283 +193,177 @@
             font-size: 11px;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: var(--gray-500);
-            margin-top: 8px;
+            color: var(--gray-400);
+            margin-top: 6px;
             display: block;
         }
 
         .portada-bottom {
-            padding: 48px 80px;
+            padding: 32px 56px;
             position: relative;
             z-index: 2;
         }
 
         .portada-meta {
-            font-size: 12px;
+            font-size: 11px;
             color: var(--gray-500);
-            letter-spacing: 1px;
         }
 
         .portada-meta strong { color: var(--gray-300); }
 
         /* ============ SECCIONES ============ */
         .section {
-            padding: 56px 64px;
+            padding: 48px 56px;
             min-height: 297mm;
         }
 
         .sec-header {
-            margin-bottom: 40px;
+            margin-bottom: 32px;
         }
 
         .sec-num {
             font-family: 'DM Sans', sans-serif;
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 700;
             color: var(--accent);
             letter-spacing: 2px;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
         }
 
         .sec-titles h2 {
             font-family: 'DM Sans', sans-serif;
-            font-size: 28px;
+            font-size: 26px;
             font-weight: 700;
             color: var(--gray-900);
-            line-height: 1.2;
         }
 
         .sec-titles p {
-            font-size: 15px;
+            font-size: 14px;
             color: var(--gray-500);
-            margin-top: 8px;
+            margin-top: 4px;
         }
 
-        .sec-divider {
+        .sec-rule {
             width: 100%;
             height: 1px;
             background: var(--gray-200);
-            margin-top: 32px;
+            margin-top: 24px;
         }
 
-        /* ============ GRID ============ */
-        .cols-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-        .cols-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
-        .cols-4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 16px; }
-        .mb-40 { margin-bottom: 40px; }
-        .mb-32 { margin-bottom: 32px; }
-        .mb-24 { margin-bottom: 24px; }
-        .mb-16 { margin-bottom: 16px; }
+        /* ============ GRIDS ============ */
+        .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .g3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+        .g4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 14px; }
+        .mb40 { margin-bottom: 40px; }
+        .mb32 { margin-bottom: 32px; }
+        .mb24 { margin-bottom: 24px; }
+        .mb16 { margin-bottom: 16px; }
 
         /* ============ CARDS ============ */
         .card {
-            background: var(--gray-50);
-            border-radius: var(--radius);
-            padding: 24px;
-            border: 1px solid var(--gray-200);
-            transition: all 0.2s ease;
+            background: var(--off-white);
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid var(--gray-100);
+            transition: border-color 0.2s;
         }
 
-        .card:hover {
-            border-color: var(--accent);
-            box-shadow: var(--shadow);
-        }
+        .card:hover { border-color: var(--accent); }
 
-        .card-icon {
-            width: 44px;
-            height: 44px;
-            border-radius: var(--radius-sm);
+        .card-ico {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 20px;
-            margin-bottom: 16px;
+            font-size: 18px;
+            margin-bottom: 14px;
         }
 
-        .card-icon.navy { background: var(--navy); color: var(--white); }
-        .card-icon.accent { background: var(--accent); color: var(--white); }
-        .card-icon.green { background: var(--green); color: var(--white); }
-        .card-icon.red { background: var(--red); color: var(--white); }
-        .card-icon.gray { background: var(--gray-500); color: var(--white); }
+        .card-ico.navy { background: var(--navy); }
+        .card-ico.gold { background: var(--accent); }
+        .card-ico.green { background: var(--green); }
+        .card-ico.red { background: var(--red); }
+        .card-ico.gray { background: var(--gray-500); }
 
         .card h3 {
             font-family: 'DM Sans', sans-serif;
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 700;
             color: var(--gray-900);
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .card p {
-            font-size: 13px;
+            font-size: 12.5px;
             color: var(--gray-500);
-            line-height: 1.6;
+            line-height: 1.5;
         }
 
-        .card .tag {
+        .pill {
             display: inline-block;
-            padding: 4px 10px;
+            padding: 3px 10px;
             border-radius: 100px;
-            font-size: 11px;
+            font-size: 10px;
             font-weight: 600;
-            margin-top: 12px;
+            margin-top: 10px;
         }
 
-        .tag.accent { background: var(--accent-light); color: #92710a; }
-        .tag.green { background: var(--green-light); color: #047857; }
-        .tag.blue { background: var(--blue-light); color: #1d4ed8; }
-
-        /* ============ PROJECT CARD ============ */
-        .project-card {
-            background: var(--white);
-            border-radius: var(--radius);
-            padding: 28px;
-            border: 1px solid var(--gray-200);
-            margin-bottom: 24px;
-        }
-
-        .project-card h3 {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--gray-900);
-            margin-bottom: 16px;
-        }
-
-        .project-card .row {
-            display: flex;
-            justify-content: space-between;
-            padding: 12px 0;
-            border-bottom: 1px solid var(--gray-100);
-            font-size: 14px;
-        }
-
-        .project-card .row:last-child { border-bottom: none; }
-        .project-card .row .label { color: var(--gray-500); }
-        .project-card .row .value { font-weight: 600; color: var(--gray-800); }
+        .pill.gold { background: var(--accent-soft); color: #92710a; }
+        .pill.green { background: var(--green-soft); color: #15803d; }
+        .pill.blue { background: var(--blue-soft); color: #1d4ed8; }
+        .pill.red { background: var(--red-soft); color: #b91c1c; }
 
         /* ============ TABLE ============ */
-        .table {
+        .tbl {
             width: 100%;
             border-collapse: collapse;
-            font-size: 14px;
+            font-size: 13px;
         }
 
-        .table thead th {
+        .tbl th {
             background: var(--navy);
             color: var(--white);
-            padding: 14px 16px;
+            padding: 12px 14px;
             text-align: left;
             font-family: 'DM Sans', sans-serif;
             font-weight: 600;
-            font-size: 12px;
+            font-size: 11px;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        .table thead th:first-child { border-radius: var(--radius-sm) 0 0 0; }
-        .table thead th:last-child { border-radius: 0 var(--radius-sm) 0 0; }
+        .tbl th:first-child { border-radius: 8px 0 0 0; }
+        .tbl th:last-child { border-radius: 0 8px 0 0; }
 
-        .table tbody td {
-            padding: 14px 16px;
+        .tbl td {
+            padding: 12px 14px;
             border-bottom: 1px solid var(--gray-100);
         }
 
-        .table tbody tr:hover { background: var(--gray-50); }
-        .table .hl { font-weight: 600; color: var(--gray-900); }
-
-        /* ============ FLOW ============ */
-        .flow {
-            background: var(--gray-50);
-            border-radius: var(--radius);
-            padding: 28px;
-            border: 1px solid var(--gray-200);
-            margin-bottom: 24px;
-        }
-
-        .flow h3 {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 14px;
-            font-weight: 700;
-            color: var(--gray-900);
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .flow-step {
-            display: flex;
-            align-items: flex-start;
-            gap: 16px;
-            padding: 12px 0;
-        }
-
-        .flow-step .num {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            background: var(--accent);
-            color: var(--white);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'DM Sans', sans-serif;
-            font-weight: 700;
-            font-size: 14px;
-            flex-shrink: 0;
-        }
-
-        .flow-step .text {
-            font-size: 14px;
-            color: var(--gray-600);
-            padding-top: 4px;
-        }
-
-        .flow-step .text strong { color: var(--gray-900); }
-
-        .flow-arrow {
-            text-align: center;
-            color: var(--gray-300);
-            font-size: 18px;
-            padding: 4px 0;
-        }
-
-        /* ============ CODE ============ */
-        .code {
-            background: var(--gray-900);
-            color: var(--gray-300);
-            padding: 24px;
-            border-radius: var(--radius);
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 13px;
-            line-height: 1.8;
-            overflow-x: auto;
-            margin: 16px 0;
-        }
-
-        .code .comment { color: var(--gray-500); }
-        .code .keyword { color: var(--accent); }
-        .code .string { color: var(--green); }
+        .tbl tr:hover { background: var(--gray-50); }
+        .tbl .hl { font-weight: 600; color: var(--gray-900); }
 
         /* ============ CALLOUT ============ */
         .callout {
             background: var(--navy);
             color: var(--white);
-            padding: 32px;
-            border-radius: var(--radius);
+            padding: 28px 32px;
+            border-radius: 12px;
             margin: 24px 0;
         }
 
         .callout h3 {
             font-family: 'DM Sans', sans-serif;
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 700;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             color: var(--accent);
         }
 
         .callout p {
-            font-size: 14px;
+            font-size: 13.5px;
             line-height: 1.7;
             color: var(--gray-300);
         }
@@ -501,104 +375,235 @@
         .callout.green h3 { color: #6ee7b7; }
         .callout.green p { color: #d1fae5; }
 
-        /* ============ EXAMPLE ============ */
-        .example {
-            border-radius: var(--radius);
+        .callout.amber {
+            background: linear-gradient(135deg, #78350f, #92400e);
+        }
+
+        .callout.amber h3 { color: #fcd34d; }
+        .callout.amber p { color: #fef3c7; }
+
+        /* ============ FLOW ============ */
+        .flow {
+            background: var(--off-white);
+            border-radius: 12px;
             padding: 24px;
-            border: 1px solid var(--gray-200);
-            margin-bottom: 16px;
-            background: var(--gray-50);
+            border: 1px solid var(--gray-100);
         }
 
-        .example-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 12px;
-        }
-
-        .example-tag {
-            padding: 4px 12px;
-            border-radius: 100px;
-            font-family: 'DM Sans', sans-serif;
-            font-size: 11px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .example.user .example-tag { background: var(--gray-200); color: var(--gray-600); }
-        .example.system .example-tag { background: var(--green-light); color: #047857; }
-
-        .example h4 {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 16px;
-            font-weight: 700;
-            color: var(--gray-900);
-        }
-
-        .example p {
-            font-size: 14px;
-            color: var(--gray-600);
-            line-height: 1.7;
-            margin-top: 8px;
-        }
-
-        .example .agents {
-            margin-top: 12px;
-            padding: 10px 14px;
-            background: var(--white);
-            border-radius: var(--radius-sm);
-            font-size: 12px;
-            color: var(--gray-500);
-            border: 1px solid var(--gray-200);
-        }
-
-        .example .agents strong { color: var(--gray-700); }
-
-        /* ============ FOOTER ============ */
-        .pg-footer {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 16px 64px;
-            background: var(--gray-50);
-            border-top: 1px solid var(--gray-200);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 11px;
-            color: var(--gray-400);
-        }
-
-        .pg-footer .pg {
-            font-family: 'DM Sans', sans-serif;
-            font-weight: 700;
-            color: var(--accent);
-        }
-
-        /* ============ SECTION HEADING ============ */
-        .section-heading {
+        .flow h3 {
             font-family: 'DM Sans', sans-serif;
             font-size: 13px;
             font-weight: 700;
-            color: var(--gray-900);
             margin-bottom: 16px;
             text-transform: uppercase;
             letter-spacing: 1px;
+            color: var(--gray-900);
+        }
+
+        .flow-step {
+            display: flex;
+            gap: 14px;
+            padding: 10px 0;
+        }
+
+        .flow-step .num {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 12px;
+            flex-shrink: 0;
+        }
+
+        .flow-step .txt {
+            font-size: 13px;
+            color: var(--gray-600);
+            padding-top: 3px;
+        }
+
+        .flow-step .txt strong { color: var(--gray-900); }
+
+        .flow-arrow {
+            text-align: center;
+            color: var(--gray-300);
+            font-size: 16px;
+            padding: 2px 0;
+        }
+
+        /* ============ CODE ============ */
+        .code {
+            background: var(--gray-800);
+            color: var(--gray-300);
+            padding: 20px 24px;
+            border-radius: 10px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12.5px;
+            line-height: 1.8;
+            overflow-x: auto;
+        }
+
+        .code .c { color: var(--gray-500); }
+        .code .k { color: var(--accent); }
+        .code .s { color: var(--green); }
+
+        /* ============ EXAMPLE ============ */
+        .ex {
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid var(--gray-200);
+            margin-bottom: 14px;
+        }
+
+        .ex.user { background: var(--gray-50); }
+        .ex.sys { background: var(--accent-soft); border-color: var(--accent); }
+
+        .ex-tag {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 100px;
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .ex.user .ex-tag { background: var(--gray-200); color: var(--gray-600); }
+        .ex.sys .ex-tag { background: var(--accent); color: var(--white); }
+
+        .ex h4 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--gray-900);
+        }
+
+        .ex p {
+            font-size: 13px;
+            color: var(--gray-600);
+            margin-top: 6px;
+            line-height: 1.6;
+        }
+
+        .ex .meta {
+            margin-top: 10px;
+            padding: 8px 12px;
+            background: var(--white);
+            border-radius: 8px;
+            font-size: 11px;
+            color: var(--gray-500);
+            border: 1px solid var(--gray-100);
+        }
+
+        .ex .meta strong { color: var(--gray-700); }
+
+        /* ============ PROJECT ============ */
+        .proj {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 24px;
+            border: 1px solid var(--gray-200);
+        }
+
+        .proj h3 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 14px;
+        }
+
+        .proj .row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--gray-100);
+            font-size: 13px;
+        }
+
+        .proj .row:last-child { border-bottom: none; }
+        .proj .row .l { color: var(--gray-500); }
+        .proj .row .v { font-weight: 600; color: var(--gray-800); }
+
+        /* ============ SECTION HEADING ============ */
+        .sh {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--gray-900);
+            margin-bottom: 14px;
             display: flex;
             align-items: center;
             gap: 8px;
         }
 
-        .section-heading::before {
+        .sh::before {
             content: '';
-            width: 4px;
-            height: 16px;
+            width: 3px;
+            height: 14px;
             background: var(--accent);
             border-radius: 2px;
         }
+
+        /* ============ FOOTER ============ */
+        .pg-foot {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 14px 56px;
+            background: var(--gray-50);
+            border-top: 1px solid var(--gray-100);
+            display: flex;
+            justify-content: space-between;
+            font-size: 10px;
+            color: var(--gray-400);
+        }
+
+        .pg-foot .pg {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        /* ============ SKILL CARD ============ */
+        .sk {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 16px;
+            border: 1px solid var(--gray-100);
+        }
+
+        .sk h4 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 4px;
+        }
+
+        .sk p {
+            font-size: 11.5px;
+            color: var(--gray-500);
+            line-height: 1.4;
+        }
+
+        /* ============ TWO-COL ============ */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .two-col .col-left { }
+        .two-col .col-right { }
     </style>
 </head>
 <body>
@@ -608,30 +613,30 @@
     <div class="portada-top">
         <div class="portada-logo">
             <svg viewBox="0 0 40 40" fill="none">
-                <rect x="2" y="14" width="10" height="24" fill="#d4a853"/>
-                <rect x="15" y="6" width="10" height="32" fill="#d4a853"/>
-                <rect x="28" y="10" width="10" height="28" fill="#d4a853"/>
+                <rect x="2" y="14" width="10" height="24" fill="#c8a45c"/>
+                <rect x="15" y="6" width="10" height="32" fill="#c8a45c"/>
+                <rect x="28" y="10" width="10" height="28" fill="#c8a45c"/>
             </svg>
             <span class="portada-logo-text">ARMAT</span>
         </div>
-        <div class="portada-badge">Sistema Operativo</div>
+        <div class="portada-badge">Sistema Operativo v2.0</div>
     </div>
     <div class="portada-center">
-        <div class="portada-label">Desarrolladora Inmobiliaria</div>
-        <h1>Guía del<span>Sistema ARMAT</span></h1>
-        <div class="portada-divider"></div>
-        <p class="portada-subtitle">17 agentes especializados, 98 skills, múltiples proyectos. Un solo sistema para gestionar y vender desarrollos inmobiliarios.</p>
+        <div class="portada-eyebrow">Desarrolladora Inmobiliaria</div>
+        <h1>Guía del<br><em>Sistema ARMAT</em></h1>
+        <div class="portada-rule"></div>
+        <p class="portada-sub">17 agentes especializados, 98 skills, múltiples proyectos. Un sistema para gestionar y vender desarrollos inmobiliarios con estrategia y ejecución.</p>
         <div class="portada-stats">
             <div class="portada-stat">
-                <span class="num">17</span>
+                <div class="num">17</div>
                 <span class="lbl">Agentes</span>
             </div>
             <div class="portada-stat">
-                <span class="num">98</span>
+                <div class="num">98</div>
                 <span class="lbl">Skills</span>
             </div>
             <div class="portada-stat">
-                <span class="num">N</span>
+                <div class="num">N</div>
                 <span class="lbl">Proyectos</span>
             </div>
         </div>
@@ -639,134 +644,150 @@
     <div class="portada-bottom">
         <div class="portada-meta">
             <strong>ARMAT — Desarrolladora Inmobiliaria</strong><br>
-            Centenario, Neuquén — Julio 2026 — Versión 2.0
+            Centenario, Neuquén — Julio 2026
         </div>
     </div>
 </div>
 
-<!-- ============ PÁGINA 1: EL SISTEMA ============ -->
+<!-- ============ P1: QUÉ ES ============ -->
 <div class="page section">
     <div class="sec-header">
         <div class="sec-num">01</div>
         <div class="sec-titles">
             <h2>Qué es el Sistema ARMAT</h2>
-            <p>Un equipo de 17 agentes especializados trabajando para vos</p>
+            <p>Un equipo de 17 agentes trabajando para vos</p>
         </div>
-        <div class="sec-divider"></div>
+        <div class="sec-rule"></div>
     </div>
 
-    <div class="callout mb-32">
+    <div class="callout mb32">
         <h3>La idea es simple</h3>
-        <p>ARMAT es la desarrolladora. Cada proyecto (ENTANYQ, y los que vienen) tiene su propia carpeta con marketing, documentación e imágenes. Los agentes y skills son compartidos — se reutilizan entre todos los proyectos.</p>
+        <p>Imagine que tiene un equipo de 17 empleados especializados: uno para ventas, otro para marketing, otro para la obra, otro para finanzas, otro para legal... Pero no son personas — son agentes de IA que trabajan las 24 horas.</p>
     </div>
 
-    <div class="cols-2 mb-32">
-        <div class="card">
-            <div class="card-icon navy">🏢</div>
-            <h3>ARMAT (la empresa)</h3>
-            <p>Gestiona múltiples desarrollos inmobiliarios. Cada proyecto tiene su carpeta en `proyectos/`</p>
+    <div class="two-col mb32">
+        <div class="col-left">
+            <div class="sh">Cómo funciona</div>
+            <div class="flow">
+                <div class="flow-step">
+                    <div class="num">1</div>
+                    <div class="txt"><strong>Vos escribís</strong> lo que necesitás en español normal</div>
+                </div>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-step">
+                    <div class="num">2</div>
+                    <div class="txt"><strong>El CEO analiza</strong> y decide quién lo resuelve</div>
+                </div>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-step">
+                    <div class="num">3</div>
+                    <div class="txt"><strong>El agente ejecuta</strong> con sus skills especializados</div>
+                </div>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-step">
+                    <div class="num">4</div>
+                    <div class="txt"><strong>Recibís el resultado</strong> — listo para usar</div>
+                </div>
+            </div>
         </div>
-        <div class="card">
-            <div class="card-icon accent">📁</div>
-            <h3>Proyectos</h3>
-            <p>Cada proyecto tiene: marketing, documentación, imágenes, planos, datos</p>
+        <div class="col-right">
+            <div class="sh">Ejemplo real</div>
+            <div class="ex user mb16">
+                <div class="ex-tag">Vos escribís</div>
+                <h4>"¿Cuánto sale el 1 dormitorio y qué opciones de pago tengo?"</h4>
+            </div>
+            <div class="ex sys">
+                <div class="ex-tag">Sistema responde</div>
+                <p><strong>CEO → Comercial:</strong> Precio USD 85.000. Opciones: contado con bonificación o 50% a la firma + 12 cuotas fijas en USD.</p>
+                <div class="meta"><strong>Tiempo:</strong> 3 segundos · <strong>Agente:</strong> armat-comercial</div>
+            </div>
         </div>
     </div>
 
-    <div class="section-heading">Flujo de Trabajo</div>
-    <div class="flow">
-        <div class="flow-step">
-            <div class="num">1</div>
-            <div class="text"><strong>Vos hacés una pregunta</strong> en lenguaje natural</div>
-        </div>
-        <div class="flow-arrow">↓</div>
-        <div class="flow-step">
-            <div class="num">2</div>
-            <div class="text"><strong>El CEO analiza</strong> y decide si resuelve o delega</div>
-        </div>
-        <div class="flow-arrow">↓</div>
-        <div class="flow-step">
-            <div class="num">3</div>
-            <div class="text"><strong>El agente especializado ejecuta</strong> la tarea</div>
-        </div>
-        <div class="flow-arrow">↓</div>
-        <div class="flow-step">
-            <div class="num">4</div>
-            <div class="text"><strong>Recibís el resultado</strong> y podés pedir ajustes</div>
-        </div>
+    <div class="callout green">
+        <h3>¿Necesitás saber de IA o programación?</h3>
+        <p><strong>No.</strong> Hablale como le hablarías a un empleado. Preguntá, pedí, pedí ajustes. El sistema entiende español natural.</p>
     </div>
 
-    <div class="pg-footer">
-        <span>ARMAT — Guía del Sistema</span>
+    <div class="pg-foot">
+        <span>ARMAT — Sistema Operativo</span>
         <span class="pg">01</span>
     </div>
 </div>
 
-<!-- ============ PÁGINA 2: PROYECTOS ============ -->
+<!-- ============ P2: PROYECTOS ============ -->
 <div class="page section">
     <div class="sec-header">
         <div class="sec-num">02</div>
         <div class="sec-titles">
             <h2>Proyectos ARMAT</h2>
-            <p>Estructura organizada para múltiples desarrollos</p>
+            <p>Estructura para múltiples desarrollos</p>
         </div>
-        <div class="sec-divider"></div>
+        <div class="sec-rule"></div>
     </div>
 
-    <div class="project-card mb-32">
+    <div class="proj mb32">
         <h3>Proyecto Actual: ENTANYQ</h3>
         <div class="row">
-            <span class="label">Ubicación</span>
-            <span class="value">Centenario, Neuquén</span>
+            <span class="l">Ubicación</span>
+            <span class="v">Centenario, Neuquén</span>
         </div>
         <div class="row">
-            <span class="label">Tipo</span>
-            <span class="value">Departamentos nuevos</span>
+            <span class="l">Tipo</span>
+            <span class="v">Departamentos nuevos</span>
         </div>
         <div class="row">
-            <span class="label">Estado</span>
-            <span class="value">50% vendido — 8 unidades disponibles</span>
+            <span class="l">Estado</span>
+            <span class="v">50% vendido — 8 unidades disponibles</span>
         </div>
         <div class="row">
-            <span class="label">1 Dormitorio</span>
-            <span class="value">USD 85.000 — 34.14 m²</span>
+            <span class="l">1 Dormitorio</span>
+            <span class="v">USD 85.000 — 34.14 m²</span>
         </div>
         <div class="row">
-            <span class="label">Monoambiente</span>
-            <span class="value">USD 60.000 — 45.03 m²</span>
+            <span class="l">Monoambiente</span>
+            <span class="v">USD 60.000 — 45.03 m²</span>
         </div>
         <div class="row">
-            <span class="label">Cocheras</span>
-            <span class="value">Desde USD 7.500</span>
+            <span class="l">Cocheras</span>
+            <span class="v">Desde USD 7.500</span>
+        </div>
+        <div class="row">
+            <span class="l">Contacto</span>
+            <span class="v">299 508-9366 · @ARMAT.DESARROLLOS</span>
         </div>
     </div>
 
-    <div class="section-heading">Estructura de Proyectos</div>
-    <div class="code mb-32">
-<span class="comment">// Cada proyecto tiene esta estructura:</span>
+    <div class="sh">Cómo se organizan los proyectos</div>
+    <div class="code mb32">
+<span class="c">// ARMAT es la empresa. Cada proyecto tiene su carpeta:</span>
 
 proyectos/
-├── <span class="string">[nombre-proyecto]</span>/
-│   ├── marketing/        <span class="comment"># Brochures, flyers, folletos</span>
-│   ├── documentacion/    <span class="comment"># Análisis, estrategia, proyecciones</span>
-│   ├── img/              <span class="comment"># Renders, fotos, videos</span>
-│   ├── documentos/       <span class="comment"># Originales</span>
-│   ├── planos/           <span class="comment"># Planos del proyecto</span>
-│   └── datos/            <span class="comment"># Specs, precios, config</span>
+├── <span class="s">entanyq/</span>           <span class="c">// Proyecto actual</span>
+│   ├── marketing/    <span class="c">// Brochures, flyers, folletos</span>
+│   ├── documentacion/<span class="c">// Análisis, estrategia, proyecciones</span>
+│   ├── img/          <span class="c">// Renders, fotos, videos</span>
+│   ├── planos/       <span class="c">// Planos del proyecto</span>
+│   └── datos/        <span class="c">// Specs, precios, config</span>
+│
+├── <span class="k">[proyecto-2]/</span>      <span class="c">// Próximo proyecto</span>
+└── <span class="k">[proyecto-3]/</span>      <span class="c">// Futuro proyecto</span>
+
+<span class="c">// Los agentes y skills son compartidos entre todos</span>
     </div>
 
-    <div class="callout green">
-        <h3>Crear nuevo proyecto</h3>
-        <p>Copiá la estructura de ENTANYQ y actualizá los datos. Los agentes generan materiales automáticamente. Ver template en `plantillas/nuevo-proyecto.md`</p>
+    <div class="callout amber">
+        <h3>Crear un nuevo proyecto</h3>
+        <p>Copiá la estructura de ENTANYQ, actualizá los datos (precios, ubicación, renders) y los agentes generan materiales automáticamente. Ver template en `plantillas/nuevo-proyecto.md`</p>
     </div>
 
-    <div class="pg-footer">
-        <span>ARMAT — Guía del Sistema</span>
+    <div class="pg-foot">
+        <span>ARMAT — Sistema Operativo</span>
         <span class="pg">02</span>
     </div>
 </div>
 
-<!-- ============ PÁGINA 3: QUÉ AGENTE USAR ============ -->
+<!-- ============ P3: QUÉ AGENTE ============ -->
 <div class="page section">
     <div class="sec-header">
         <div class="sec-num">03</div>
@@ -774,40 +795,40 @@ proyectos/
             <h2>Qué Agente Usar Cuándo</h2>
             <p>Árbol de decisión para elegir el agente correcto</p>
         </div>
-        <div class="sec-divider"></div>
+        <div class="sec-rule"></div>
     </div>
 
-    <div class="callout mb-32">
+    <div class="callout mb32">
         <h3>Regla de oro</h3>
         <p><strong>Si no sabés cuál usar, hablale al Mgr-CEO.</strong> Él coordina a todos. Es como hablar con el gerente — él sabe a quién_derivar.</p>
     </div>
 
-    <div class="section-heading">Los 3 tipos de agentes</div>
-    <div class="cols-3 mb-32">
+    <div class="sh">Los 3 tipos de agentes</div>
+    <div class="g3 mb32">
         <div class="card">
-            <div class="card-icon navy">🧠</div>
+            <div class="card-ico navy">🧠</div>
             <h3>Mgr-CEO</h3>
             <p>Coordinador general. Cuando no sabés a quién_derivar, hablale a él.</p>
-            <span class="tag accent">Recomendado para empezar</span>
+            <span class="pill gold">Empezá acá</span>
         </div>
         <div class="card">
-            <div class="card-icon accent">🛠</div>
+            <div class="card-ico gold">🛠</div>
             <h3>Gentle-Orchestrator</h3>
-            <p>Para desarrollo de software. Úsalo cuando construís algo técnico.</p>
-            <span class="tag blue">Solo desarrollo</span>
+            <p>Para desarrollo de software. Solo si estás construyendo algo técnico.</p>
+            <span class="pill blue">Solo desarrollo</span>
         </div>
         <div class="card">
-            <div class="card-icon green">📋</div>
+            <div class="card-ico green">📋</div>
             <h3>Skills</h3>
-            <p>98 tareas específicas. Se activan cuando el agente los necesita.</p>
-            <span class="tag green">Se usan solos</span>
+            <p>98 tareas específicas. Se activan cuando el agente las necesita.</p>
+            <span class="pill green">Automáticos</span>
         </div>
     </div>
 
-    <div class="section-heading">Tabla de agentes</div>
-    <table class="table">
+    <div class="sh">Tabla de agentes</div>
+    <table class="tbl">
         <thead>
-            <tr><th>Si necesitás...</th><th>Agente</th><th>Ejemplo</th></tr>
+            <tr><th>Si necesitás...</th><th>Agente</th><th>Ejemplo de pregunta</th></tr>
         </thead>
         <tbody>
             <tr><td class="hl">Vender o cotizar</td><td>armat-comercial</td><td>"¿Cuánto sale el monoambiente?"</td></tr>
@@ -821,13 +842,13 @@ proyectos/
         </tbody>
     </table>
 
-    <div class="pg-footer">
-        <span>ARMAT — Guía del Sistema</span>
+    <div class="pg-foot">
+        <span>ARMAT — Sistema Operativo</span>
         <span class="pg">03</span>
     </div>
 </div>
 
-<!-- ============ PÁGINA 4: LOS 17 AGENTES ============ -->
+<!-- ============ P4: 17 AGENTES ============ -->
 <div class="page section">
     <div class="sec-header">
         <div class="sec-num">04</div>
@@ -835,170 +856,102 @@ proyectos/
             <h2>Los 17 Agentes</h2>
             <p>Cada agente es un especialista con instrucciones propias</p>
         </div>
-        <div class="sec-divider"></div>
+        <div class="sec-rule"></div>
     </div>
 
-    <div class="cols-4 mb-24">
-        <div class="card">
-            <div class="card-icon navy">🧠</div>
-            <h3>CEO</h3>
-            <p>Orquestador</p>
-        </div>
-        <div class="card">
-            <div class="card-icon accent">💼</div>
-            <h3>Comercial</h3>
-            <p>8 skills</p>
-        </div>
-        <div class="card">
-            <div class="card-icon accent">📢</div>
-            <h3>Marketing</h3>
-            <p>10 skills</p>
-        </div>
-        <div class="card">
-            <div class="card-icon green">🏗</div>
-            <h3>Obras</h3>
-            <p>8 skills</p>
-        </div>
+    <div class="g4 mb24">
+        <div class="card"><div class="card-ico navy">🧠</div><h3>CEO</h3><p>Orquestador</p></div>
+        <div class="card"><div class="card-ico gold">💼</div><h3>Comercial</h3><p>8 skills</p></div>
+        <div class="card"><div class="card-ico gold">📢</div><h3>Marketing</h3><p>10 skills</p></div>
+        <div class="card"><div class="card-ico green">🏗</div><h3>Obras</h3><p>8 skills</p></div>
+    </div>
+    <div class="g4 mb24">
+        <div class="card"><div class="card-ico green">💰</div><h3>Finanzas</h3><p>10 skills</p></div>
+        <div class="card"><div class="card-ico navy">⚖</div><h3>Legal</h3><p>8 skills</p></div>
+        <div class="card"><div class="card-ico gray">📋</div><h3>Admin</h3><p>8 skills</p></div>
+        <div class="card"><div class="card-ico green">✓</div><h3>Calidad</h3><p>4 skills</p></div>
+    </div>
+    <div class="g4 mb24">
+        <div class="card"><div class="card-ico gray">👥</div><h3>Clientes</h3><p>4 skills</p></div>
+        <div class="card"><div class="card-ico gold">🛒</div><h3>Compras</h3><p>4 skills</p></div>
+        <div class="card"><div class="card-ico red">🤖</div><h3>IA</h3><p>4 skills</p></div>
+        <div class="card"><div class="card-ico gold">📊</div><h3>Presupuestos</h3><p>4 skills</p></div>
+    </div>
+    <div class="g4">
+        <div class="card"><div class="card-ico navy">👤</div><h3>RRHH</h3><p>4 skills</p></div>
+        <div class="card"><div class="card-ico gray">💻</div><h3>IT</h3><p>4 skills</p></div>
+        <div class="card"><div class="card-ico gray">Postventa</div><h3>Postventa</h3><p>4 skills</p></div>
+        <div class="card"><div class="card-ico green">📈</div><h3>Data</h3><p>4 skills</p></div>
     </div>
 
-    <div class="cols-4 mb-24">
-        <div class="card">
-            <div class="card-icon green">💰</div>
-            <h3>Finanzas</h3>
-            <p>10 skills</p>
-        </div>
-        <div class="card">
-            <div class="card-icon navy">⚖</div>
-            <h3>Legal</h3>
-            <p>5 skills</p>
-        </div>
-        <div class="card">
-            <div class="card-icon gray">📋</div>
-            <h3>Admin</h3>
-            <p>3 skills</p>
-        </div>
-        <div class="card">
-            <div class="card-icon green">✓</div>
-            <h3>Calidad</h3>
-            <p>4 skills</p>
-        </div>
-    </div>
-
-    <div class="cols-4 mb-24">
-        <div class="card">
-            <div class="card-icon gray">👥</div>
-            <h3>Clientes</h3>
-            <p>4 skills</p>
-        </div>
-        <div class="card">
-            <div class="card-icon accent">🛒</div>
-            <h3>Compras</h3>
-            <p>4 skills</p>
-        </div>
-        <div class="card">
-            <div class="card-icon red">🤖</div>
-            <h3>IA</h3>
-            <p>3 skills</p>
-        </div>
-        <div class="card">
-            <div class="card-icon accent">📊</div>
-            <h3>Presupuestos</h3>
-            <p>3 skills</p>
-        </div>
-    </div>
-
-    <div class="cols-4">
-        <div class="card">
-            <div class="card-icon navy">👤</div>
-            <h3>RRHH</h3>
-            <p>3 skills</p>
-        </div>
-        <div class="card">
-            <div class="card-icon gray">💻</div>
-            <h3>IT</h3>
-            <p>3 skills</p>
-        </div>
-        <div class="card">
-            <div class="card-icon gray">Postventa</div>
-            <h3>Postventa</h3>
-            <p>3 skills</p>
-        </div>
-        <div class="card">
-            <div class="card-icon green">📈</div>
-            <h3>Data</h3>
-            <p>4 skills</p>
-        </div>
-    </div>
-
-    <div class="pg-footer">
-        <span>ARMAT — Guía del Sistema</span>
+    <div class="pg-foot">
+        <span>ARMAT — Sistema Operativo</span>
         <span class="pg">04</span>
     </div>
 </div>
 
-<!-- ============ PÁGINA 5: CASOS DE USO ============ -->
+<!-- ============ P5: CASOS REALES ============ -->
 <div class="page section">
     <div class="sec-header">
         <div class="sec-num">05</div>
         <div class="sec-titles">
-            <h2>Casos de Uso</h2>
-            <p>Situaciones reales y cómo el sistema las resuelve</p>
+            <h2>Casos de Uso Reales</h2>
+            <p>Situaciones de negocio y cómo el sistema las resuelve</p>
         </div>
-        <div class="sec-divider"></div>
+        <div class="sec-rule"></div>
     </div>
 
-    <div class="section-heading">Ejemplo 1: Cotizar departamento</div>
-    <div class="example user mb-16">
-        <div class="example-header">
-            <span class="example-tag">Vos preguntás</span>
-        </div>
-        <h4>"¿Cuánto sale el departamento de 1 dormitorio?"</h4>
+    <div class="sh">Caso 1: Cliente quiere comprar con crédito</div>
+    <div class="ex user mb16">
+        <div class="ex-tag">Vos escribís</div>
+        <h4>"Tengo un cliente que quiere el 1 dormitorio pero con crédito hipotecario. ¿Cómo lo proceso?"</h4>
     </div>
-    <div class="example system mb-32">
-        <div class="example-header">
-            <span class="example-tag">Sistema ejecuta</span>
-        </div>
-        <p><strong>CEO → Comercial:</strong> Verifica disponibilidad, precio USD 85.000, calcula opciones de pago</p>
-        <div class="agents"><strong>Agentes:</strong> CEO → Comercial</div>
+    <div class="ex sys mb32">
+        <div class="ex-tag">Sistema ejecuta</div>
+        <p><strong>CEO → Comercial + Finanzas:</strong> Genera propuesta con precio contado USD 85.000, simula crédito a 20 años con tasa del 7%, calcula cuota mensual ~USD 650, compara con opción de financiamiento directo (50% + 12 cuotas).</p>
+        <div class="meta"><strong>Agentes:</strong> CEO → Comercial → Finanzas · <strong>Tiempo:</strong> 8 segundos</div>
     </div>
 
-    <div class="section-heading">Ejemplo 2: Post de Instagram</div>
-    <div class="example user mb-16">
-        <div class="example-header">
-            <span class="example-tag">Vos preguntás</span>
-        </div>
-        <h4>"Haceme un post para Instagram mostrando el avance de obra"</h4>
+    <div class="sh">Caso 2: Calcular materiales de un departamento</div>
+    <div class="ex user mb16">
+        <div class="ex-tag">Vos escribís</div>
+        <h4>"Necesito saber cuánto material necesito para el monoambiente. Te paso las medidas: 5m x 4.50m, baños 2m x 1.80m"</h4>
     </div>
-    <div class="example system mb-32">
-        <div class="example-header">
-            <span class="example-tag">Sistema ejecuta</span>
-        </div>
-        <p><strong>CEO → Marketing:</strong> Selecciona fotos, escribe copy, genera hashtags, sugiere horario</p>
-        <div class="agents"><strong>Agentes:</strong> CEO → Marketing</div>
+    <div class="ex sys mb32">
+        <div class="ex-tag">Sistema ejecuta</div>
+        <p><strong>CEO → Obras:</strong> Calcula materiales con rendimientos Neuquén: 15 ladrillos/m², 0.015 m³ hormigón/m², cerámica con 8% desperdicio. Genera lista completa con costos en USD y ARS.</p>
+        <div class="meta"><strong>Agentes:</strong> CEO → Obras · <strong>Output:</strong> Tabla de materiales + costos</div>
     </div>
 
-    <div class="section-heading">Ejemplo 3: Reporte de obra</div>
-    <div class="example user mb-16">
-        <div class="example-header">
-            <span class="example-tag">Vos preguntás</span>
-        </div>
-        <h4>"¿Cómo va la obra? Necesito un reporte ejecutivo"</h4>
+    <div class="sh">Caso 3: Crear brochure para nuevo proyecto</div>
+    <div class="ex user mb16">
+        <div class="ex-tag">Vos escribís</div>
+        <h4>"Arrancamos un proyecto nuevo en Neuquén Capital. Necesito un brochure para vender"</h4>
     </div>
-    <div class="example system">
-        <div class="example-header">
-            <span class="example-tag">Sistema ejecuta</span>
-        </div>
-        <p><strong>CEO → Obras + Calidad + Data:</strong> Recopila bitácora, verifica calidad, genera dashboard</p>
-        <div class="agents"><strong>Agentes:</strong> CEO → Obras → Calidad → Data</div>
+    <div class="ex sys mb32">
+        <div class="ex-tag">Sistema ejecuta</div>
+        <p><strong>CEO → Marketing:</strong> Crea estructura de proyecto, genera brochure HTML profesional con renders, datos, formas de pago. Crea versión autocontenido (base64) para enviar por WhatsApp.</p>
+        <div class="meta"><strong>Agentes:</strong> CEO → Marketing · <strong>Output:</strong> 2 archivos HTML listos para usar</div>
     </div>
 
-    <div class="pg-footer">
-        <span>ARMAT — Guía del Sistema</span>
+    <div class="sh">Caso 4: Reporte de avance para cliente</div>
+    <div class="ex user mb16">
+        <div class="ex-tag">Vos escribís</div>
+        <h4>"El cliente de la unidad 3 pregunta cómo va la obra. Necesito un reporte"</h4>
+    </div>
+    <div class="ex sys">
+        <div class="ex-tag">Sistema ejecuta</div>
+        <p><strong>CEO → Obras + Calidad:</strong> Genera reporte con % avance físico (65%), fotos del estado actual, checklist de calidad verificado, próximos pasos y fecha estimada de entrega.</p>
+        <div class="meta"><strong>Agentes:</strong> CEO → Obras → Calidad · <strong>Output:</strong> Reporte PDF + fotos</div>
+    </div>
+
+    <div class="pg-foot">
+        <span>ARMAT — Sistema Operativo</span>
         <span class="pg">05</span>
     </div>
 </div>
 
-<!-- ============ PÁGINA 6: CÓMO INVOCAR ============ -->
+<!-- ============ P6: CÓMO INVOCAR ============ -->
 <div class="page section">
     <div class="sec-header">
         <div class="sec-num">06</div>
@@ -1006,132 +959,118 @@ proyectos/
             <h2>Cómo Invocar los Agentes</h2>
             <p>Formas de usar el sistema</p>
         </div>
-        <div class="sec-divider"></div>
+        <div class="sec-rule"></div>
     </div>
 
-    <div class="section-heading">Forma 1: Hablarle al CEO (recomendado)</div>
-    <div class="code mb-32">
-<span class="comment">// Simplemente hacé tu pregunta</span>
+    <div class="sh">Forma 1: Hablarle al CEO (recomendado)</div>
+    <div class="code mb32">
+<span class="c">// Simplemente escribí tu necesidad</span>
 
-<span class="string">"¿Cuánto sale el monoambiente?"</span>
-<span class="string">"Armame una propuesta para este cliente"</span>
-<span class="string">"Creame un post para Instagram"</span>
-<span class="string">"¿Cómo va la obra?"</span>
-<span class="string">"Revisá si este contrato está bien"</span>
+<span class="s">"¿Cuánto sale el monoambiente?"</span>
+<span class="s">"Armame una propuesta para este cliente"</span>
+<span class="s">"Creame un post para Instagram"</span>
+<span class="s">"¿Cómo va la obra?"</span>
+<span class="s">"Revisá si este contrato está bien"</span>
+<span class="s">"Calcula materiales para el 1 dormitorio"</span>
+<span class="s">"Haceme un reporte ejecutivo de ventas"</span>
     </div>
 
-    <div class="section-heading">Forma 2: Invocar agente directo</div>
-    <div class="code mb-32">
-<span class="comment">// Si sabés qué agente necesitás</span>
+    <div class="sh">Forma 2: Invocar agente directo</div>
+    <div class="code mb32">
+<span class="c">// Si sabés qué agente necesitás</span>
 
-<span class="keyword">armat-ceo</span>          → Orquestador general
-<span class="keyword">armat-comercial</span>    → Ventas, pricing
-<span class="keyword">armat-marketing</span>    → Contenido, redes
-<span class="keyword">armat-obras</span>        → Construcción
-<span class="keyword">armat-finanzas</span>     → ROI, flujos
-<span class="keyword">armat-legal</span>        → Contratos
-<span class="keyword">armat-data</span>         → KPIs, dashboards
+<span class="k">armat-ceo</span>          → Orquestador general
+<span class="k">armat-comercial</span>    → Ventas, pricing, propuestas
+<span class="k">armat-marketing</span>    → Contenido, brochures, redes
+<span class="k">armat-obras</span>        → Construcción, avance, materiales
+<span class="k">armat-finanzas</span>     → ROI, flujos, proyecciones
+<span class="k">armat-legal</span>        → Contratos, permisos
+<span class="k">armat-data</span>         → KPIs, dashboards
     </div>
 
     <div class="callout green">
         <h3>Tip: El sistema aprende</h3>
-        <p>Cada agente tiene un archivo <strong>memory.md</strong> que guarda decisiones y preferencias. Cuanto más usás el sistema, mejor se adapta.</p>
+        <p>Cada agente tiene memoria. Cuanto más usás el sistema, mejor se adapta a tu forma de trabajar. Si preferís reportes cortos, lo aprende. Si siempre querés fotos en los reportes, lo recuerda.</p>
     </div>
 
-    <div class="pg-footer">
-        <span>ARMAT — Guía del Sistema</span>
+    <div class="pg-foot">
+        <span>ARMAT — Sistema Operativo</span>
         <span class="pg">06</span>
     </div>
 </div>
 
-<!-- ============ PÁGINA 7: MODELOS ============ -->
+<!-- ============ P7: MODELOS ============ -->
 <div class="page section">
     <div class="sec-header">
         <div class="sec-num">07</div>
         <div class="sec-titles">
             <h2>Modelos y Configuración</h2>
-            <p>Qué modelo de IA usar y nivel de detalle</p>
+            <p>Qué modelo usar y nivel de detalle</p>
         </div>
-        <div class="sec-divider"></div>
+        <div class="sec-rule"></div>
     </div>
 
-    <div class="callout mb-32">
-        <h3>Modelo recomendado para ARMAT</h3>
-        <p><strong>MiMo V2.5 Free</strong> es suficiente para el 90% de las tareas. No necesitás pagar por modelos premium. Los modelos MiMo están optimizados para ser rápidos y gratuitos.</p>
+    <div class="callout mb32">
+        <h3>Modelo recomendado</h3>
+        <p><strong>MiMo V2.5 Free</strong> es suficiente para el 90% de las tareas de ARMAT. No necesitás pagar por modelos premium.</p>
     </div>
 
-    <div class="section-heading">Modelos de IA</div>
-    <table class="table mb-32">
+    <div class="sh">Modelos de IA</div>
+    <table class="tbl mb32">
         <thead>
             <tr><th>Modelo</th><th>Costo</th><th>Cuándo usar</th></tr>
         </thead>
         <tbody>
-            <tr><td class="hl">MiMo V2.5 Free</td><td>Gratis</td><td>Cotizaciones, posts, consultas, reportes simples</td></tr>
+            <tr><td class="hl">MiMo V2.5 Free</td><td>Gratis</td><td>Cotizaciones, posts, consultas, reportes</td></tr>
             <tr><td class="hl">MiMo V2.5 Medium</td><td>Gratis</td><td>Análisis financiero, estrategia, contratos</td></tr>
             <tr><td class="hl">MiMo V2.5 High</td><td>Gratis</td><td>Decisiones críticas, documentos legales</td></tr>
-            <tr><td class="hl" style="color:var(--gray-400);">Claude Sonnet 4</td><td style="color:var(--red);">Pago (API)</td><td style="color:var(--gray-400);">Solo para desarrollo técnico avanzado</td></tr>
+            <tr><td class="hl" style="color:var(--gray-400);">Claude Sonnet 4</td><td style="color:var(--red);">Pago (API)</td><td style="color:var(--gray-400);">Solo desarrollo técnico avanzado</td></tr>
         </tbody>
     </table>
 
-    <div class="section-heading">Por qué MiMo Free es suficiente</div>
-    <div class="cols-2 mb-32">
+    <div class="sh">Qué puede hacer MiMo Free</div>
+    <div class="g2 mb32">
         <div class="card">
-            <div class="card-icon green">✅</div>
-            <h3>Lo que MiMo Free puede hacer</h3>
-            <p>Cotizar departamentos, crear posts, reportes de obra, análisis simples, consultas frecuentes</p>
+            <div class="card-ico green">✅</div>
+            <h3>Sí puede</h3>
+            <p>Cotizar departamentos, crear posts, reportes de obra, análisis simples, consultas frecuentes, brochures, flyers</p>
         </div>
         <div class="card">
-            <div class="card-icon accent">⚠</div>
-            <h3>Cuándo subir a Medium/High</h3>
-            <p>Contratos legales, análisis financiero profundo, estrategia compleja, documentos críticos</p>
+            <div class="card-ico gold">⚠</div>
+            <h3>Subir a Medium/High</h3>
+            <p>Contratos legales, análisis financiero profundo, estrategia compleja, documentos críticos para clientes</p>
         </div>
     </div>
 
-    <div class="section-heading">Nivel de detalle (Thinking)</div>
-    <div class="cols-3 mb-32">
+    <div class="sh">Nivel de detalle (Thinking)</div>
+    <div class="g3 mb32">
         <div class="card">
-            <div class="card-icon green">🟢</div>
+            <div class="card-ico green">🟢</div>
             <h3>Medium</h3>
             <p>Para la mayoría. Buena relación calidad/velocidad.</p>
-            <span class="tag green">Recomendado</span>
+            <span class="pill green">Recomendado</span>
         </div>
         <div class="card">
-            <div class="card-icon accent">🟡</div>
+            <div class="card-ico gold">🟡</div>
             <h3>High</h3>
             <p>Para tareas complejas. Máximo análisis.</p>
-            <span class="tag accent">Cuando importa la calidad</span>
+            <span class="pill gold">Cuando importa la calidad</span>
         </div>
         <div class="card">
-            <div class="card-icon red">🔴</div>
+            <div class="card-ico red">🔴</div>
             <h3>Off</h3>
             <p>Respuestas directas. Sin análisis profundo.</p>
-            <span class="tag blue">Más rápido</span>
+            <span class="pill blue">Más rápido</span>
         </div>
     </div>
 
-    <div class="section-heading">Recomendaciones por tarea</div>
-    <table class="table">
-        <thead>
-            <tr><th>Tarea</th><th>Modelo</th><th>Thinking</th></tr>
-        </thead>
-        <tbody>
-            <tr><td class="hl">Pregunta simple</td><td>MiMo Free</td><td>Off</td></tr>
-            <tr><td class="hl">Cotizar</td><td>MiMo Free</td><td>Medium</td></tr>
-            <tr><td class="hl">Post Instagram</td><td>MiMo Free</td><td>Medium</td></tr>
-            <tr><td class="hl">Reporte</td><td>MiMo Medium</td><td>Medium</td></tr>
-            <tr><td class="hl">Análisis financiero</td><td>MiMo Medium</td><td>High</td></tr>
-            <tr><td class="hl">Contrato</td><td>MiMo High</td><td>High</td></tr>
-            <tr><td class="hl">Estrategia</td><td>MiMo High</td><td>High</td></tr>
-        </tbody>
-    </table>
-
-    <div class="pg-footer">
-        <span>ARMAT — Guía del Sistema</span>
+    <div class="pg-foot">
+        <span>ARMAT — Sistema Operativo</span>
         <span class="pg">07</span>
     </div>
 </div>
 
-<!-- ============ PÁGINA 8: INTEGRACIONES ============ -->
+<!-- ============ P8: INTEGRACIONES ============ -->
 <div class="page section">
     <div class="sec-header">
         <div class="sec-num">08</div>
@@ -1139,11 +1078,11 @@ proyectos/
             <h2>Integraciones</h2>
             <p>Conexiones externas y configuración</p>
         </div>
-        <div class="sec-divider"></div>
+        <div class="sec-rule"></div>
     </div>
 
-    <div class="section-heading">Integraciones disponibles</div>
-    <table class="table mb-32">
+    <div class="sh">Integraciones disponibles</div>
+    <table class="tbl mb32">
         <thead>
             <tr><th>Integración</th><th>Estado</th><th>Agentes</th><th>Uso</th></tr>
         </thead>
@@ -1155,8 +1094,8 @@ proyectos/
         </tbody>
     </table>
 
-    <div class="section-heading">Base de conocimiento legal</div>
-    <table class="table mb-32">
+    <div class="sh">Base de conocimiento legal</div>
+    <table class="tbl mb32">
         <thead>
             <tr><th>Documento</th><th>Contenido</th></tr>
         </thead>
@@ -1169,25 +1108,25 @@ proyectos/
         </tbody>
     </table>
 
-    <div class="section-heading">Plantillas de contratos</div>
-    <table class="table">
+    <div class="sh">Plantillas de contratos</div>
+    <table class="tbl">
         <thead>
             <tr><th>Plantilla</th><th>Uso</th></tr>
         </thead>
         <tbody>
-            <tr><td class="hl">Compraventa Inmueble</td><td>Para departamentos</td></tr>
+            <tr><td class="hl">Compraventa Inmueble</td><td>Para departamentos ENTANYQ</td></tr>
             <tr><td class="hl">Confidencialidad</td><td>NDA para proveedores</td></tr>
-            <tr><td class="hl">Comisión Venta</td><td>Para corredores</td></tr>
+            <tr><td class="hl">Comisión Venta</td><td>Para corredores inmobiliarios</td></tr>
         </tbody>
     </table>
 
-    <div class="pg-footer">
-        <span>ARMAT — Guía del Sistema</span>
+    <div class="pg-foot">
+        <span>ARMAT — Sistema Operativo</span>
         <span class="pg">08</span>
     </div>
 </div>
 
-<!-- ============ PÁGINA 9: GUÍA PRINCIPIANTES ============ -->
+<!-- ============ P9: GUÍA PRINCIPIANTES ============ -->
 <div class="page section">
     <div class="sec-header">
         <div class="sec-num">09</div>
@@ -1195,48 +1134,48 @@ proyectos/
             <h2>Guía para Principiantes</h2>
             <p>Si nunca usaste agentes de IA, empezá acá</p>
         </div>
-        <div class="sec-divider"></div>
+        <div class="sec-rule"></div>
     </div>
 
-    <div class="callout mb-32">
+    <div class="callout mb32">
         <h3>¿Qué es esto?</h3>
-        <p>Un sistema de <strong>17 agentes especializados</strong> que trabajan como un equipo. Vos le decís qué necesitás en español normal y el sistema coordina todo. No necesitás saber programar.</p>
+        <p>Un equipo de <strong>17 agentes especializados</strong> que trabajan como empleados. Vos le decís qué necesitás y el sistema coordina todo. No necesitás saber programar ni entender de IA.</p>
     </div>
 
-    <div class="section-heading">Requisitos</div>
-    <div class="cols-2 mb-32">
+    <div class="sh">Requisitos</div>
+    <div class="g2 mb32">
         <div class="card">
-            <div class="card-icon green">✅</div>
+            <div class="card-ico green">✅</div>
             <h3>Necesitás</h3>
-            <p>Computadora, internet, OpenCode instalado</p>
+            <p>Computadora con internet, OpenCode instalado</p>
         </div>
         <div class="card">
-            <div class="card-icon accent">💡</div>
+            <div class="card-ico gold">💡</div>
             <h3>No necesitás</h3>
             <p>Saber de IA, programación, ni comandos especiales</p>
         </div>
     </div>
 
-    <div class="section-heading">Paso a paso</div>
-    <div class="flow mb-32">
+    <div class="sh">Paso a paso</div>
+    <div class="flow mb32">
         <div class="flow-step">
             <div class="num">1</div>
-            <div class="text"><strong>Abrí OpenCode</strong> en tu computadora</div>
+            <div class="txt"><strong>Abrí OpenCode</strong> en tu computadora</div>
         </div>
         <div class="flow-arrow">↓</div>
         <div class="flow-step">
             <div class="num">2</div>
-            <div class="text"><strong>Escribí tu pregunta</strong> en lenguaje natural</div>
+            <div class="txt"><strong>Escribí tu pregunta</strong> en lenguaje natural</div>
         </div>
         <div class="flow-arrow">↓</div>
         <div class="flow-step">
             <div class="num">3</div>
-            <div class="text"><strong>Esperá la respuesta</strong> — el sistema coordina automáticamente</div>
+            <div class="txt"><strong>Esperá la respuesta</strong> — el sistema coordina automáticamente</div>
         </div>
         <div class="flow-arrow">↓</div>
         <div class="flow-step">
             <div class="num">4</div>
-            <div class="text"><strong>Pedí ajustes</strong> si algo no te convence</div>
+            <div class="txt"><strong>Pedí ajustes</strong> si algo no te convence</div>
         </div>
     </div>
 
@@ -1245,13 +1184,13 @@ proyectos/
         <p>Hablale como le hablarías a un empleado. No tengas miedo de preguntar — el sistema está diseñado para entender preguntas simples.</p>
     </div>
 
-    <div class="pg-footer">
-        <span>ARMAT — Guía del Sistema</span>
+    <div class="pg-foot">
+        <span>ARMAT — Sistema Operativo</span>
         <span class="pg">09</span>
     </div>
 </div>
 
-<!-- ============ PÁGINA 10: RESUMEN ============ -->
+<!-- ============ P10: RESUMEN ============ -->
 <div class="page section">
     <div class="sec-header">
         <div class="sec-num">10</div>
@@ -1259,10 +1198,10 @@ proyectos/
             <h2>Resumen</h2>
             <p>Todo lo que el sistema puede hacer</p>
         </div>
-        <div class="sec-divider"></div>
+        <div class="sec-rule"></div>
     </div>
 
-    <table class="table mb-32">
+    <table class="tbl mb32">
         <thead>
             <tr><th>Área</th><th>Skills</th><th>Qué hacemos</th></tr>
         </thead>
@@ -1272,14 +1211,15 @@ proyectos/
             <tr><td class="hl">📢 Marketing</td><td>10</td><td>Brochures, posts, emails</td></tr>
             <tr><td class="hl">🏗 Operaciones</td><td>8</td><td>Construcción, avance, materiales</td></tr>
             <tr><td class="hl">💰 Finanzas</td><td>10</td><td>ROI, flujos, proyecciones</td></tr>
-            <tr><td class="hl">⚖ Legal</td><td>5</td><td>Contratos, permisos</td></tr>
+            <tr><td class="hl">⚖ Legal</td><td>8</td><td>Contratos, permisos</td></tr>
             <tr><td class="hl">📊 Data</td><td>4</td><td>KPIs, dashboards</td></tr>
         </tbody>
         <tfoot>
             <tr style="background:var(--navy); color:var(--white); font-weight:700;">
                 <td>TOTAL</td>
                 <td>98</td>
-                <td>Sistema completo de gestión inmobiliaria</td></tr>
+                <td>Sistema completo de gestión inmobiliaria</td>
+            </tr>
         </tfoot>
     </table>
 
@@ -1290,795 +1230,18 @@ proyectos/
 
     <div style="text-align:center; margin-top:40px;">
         <svg width="40" height="40" viewBox="0 0 40 40" fill="none" style="margin-bottom:12px;">
-            <rect x="2" y="14" width="10" height="24" fill="#d4a853"/>
-            <rect x="15" y="6" width="10" height="32" fill="#d4a853"/>
-            <rect x="28" y="10" width="10" height="28" fill="#d4a853"/>
+            <rect x="2" y="14" width="10" height="24" fill="#c8a45c"/>
+            <rect x="15" y="6" width="10" height="32" fill="#c8a45c"/>
+            <rect x="28" y="10" width="10" height="28" fill="#c8a45c"/>
         </svg>
-        <p style="font-family:'DM Sans',sans-serif; font-size:16px; font-weight:700; color:var(--gray-900); letter-spacing:4px;">ARMAT DESARROLLOS</p>
-        <p style="font-size:13px; color:var(--gray-500); margin-top:8px;">Centenario, Neuquén — Julio 2026</p>
-        <p style="font-size:12px; color:var(--gray-400); margin-top:4px;">299 508-9366 · @ARMAT.DESARROLLOS</p>
+        <p style="font-family:'DM Sans',sans-serif; font-size:15px; font-weight:700; color:var(--gray-900); letter-spacing:4px;">ARMAT DESARROLLOS</p>
+        <p style="font-size:12px; color:var(--gray-500); margin-top:6px;">Centenario, Neuquén — Julio 2026</p>
+        <p style="font-size:11px; color:var(--gray-400); margin-top:4px;">299 508-9366 · @ARMAT.DESARROLLOS</p>
     </div>
 
-    <div class="pg-footer">
-        <span>ARMAT — Guía del Sistema</span>
+    <div class="pg-foot">
+        <span>ARMAT — Sistema Operativo</span>
         <span class="pg">10</span>
-    </div>
-</div>
-
-<!-- ============ PÁGINA 11: SKILLS - COMERCIAL ============ -->
-<div class="page section">
-    <div class="sec-header">
-        <div class="sec-num">11</div>
-        <div class="sec-titles">
-            <h2>Skills: Comercial</h2>
-            <p>8 skills especializados en ventas y pricing</p>
-        </div>
-        <div class="sec-divider"></div>
-    </div>
-
-    <div class="cols-2 mb-24">
-        <div class="card">
-            <div class="card-icon accent">💰</div>
-            <h3>cotizar_propiedad</h3>
-            <p>Genera cotización precisa con precio, superficie, USD/m² y opciones de pago.</p>
-            <span class="tag accent">Ventas</span>
-        </div>
-        <div class="card">
-            <div class="card-icon accent">📋</div>
-            <h3>generar_propuesta_venta</h3>
-            <p>Crea propuesta personalizada con comparativas y beneficios para el cliente.</p>
-            <span class="tag accent">Ventas</span>
-        </div>
-        <div class="card">
-            <div class="card-icon accent">🔍</div>
-            <h3>verificar_disponibilidad</h3>
-            <p>Consulta unidades disponibles, precios actualizados y estados de venta.</p>
-            <span class="tag accent">Ventas</span>
-        </div>
-        <div class="card">
-            <div class="card-icon accent">📊</div>
-            <h3>comparar_unidades</h3>
-            <p>Compara diferentes tipos de unidades (precio, m², features, ubicación).</p>
-            <span class="tag accent">Ventas</span>
-        </div>
-    </div>
-
-    <div class="cols-2 mb-24">
-        <div class="card">
-            <div class="card-icon accent">💳</div>
-            <h3>calcular_financiamiento</h3>
-            <p>Simula opciones de pago: contado, cuotas, banco, plan personalizado.</p>
-            <span class="tag accent">Finanzas</span>
-        </div>
-        <div class="card">
-            <div class="card-icon accent">📈</div>
-            <h3>calcular_roi</h3>
-            <p>Calcula retorno de inversión para el comprador o inversionista.</p>
-            <span class="tag accent">Finanzas</span>
-        </div>
-        <div class="card">
-            <div class="card-icon accent">🤝</div>
-            <h3>seguimiento_lead</h3>
-            <p>Programa contactos, registra interacciones, sugiere próximos pasos.</p>
-            <span class="tag accent">CRM</span>
-        </div>
-        <div class="card">
-            <div class="card-icon accent">💬</div>
-            <h3>responder_objecion</h3>
-            <p>Genera respuestas profesionales a objeciones comunes del comprador.</p>
-            <span class="tag accent">Ventas</span>
-        </div>
-    </div>
-
-    <div class="pg-footer">
-        <span>ARMAT — Guía del Sistema</span>
-        <span class="pg">11</span>
-    </div>
-</div>
-
-<!-- ============ PÁGINA 12: SKILLS - MARKETING ============ -->
-<div class="page section">
-    <div class="sec-header">
-        <div class="sec-num">12</div>
-        <div class="sec-titles">
-            <h2>Skills: Marketing</h2>
-            <p>10 skills para contenido y comunicación</p>
-        </div>
-        <div class="sec-divider"></div>
-    </div>
-
-    <div class="cols-2 mb-24">
-        <div class="card">
-            <div class="card-icon accent">📖</div>
-            <h3>crear_brochure</h3>
-            <p>Genera brochure HTML profesional con renders, datos y formas de pago.</p>
-            <span class="tag accent">Contenido</span>
-        </div>
-        <div class="card">
-            <div class="card-icon accent">🎨</div>
-            <h3>crear_flyer_instagram</h3>
-            <p>Crea flyers optimizados para Instagram con copy y hashtags.</p>
-            <span class="tag accent">Redes</span>
-        </div>
-        <div class="card">
-            <div class="card-icon accent">📱</div>
-            <h3>crear_post_instagram</h3>
-            <p>Genera posts completos: imagen, copy, hashtags, horario sugerido.</p>
-            <span class="tag accent">Redes</span>
-        </div>
-        <div class="card">
-            <div class="card-icon accent">✉</div>
-            <h3>crear_email_marketing</h3>
-            <p>Diseña campañas de email con templates profesionales.</p>
-            <span class="tag accent">Email</span>
-        </div>
-    </div>
-
-    <div class="cols-2 mb-24">
-        <div class="card">
-            <div class="card-icon accent">🖼</div>
-            <h3>seleccionar_renders</h3>
-            <p>Elige las mejores imágenes según el canal y audiencia.</p>
-            <span class="tag accent">Visual</span>
-        </div>
-        <div class="card">
-            <div class="card-icon accent">✍</div>
-            <h3>escribir_copy</h3>
-            <p>Redacta textos persuasivos para diferentes formatos y canales.</p>
-            <span class="tag accent">Copywriting</span>
-        </div>
-        <div class="card">
-            <div class="card-icon accent">#</div>
-            <h3>generar_hashtags</h3>
-            <p>Crea hashtags relevantes y trending para maximizar alcance.</p>
-            <span class="tag accent">Redes</span>
-        </div>
-        <div class="card">
-            <div class="card-icon accent">✏</div>
-            <h3>disenar_estructura_brochure</h3>
-            <p>Define layout y secciones del brochure según el proyecto.</p>
-            <span class="tag accent">Diseño</span>
-        </div>
-    </div>
-
-    <div class="cols-2">
-        <div class="card">
-            <div class="card-icon accent">📧</div>
-            <h3>escribir_email</h3>
-            <p>Redacta emails profesionales para diferentes propósitos.</p>
-            <span class="tag accent">Email</span>
-        </div>
-        <div class="card">
-            <div class="card-icon accent">🔄</div>
-            <h3>optimizar_contenido</h3>
-            <p>Mejora contenido existente para mejor rendimiento y conversión.</p>
-            <span class="tag accent">Optimización</span>
-        </div>
-    </div>
-
-    <div class="pg-footer">
-        <span>ARMAT — Guía del Sistema</span>
-        <span class="pg">12</span>
-    </div>
-</div>
-
-<!-- ============ PÁGINA 13: SKILLS - OBRAS ============ -->
-<div class="page section">
-    <div class="sec-header">
-        <div class="sec-num">13</div>
-        <div class="sec-titles">
-            <h2>Skills: Obras</h2>
-            <p>8 skills para gestión de construcción</p>
-        </div>
-        <div class="sec-divider"></div>
-    </div>
-
-    <div class="cols-2 mb-24">
-        <div class="card">
-            <div class="card-icon green">📊</div>
-            <h3>calcular_avance_obra</h3>
-            <p>Calcula % físico y financiero, compara contra programación original.</p>
-            <span class="tag green">Construcción</span>
-        </div>
-        <div class="card">
-            <div class="card-icon green">📝</div>
-            <h3>registrar_bitacora_diaria</h3>
-            <p>Registra actividades diarias, personal, materiales y observaciones.</p>
-            <span class="tag green">Construcción</span>
-        </div>
-        <div class="card">
-            <div class="card-icon green">📋</div>
-            <h3>generar_reporte_avance</h3>
-            <p>Crea reportes ejecutivos con fotos, porcentajes y próximos pasos.</p>
-            <span class="tag green">Reportes</span>
-        </div>
-        <div class="card">
-            <div class="card-icon green">🗓</div>
-            <h3>programar_actividades</h3>
-            <p>Planifica tareas, asigna recursos y define cronogramas.</p>
-            <span class="tag green">Planificación</span>
-        </div>
-    </div>
-
-    <div class="cols-2 mb-24">
-        <div class="card">
-            <div class="card-icon green">✓</div>
-            <h3>verificar_calidad</h3>
-            <p>Inspecciona acabados contra estándares y genera checklist.</p>
-            <span class="tag green">Calidad</span>
-        </div>
-        <div class="card">
-            <div class="card-icon green">💰</div>
-            <h3>controlar_presupuesto</h3>
-            <p>Monitorea costos reales vs presupuestados, alerta desvíos.</p>
-            <span class="tag green">Finanzas</span>
-        </div>
-        <div class="card">
-            <div class="card-icon green">🧱</div>
-            <h3>calcular_materiales</h3>
-            <p>Recibe plano y genera cómputo detallado de materiales con costos.</p>
-            <span class="tag green">Materiales</span>
-        </div>
-        <div class="card">
-            <div class="card-icon green">👷</div>
-            <h3>programar_personal</h3>
-            <p>Organiza cuadrillas, turnos y asignación de personal por tarea.</p>
-            <span class="tag green">RRHH</span>
-        </div>
-    </div>
-
-    <div class="pg-footer">
-        <span>ARMAT — Guía del Sistema</span>
-        <span class="pg">13</span>
-    </div>
-</div>
-
-<!-- ============ PÁGINA 14: SKILLS - FINANZAS ============ -->
-<div class="page section">
-    <div class="sec-header">
-        <div class="sec-num">14</div>
-        <div class="sec-titles">
-            <h2>Skills: Finanzas</h2>
-            <p>10 skills para gestión financiera</p>
-        </div>
-        <div class="sec-divider"></div>
-    </div>
-
-    <div class="cols-2 mb-24">
-        <div class="card">
-            <div class="card-icon green">💰</div>
-            <h3>analizar_rentabilidad</h3>
-            <p>Calcula ROI, payback, punto de equilibrio y margen neto.</p>
-            <span class="tag green">Análisis</span>
-        </div>
-        <div class="card">
-            <div class="card-icon green">📊</div>
-            <h3>proyectar_ventas</h3>
-            <p>Genera proyecciones de ventas con escenarios (optimista/base/pesimista).</p>
-            <span class="tag green">Proyecciones</span>
-        </div>
-        <div class="card">
-            <div class="card-icon green">💵</div>
-            <h3>calcular_flujo_caja</h3>
-            <p>Simula flujo de caja mensual con ingresos, egresos y saldo.</p>
-            <span class="tag green">Flujo</span>
-        </div>
-        <div class="card">
-            <div class="card-icon green">🧮</div>
-            <h3>calcular_impuestos</h3>
-            <p>Estima impuestos aplicables (IVA, IIBB, Ganancias, SELLOS).</p>
-            <span class="tag green">Fiscal</span>
-        </div>
-    </div>
-
-    <div class="cols-2 mb-24">
-        <div class="card">
-            <div class="card-icon green">📈</div>
-            <h3>evaluar_inversion</h3>
-            <p>Analiza viabilidad de inversión con VPN, TIR y indicadores.</p>
-            <span class="tag green">Inversión</span>
-        </div>
-        <div class="card">
-            <div class="card-icon green">📋</div>
-            <h3>presupuestar_proyecto</h3>
-            <p>Genera presupuesto detallado por rubro y partida.</p>
-            <span class="tag green">Presupuesto</span>
-        </div>
-        <div class="card">
-            <div class="card-icon green">📝</div>
-            <h3>generar_estado_financiero</h3>
-            <p>Crea balance general, estado de resultados y ratios.</p>
-            <span class="tag green">Contabilidad</span>
-        </div>
-        <div class="card">
-            <div class="card-icon green">📊</div>
-            <h3>generar_reporte_ejecutivo</h3>
-            <p>Sintetiza situación financiera en reporte para dirección.</p>
-            <span class="tag green">Reportes</span>
-        </div>
-    </div>
-
-    <div class="cols-2">
-        <div class="card">
-            <div class="card-icon green">🔍</div>
-            <h3>analizar_costos</h3>
-            <p>Desglosa costos fijos, variables, directos e indirectos.</p>
-            <span class="tag green">Costos</span>
-        </div>
-        <div class="card">
-            <div class="card-icon green">🏦</div>
-            <h3>conciliar_cuentas</h3>
-            <p>Verifica que movimientos bancarios coincidan con registros.</p>
-            <span class="tag green">Contabilidad</span>
-        </div>
-    </div>
-
-    <div class="pg-footer">
-        <span>ARMAT — Guía del Sistema</span>
-        <span class="pg">14</span>
-    </div>
-</div>
-
-<!-- ============ PÁGINA 15: SKILLS - LEGAL ============ -->
-<div class="page section">
-    <div class="sec-header">
-        <div class="sec-num">15</div>
-        <div class="sec-titles">
-            <h2>Skills: Legal</h2>
-            <p>8 skills para asesoramiento jurídico</p>
-        </div>
-        <div class="sec-divider"></div>
-    </div>
-
-    <div class="cols-2 mb-24">
-        <div class="card">
-            <div class="card-icon navy">⚖</div>
-            <h3>redactar_contrato</h3>
-            <p>Genera borrador de contrato personalizado según tipo de operación.</p>
-            <span class="tag accent">Contratos</span>
-        </div>
-        <div class="card">
-            <div class="card-icon navy">📋</div>
-            <h3>gestionar_contratos</h3>
-            <p>Administra lifecycle de contratos: borrador, revisión, firma, archivo.</p>
-            <span class="tag accent">Contratos</span>
-        </div>
-        <div class="card">
-            <div class="card-icon navy">🔍</div>
-            <h3>consultar_normativa</h3>
-            <p>Busca leyes, reglamentos y normas aplicables a una situación.</p>
-            <span class="tag accent">Normativa</span>
-        </div>
-        <div class="card">
-            <div class="card-icon navy">📝</div>
-            <h3>generar_informe_legal</h3>
-            <p>Crea informes con análisis jurídico, fundamentos y recomendaciones.</p>
-            <span class="tag accent">Informes</span>
-        </div>
-    </div>
-
-    <div class="cols-2 mb-24">
-        <div class="card">
-            <div class="card-icon navy">🏛</div>
-            <h3>verificar_permisos</h3>
-            <p>Consulta estado de permisos y habilitaciones municipales.</p>
-            <span class="tag accent">Permisos</span>
-        </div>
-        <div class="card">
-            <div class="card-icon navy">🏠</div>
-            <h3>validar_propiedad</h3>
-            <p>Verifica documentación de propiedad: título, hipotecas, cargas.</p>
-            <span class="tag accent">Propiedad</span>
-        </div>
-        <div class="card">
-            <div class="card-icon navy">⚠</div>
-            <h3>gestionar_litigios</h3>
-            <p>Administra expedientes judiciales y plazos procesales.</p>
-            <span class="tag accent">Litigios</span>
-        </div>
-        <div class="card">
-            <div class="card-icon navy">✅</div>
-            <h3>revisar_cumplimiento</h3>
-            <p>Verifica cumplimiento normativo y regulatorio del proyecto.</p>
-            <span class="tag accent">Cumplimiento</span>
-        </div>
-    </div>
-
-    <div class="pg-footer">
-        <span>ARMAT — Guía del Sistema</span>
-        <span class="pg">15</span>
-    </div>
-</div>
-
-<!-- ============ PÁGINA 16: SKILLS - DATA + IA ============ -->
-<div class="page section">
-    <div class="sec-header">
-        <div class="sec-num">16</div>
-        <div class="sec-titles">
-            <h2>Skills: Data + IA</h2>
-            <p>8 skills para analítica e inteligencia artificial</p>
-        </div>
-        <div class="sec-divider"></div>
-    </div>
-
-    <div class="section-heading">Data (4 skills)</div>
-    <div class="cols-2 mb-32">
-        <div class="card">
-            <div class="card-icon green">📊</div>
-            <h3>generar_dashboard</h3>
-            <p>Crea dashboards visuales con KPIs, gráficos y métricas clave.</p>
-            <span class="tag green">Visualización</span>
-        </div>
-        <div class="card">
-            <div class="card-icon green">📈</div>
-            <h3>analizar_ventas</h3>
-            <p>Analiza tendencias de ventas, conversión y rendimiento por canal.</p>
-            <span class="tag green">Análisis</span>
-        </div>
-        <div class="card">
-            <div class="card-icon green">📋</div>
-            <h3>reportar_kpis</h3>
-            <p>Genera reportes de indicadores clave con comparativas históricas.</p>
-            <span class="tag green">Reportes</span>
-        </div>
-        <div class="card">
-            <div class="card-icon green">🔮</div>
-            <h3>predecir_demanda</h3>
-            <p>Estima demanda futura basada en datos históricos y tendencias.</p>
-            <span class="tag green">Predicción</span>
-        </div>
-    </div>
-
-    <div class="section-heading">IA (4 skills)</div>
-    <div class="cols-2">
-        <div class="card">
-            <div class="card-icon red">🤖</div>
-            <h3>automatizar_tarea</h3>
-            <p>Configura flujos automáticos para tareas repetitivas.</p>
-            <span class="tag blue">Automatización</span>
-        </div>
-        <div class="card">
-            <div class="card-icon red">⚡</div>
-            <h3>optimizar_procesos</h3>
-            <p>Identifica cuellos de botella y propone mejoras de eficiencia.</p>
-            <span class="tag blue">Optimización</span>
-        </div>
-        <div class="card">
-            <div class="card-icon red">🧠</div>
-            <h3>analizar_datos</h3>
-            <p>Procesa grandes volúmenes de datos para extraer insights.</p>
-            <span class="tag blue">Análisis</span>
-        </div>
-        <div class="card">
-            <div class="card-icon red">🔮</div>
-            <h3>predecir_tendencias</h3>
-            <p>Identifica patrones y tendencias en datos del mercado.</p>
-            <span class="tag blue">Predicción</span>
-        </div>
-    </div>
-
-    <div class="pg-footer">
-        <span>ARMAT — Guía del Sistema</span>
-        <span class="pg">16</span>
-    </div>
-</div>
-
-<!-- ============ PÁGINA 17: SKILLS - RESTANTES ============ -->
-<div class="page section">
-    <div class="sec-header">
-        <div class="sec-num">17</div>
-        <div class="sec-titles">
-            <h2>Skills: Restantes</h2>
-            <p>20 skills para soporte y operaciones</p>
-        </div>
-        <div class="sec-divider"></div>
-    </div>
-
-    <div class="section-heading">Calidad (4 skills)</div>
-    <div class="cols-2 mb-24">
-        <div class="card">
-            <div class="card-icon green">✓</div>
-            <h3>inspeccionar_obra</h3>
-            <p>Realiza inspecciones visuales y genera checklist de calidad.</p>
-        </div>
-        <div class="card">
-            <div class="card-icon green">📋</div>
-            <h3>auditar_proceso</h3>
-            <p>Audita procesos contra estándares y normativas.</p>
-        </div>
-        <div class="card">
-            <div class="card-icon green">🧱</div>
-            <h3>verificar_materiales</h3>
-            <p>Verifica calidad y especificaciones de materiales recibidos.</p>
-        </div>
-        <div class="card">
-            <div class="card-icon green">📝</div>
-            <h3>generar_informe_calidad</h3>
-            <p>Crea informes con hallazgos, riesgos y recomendaciones.</p>
-        </div>
-    </div>
-
-    <div class="section-heading">Clientes + Postventa (8 skills)</div>
-    <div class="cols-2 mb-24">
-        <div class="card">
-            <div class="card-icon gray">👥</div>
-            <h3>registrar_lead</h3>
-            <p>Captura datos de nuevos prospectos en el CRM.</p>
-        </div>
-        <div class="card">
-            <div class="card-icon gray">📞</div>
-            <h3>seguir_cliente</h3>
-            <p>Programa y registra seguimientos con clientes.</p>
-        </div>
-        <div class="card">
-            <div class="card-icon gray">⭐</div>
-            <h3>calificar_satisfaccion</h3>
-            <p>Mide satisfacción con encuestas y métricas NPS.</p>
-        </div>
-        <div class="card">
-            <div class="card-icon gray">💼</div>
-            <h3>gestionar_crm</h3>
-            <p>Administra base de datos de clientes y interacciones.</p>
-        </div>
-        <div class="card">
-            <div class="card-icon gray">🔧</div>
-            <h3>atender_reclamacion</h3>
-            <p>Gestiona reclamos con protocolos de resolución.</p>
-        </div>
-        <div class="card">
-            <div class="card-icon gray">📄</div>
-            <h3>emitir_garantia</h3>
-            <p>Genera documentación de garantías para compradores.</p>
-        </div>
-        <div class="card">
-            <div class="card-icon gray">📊</div>
-            <h3>medir_satisfaccion</h3>
-            <p>Analiza métricas de satisfacción y tendencias.</p>
-        </div>
-        <div class="card">
-            <div class="card-icon gray">🗓</div>
-            <h3>programar_mantenimiento</h3>
-            <p>Planifica tareas de mantenimiento preventivo y correctivo.</p>
-        </div>
-    </div>
-
-    <div class="section-heading">Compras + Proveedores (8 skills)</div>
-    <div class="cols-2">
-        <div class="card">
-            <div class="card-icon accent">🛒</div>
-            <h3>solicitar_cotizacion</h3>
-            <p>Genera solicitudes de cotización a proveedores.</p>
-        </div>
-        <div class="card">
-            <div class="card-icon accent">📊</div>
-            <h3>comparar_cotizaciones</h3>
-            <p>Analiza y compara ofertas de diferentes proveedores.</p>
-        </div>
-        <div class="card">
-            <div class="card-icon accent">📝</div>
-            <h3>generar_orden_compra</h3>
-            <p>Emite órdenes de compra con especificaciones técnicas.</p>
-        </div>
-        <div class="card">
-            <div class="card-icon accent">🔍</div>
-            <h3>evaluar_proveedor</h3>
-            <p>Califica proveedores según precio, calidad y cumplimiento.</p>
-        </div>
-        <div class="card">
-            <div class="card-icon accent">🔎</div>
-            <h3>buscar_proveedor</h3>
-            <p>Busca proveedores por especialidad, zona y precio.</p>
-        </div>
-        <div class="card">
-            <div class="card-icon accent">🤝</div>
-            <h3>negociar_contrato</h3>
-            <p>Genera propuestas de negociación con proveedores.</p>
-        </div>
-        <div class="card">
-            <div class="card-icon accent">📦</div>
-            <h3>seguir_pedido</h3>
-            <p>Monitorea estado de pedidos y entregas programadas.</p>
-        </div>
-        <div class="card">
-            <div class="card-icon accent">⭐</div>
-            <h3>evaluarProveedor</h3>
-            <p>Califica rendimiento post-entrega de proveedores.</p>
-        </div>
-    </div>
-
-    <div class="pg-footer">
-        <span>ARMAT — Guía del Sistema</span>
-        <span class="pg">17</span>
-    </div>
-</div>
-
-<!-- ============ PÁGINA 18: SKILLS - ADMIN + RRHH + IT ============ -->
-<div class="page section">
-    <div class="sec-header">
-        <div class="sec-num">18</div>
-        <div class="sec-titles">
-            <h2>Skills: Admin + RRHH + IT</h2>
-            <p>12 skills para soporte administrativo y tecnológico</p>
-        </div>
-        <div class="sec-divider"></div>
-    </div>
-
-    <div class="section-heading">Administración (8 skills)</div>
-    <div class="cols-2 mb-24">
-        <div class="card">
-            <div class="card-icon gray">📋</div>
-            <h3>organizar_oficina</h3>
-            <p>Gestiona suministros, equipamiento y logística de oficina.</p>
-        </div>
-        <div class="card">
-            <div class="card-icon gray">🗓</div>
-            <h3>programar_reuniones</h3>
-            <p>Coordina agendas, envía invites y registra actas.</p>
-        </div>
-        <div class="card">
-            <div class="card-icon gray">✉</div>
-            <h3>manejar_correspondencia</h3>
-            <p>Clasifica y responde correspondencia entrante y saliente.</p>
-        </div>
-        <div class="card">
-            <div class="card-icon gray">📑</div>
-            <h3>elaborar_contratos</h3>
-            <p>Genera borradores de contratos administrativos.</p>
-        </div>
-        <div class="card">
-            <div class="card-icon gray">👥</div>
-            <h3>gestionar_nomina</h3>
-            <p>Administra pagos de sueldos y cargas sociales.</p>
-        </div>
-        <div class="card">
-            <div class="card-icon gray">🛒</div>
-            <h3>gestionar_proveedores</h3>
-            <p>Administra relación con proveedores de servicios.</p>
-        </div>
-        <div class="card">
-            <div class="card-icon gray">📦</div>
-            <h3>controlar_inventario</h3>
-            <p>Monitorea stock de materiales y suministros.</p>
-        </div>
-        <div class="card">
-            <div class="card-icon gray">🚚</div>
-            <h3>coordinar_logistica</h3>
-            <p>Organiza entregas, transportes y distribución.</p>
-        </div>
-    </div>
-
-    <div class="section-heading">RRHH (4 skills)</div>
-    <div class="cols-2 mb-24">
-        <div class="card">
-            <div class="card-icon navy">👤</div>
-            <h3>reclutar_personal</h3>
-            <p>Publica vacantes, filtra CVs y coordina entrevistas.</p>
-        </div>
-        <div class="card">
-            <div class="card-icon navy">📊</div>
-            <h3>evaluar_desempeno</h3>
-            <p>Aplica evaluaciones periódicas con rúbricas estandarizadas.</p>
-        </div>
-        <div class="card">
-            <div class="card-icon navy">📚</div>
-            <h3>programar_capacitacion</h3>
-            <p>Diseña y coordina planes de capacitación para el equipo.</p>
-        </div>
-        <div class="card">
-            <div class="card-icon navy">💵</div>
-            <h3>calcular_nomina</h3>
-            <p>Calcula sueldos, cargas sociales y deducciones.</p>
-        </div>
-    </div>
-
-    <div class="section-heading">IT (4 skills)</div>
-    <div class="cols-2">
-        <div class="card">
-            <div class="card-icon gray">💻</div>
-            <h3>soporte_tecnico</h3>
-            <p>Resuelve incidencias de hardware, software y redes.</p>
-        </div>
-        <div class="card">
-            <div class="card-icon gray">🔒</div>
-            <h3>gestionar_seguridad</h3>
-            <p>Administra accesos, permisos y políticas de seguridad.</p>
-        </div>
-        <div class="card">
-            <div class="card-icon gray">🌐</div>
-            <h3>configurar_red</h3>
-            <p>Configura y mantiene infraestructura de red.</p>
-        </div>
-        <div class="card">
-            <div class="card-icon gray">⚙</div>
-            <h3>administrar_sistemas</h3>
-            <p>Gestiona servidores, backups y actualizaciones.</p>
-        </div>
-    </div>
-
-    <div class="pg-footer">
-        <span>ARMAT — Guía del Sistema</span>
-        <span class="pg">18</span>
-    </div>
-</div>
-
-<!-- ============ PÁGINA 19: SKILLS COMPARTIDAS ============ -->
-<div class="page section">
-    <div class="sec-header">
-        <div class="sec-num">19</div>
-        <div class="sec-titles">
-            <h2>Skills Compartidas</h2>
-            <p>8 skills en raíz usadas por múltiples agentes</p>
-        </div>
-        <div class="sec-divider"></div>
-    </div>
-
-    <div class="callout mb-32">
-        <h3>Skills en raíz</h3>
-        <p>Estas skills están en `skills/` (no en subcarpetas) y pueden ser invocadas por cualquier agente según la necesidad.</p>
-    </div>
-
-    <div class="cols-2 mb-24">
-        <div class="card">
-            <div class="card-icon accent">💰</div>
-            <h3>analizar_rentabilidad</h3>
-            <p>Calcula ROI, payback y punto de equilibrio de un proyecto o unidad.</p>
-            <span class="tag accent">Finanzas</span>
-        </div>
-        <div class="card">
-            <div class="card-icon accent">🧱</div>
-            <h3>calcular_materiales</h3>
-            <p>Recibe plano y genera cómputo detallado de materiales con costos Neuquén.</p>
-            <span class="tag green">Obras</span>
-        </div>
-        <div class="card">
-            <div class="card-icon accent">📖</div>
-            <h3>crear_brochure</h3>
-            <p>Genera brochure HTML profesional para cualquier proyecto ARMAT.</p>
-            <span class="tag accent">Marketing</span>
-        </div>
-        <div class="card">
-            <div class="card-icon accent">🎨</div>
-            <h3>crear_flyer</h3>
-            <p>Crea flyers optimizados para diferentes canales y formatos.</p>
-            <span class="tag accent">Marketing</span>
-        </div>
-    </div>
-
-    <div class="cols-2 mb-24">
-        <div class="card">
-            <div class="card-icon accent">📱</div>
-            <h3>crear_post_instagram</h3>
-            <p>Genera posts completos: imagen, copy, hashtags, horario.</p>
-            <span class="tag accent">Marketing</span>
-        </div>
-        <div class="card">
-            <div class="card-icon accent">⚖</div>
-            <h3>generar_contrato</h3>
-            <p>Crea borradores de contratos según tipo de operación.</p>
-            <span class="tag accent">Legal</span>
-        </div>
-        <div class="card">
-            <div class="card-icon accent">📊</div>
-            <h3>hacer_presupuesto</h3>
-            <p>Genera presupuestos detallados por rubro y partida.</p>
-            <span class="tag green">Presupuestos</span>
-        </div>
-        <div class="card">
-            <div class="card-icon accent">💬</div>
-            <h3>responder_cliente</h3>
-            <p>Genera respuestas profesionales para consultas de clientes.</p>
-            <span class="tag accent">Clientes</span>
-        </div>
-    </div>
-
-    <div class="callout green">
-        <h3>Resumen de capacidades</h3>
-        <p><strong>98 skills</strong> organizados en 17 agentes + 8 compartidos. Cada skill es una tarea específica que se activa cuando el agente la necesita. El sistema cubre: ventas, marketing, obras, finanzas, legal, compras, calidad, clientes, data, IA, administración, RRHH, IT y postventa.</p>
-    </div>
-
-    <div class="pg-footer">
-        <span>ARMAT — Guía del Sistema</span>
-        <span class="pg">19</span>
     </div>
 </div>
 
