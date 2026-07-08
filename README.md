@@ -373,6 +373,33 @@ C:\IA\Armat\
 
 ---
 
+## Instalación en Otra PC
+
+**Necesitás**: Git + OpenCode + API Key de IA (gratuita con MiMo V2.5 Free)
+
+```bash
+# 1. Instalar OpenCode
+winget install opencode                    # Windows
+curl -fsSL https://opencode.ai/install | bash  # macOS/Linux
+
+# 2. Clonar repositorio
+git clone https://github.com/lambertuccil/Armat.git
+cd Armat
+
+# 3. Configurar API key
+opencode config                            # Seguir instrucciones
+
+# 4. ¡Listo!
+opencode
+```
+
+**Tiempo estimado**: 10-15 minutos
+
+📖 **Guía completa paso a paso**: [INSTALACION.md](INSTALACION.md)
+📖 **Guía visual del sistema**: [GUIA-COMPLETA-ARMAT.html](GUIA-COMPLETA-ARMAT.html)
+
+---
+
 ## Cómo Usar
 
 ### Ejemplo 1: Cotizar un departamento
