@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARMAT — Sistema Operativo</title>
+    <title>ARMAT — Sistema Operativo Empresarial</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -24,6 +24,7 @@
             --gray-600: #44403c;
             --gray-700: #292524;
             --gray-800: #1c1917;
+            --gray-900: #1c1917;
             --green: #16a34a;
             --green-soft: #dcfce7;
             --red: #dc2626;
@@ -33,224 +34,36 @@
             --amber: #d97706;
             --amber-soft: #fef3c7;
         }
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            color: var(--gray-800);
-            background: var(--gray-100);
-            line-height: 1.6;
-        }
-
-        .page {
-            width: 210mm;
-            min-height: 297mm;
-            margin: 32px auto;
-            background: var(--white);
-            border-radius: 16px;
-            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15);
-            overflow: hidden;
-            page-break-after: always;
-            position: relative;
-        }
-
-        @media print {
-            body { background: white; }
-            .page { margin: 0; box-shadow: none; border-radius: 0; }
-        }
-
-        /* ============ PORTADA ============ */
-        .portada {
-            height: 297mm;
-            background: var(--navy);
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .portada::before {
-            content: '';
-            position: absolute;
-            top: -150px;
-            right: -150px;
-            width: 500px;
-            height: 500px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(200,164,92,0.12) 0%, transparent 70%);
-        }
-
-        .portada::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 300px;
-            background: linear-gradient(to top, rgba(0,0,0,0.4), transparent);
-        }
-
-        .portada-top {
-            padding: 40px 56px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: relative;
-            z-index: 2;
-        }
-
-        .portada-logo {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-        }
-
+        body { font-family: 'Inter', sans-serif; color: var(--gray-800); background: var(--gray-100); line-height: 1.6; }
+        .page { width: 210mm; min-height: 297mm; margin: 32px auto; background: var(--white); border-radius: 16px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15); overflow: hidden; page-break-after: always; position: relative; }
+        @media print { body { background: white; } .page { margin: 0; box-shadow: none; border-radius: 0; } }
+        .portada { height: 297mm; background: var(--navy); display: flex; flex-direction: column; position: relative; overflow: hidden; }
+        .portada::before { content: ''; position: absolute; top: -150px; right: -150px; width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle, rgba(200,164,92,0.12) 0%, transparent 70%); }
+        .portada::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 300px; background: linear-gradient(to top, rgba(0,0,0,0.4), transparent); }
+        .portada-top { padding: 40px 56px; display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 2; }
+        .portada-logo { display: flex; align-items: center; gap: 14px; }
         .portada-logo svg { width: 32px; height: 32px; }
-
-        .portada-logo-text {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 16px;
-            font-weight: 700;
-            letter-spacing: 6px;
-            color: var(--white);
-        }
-
-        .portada-badge {
-            background: rgba(200,164,92,0.15);
-            border: 1px solid rgba(200,164,92,0.3);
-            padding: 6px 16px;
-            border-radius: 100px;
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--accent);
-        }
-
-        .portada-center {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 0 72px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .portada-eyebrow {
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: 8px;
-            text-transform: uppercase;
-            color: var(--accent);
-            margin-bottom: 20px;
-        }
-
-        .portada h1 {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 52px;
-            font-weight: 700;
-            line-height: 1.1;
-            color: var(--white);
-        }
-
-        .portada h1 em {
-            font-style: italic;
-            color: var(--accent);
-        }
-
-        .portada-rule {
-            width: 48px;
-            height: 3px;
-            background: var(--accent);
-            margin: 28px 0;
-            border-radius: 2px;
-        }
-
-        .portada-sub {
-            font-size: 16px;
-            color: var(--gray-300);
-            max-width: 480px;
-            line-height: 1.7;
-        }
-
-        .portada-stats {
-            display: flex;
-            gap: 40px;
-            margin-top: 40px;
-        }
-
-        .portada-stat .num {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 44px;
-            font-weight: 700;
-            color: var(--accent);
-            line-height: 1;
-        }
-
-        .portada-stat .lbl {
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--gray-400);
-            margin-top: 6px;
-            display: block;
-        }
-
-        .portada-bottom {
-            padding: 32px 56px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .portada-meta {
-            font-size: 11px;
-            color: var(--gray-500);
-        }
-
+        .portada-logo-text { font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 700; letter-spacing: 6px; color: var(--white); }
+        .portada-badge { background: rgba(200,164,92,0.15); border: 1px solid rgba(200,164,92,0.3); padding: 6px 16px; border-radius: 100px; font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); }
+        .portada-center { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 0 72px; position: relative; z-index: 2; }
+        .portada-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 8px; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; }
+        .portada h1 { font-family: 'DM Sans', sans-serif; font-size: 52px; font-weight: 700; line-height: 1.1; color: var(--white); }
+        .portada h1 em { font-style: italic; color: var(--accent); }
+        .portada-rule { width: 48px; height: 3px; background: var(--accent); margin: 28px 0; border-radius: 2px; }
+        .portada-sub { font-size: 16px; color: var(--gray-300); max-width: 480px; line-height: 1.7; }
+        .portada-stats { display: flex; gap: 40px; margin-top: 40px; }
+        .portada-stat .num { font-family: 'DM Sans', sans-serif; font-size: 44px; font-weight: 700; color: var(--accent); line-height: 1; }
+        .portada-stat .lbl { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: var(--gray-400); margin-top: 6px; display: block; }
+        .portada-bottom { padding: 32px 56px; position: relative; z-index: 2; }
+        .portada-meta { font-size: 11px; color: var(--gray-500); }
         .portada-meta strong { color: var(--gray-300); }
-
-        /* ============ SECCIONES ============ */
-        .section {
-            padding: 48px 56px;
-            min-height: 297mm;
-        }
-
-        .sec-header {
-            margin-bottom: 32px;
-        }
-
-        .sec-num {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 12px;
-            font-weight: 700;
-            color: var(--accent);
-            letter-spacing: 2px;
-            margin-bottom: 8px;
-        }
-
-        .sec-titles h2 {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 26px;
-            font-weight: 700;
-            color: var(--gray-900);
-        }
-
-        .sec-titles p {
-            font-size: 14px;
-            color: var(--gray-500);
-            margin-top: 4px;
-        }
-
-        .sec-rule {
-            width: 100%;
-            height: 1px;
-            background: var(--gray-200);
-            margin-top: 24px;
-        }
-
-        /* ============ GRIDS ============ */
+        .section { padding: 48px 56px; min-height: 297mm; }
+        .sec-header { margin-bottom: 32px; }
+        .sec-num { font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 700; color: var(--accent); letter-spacing: 2px; margin-bottom: 8px; }
+        .sec-titles h2 { font-family: 'DM Sans', sans-serif; font-size: 26px; font-weight: 700; color: var(--gray-900); }
+        .sec-titles p { font-size: 14px; color: var(--gray-500); margin-top: 4px; }
+        .sec-rule { width: 100%; height: 1px; background: var(--gray-200); margin-top: 24px; }
         .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
         .g3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
         .g4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 14px; }
@@ -258,357 +71,92 @@
         .mb32 { margin-bottom: 32px; }
         .mb24 { margin-bottom: 24px; }
         .mb16 { margin-bottom: 16px; }
-
-        /* ============ CARDS ============ */
-        .card {
-            background: var(--off-white);
-            border-radius: 12px;
-            padding: 20px;
-            border: 1px solid var(--gray-100);
-            transition: border-color 0.2s;
-        }
-
+        .card { background: var(--off-white); border-radius: 12px; padding: 20px; border: 1px solid var(--gray-100); transition: border-color 0.2s; }
         .card:hover { border-color: var(--accent); }
-
-        .card-ico {
-            width: 40px;
-            height: 40px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-            margin-bottom: 14px;
-        }
-
+        .card-ico { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; margin-bottom: 14px; }
         .card-ico.navy { background: var(--navy); }
         .card-ico.gold { background: var(--accent); }
         .card-ico.green { background: var(--green); }
         .card-ico.red { background: var(--red); }
         .card-ico.gray { background: var(--gray-500); }
-
-        .card h3 {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 15px;
-            font-weight: 700;
-            color: var(--gray-900);
-            margin-bottom: 6px;
-        }
-
-        .card p {
-            font-size: 12.5px;
-            color: var(--gray-500);
-            line-height: 1.5;
-        }
-
-        .pill {
-            display: inline-block;
-            padding: 3px 10px;
-            border-radius: 100px;
-            font-size: 10px;
-            font-weight: 600;
-            margin-top: 10px;
-        }
-
+        .card h3 { font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 700; color: var(--gray-900); margin-bottom: 6px; }
+        .card p { font-size: 12.5px; color: var(--gray-500); line-height: 1.5; }
+        .pill { display: inline-block; padding: 3px 10px; border-radius: 100px; font-size: 10px; font-weight: 600; margin-top: 10px; }
         .pill.gold { background: var(--accent-soft); color: #92710a; }
         .pill.green { background: var(--green-soft); color: #15803d; }
         .pill.blue { background: var(--blue-soft); color: #1d4ed8; }
         .pill.red { background: var(--red-soft); color: #b91c1c; }
-
-        /* ============ TABLE ============ */
-        .tbl {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 13px;
-        }
-
-        .tbl th {
-            background: var(--navy);
-            color: var(--white);
-            padding: 12px 14px;
-            text-align: left;
-            font-family: 'DM Sans', sans-serif;
-            font-weight: 600;
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
+        .tbl { width: 100%; border-collapse: collapse; font-size: 13px; }
+        .tbl th { background: var(--navy); color: var(--white); padding: 12px 14px; text-align: left; font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
         .tbl th:first-child { border-radius: 8px 0 0 0; }
         .tbl th:last-child { border-radius: 0 8px 0 0; }
-
-        .tbl td {
-            padding: 12px 14px;
-            border-bottom: 1px solid var(--gray-100);
-        }
-
+        .tbl td { padding: 12px 14px; border-bottom: 1px solid var(--gray-100); }
         .tbl tr:hover { background: var(--gray-50); }
         .tbl .hl { font-weight: 600; color: var(--gray-900); }
-
-        /* ============ CALLOUT ============ */
-        .callout {
-            background: var(--navy);
-            color: var(--white);
-            padding: 28px 32px;
-            border-radius: 12px;
-            margin: 24px 0;
-        }
-
-        .callout h3 {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 15px;
-            font-weight: 700;
-            margin-bottom: 10px;
-            color: var(--accent);
-        }
-
-        .callout p {
-            font-size: 13.5px;
-            line-height: 1.7;
-            color: var(--gray-300);
-        }
-
-        .callout.green {
-            background: linear-gradient(135deg, #065f46, #047857);
-        }
-
+        .callout { background: var(--navy); color: var(--white); padding: 28px 32px; border-radius: 12px; margin: 24px 0; }
+        .callout h3 { font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 700; margin-bottom: 10px; color: var(--accent); }
+        .callout p { font-size: 13.5px; line-height: 1.7; color: var(--gray-300); }
+        .callout.green { background: linear-gradient(135deg, #065f46, #047857); }
         .callout.green h3 { color: #6ee7b7; }
         .callout.green p { color: #d1fae5; }
-
-        .callout.amber {
-            background: linear-gradient(135deg, #78350f, #92400e);
-        }
-
+        .callout.amber { background: linear-gradient(135deg, #78350f, #92400e); }
         .callout.amber h3 { color: #fcd34d; }
         .callout.amber p { color: #fef3c7; }
-
-        /* ============ FLOW ============ */
-        .flow {
-            background: var(--off-white);
-            border-radius: 12px;
-            padding: 24px;
-            border: 1px solid var(--gray-100);
-        }
-
-        .flow h3 {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 13px;
-            font-weight: 700;
-            margin-bottom: 16px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--gray-900);
-        }
-
-        .flow-step {
-            display: flex;
-            gap: 14px;
-            padding: 10px 0;
-        }
-
-        .flow-step .num {
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            background: var(--accent);
-            color: var(--white);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 12px;
-            flex-shrink: 0;
-        }
-
-        .flow-step .txt {
-            font-size: 13px;
-            color: var(--gray-600);
-            padding-top: 3px;
-        }
-
+        .callout.red { background: linear-gradient(135deg, #7f1d1d, #991b1b); }
+        .callout.red h3 { color: #fca5a5; }
+        .callout.red p { color: #fee2e2; }
+        .flow { background: var(--off-white); border-radius: 12px; padding: 24px; border: 1px solid var(--gray-100); }
+        .flow h3 { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 700; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px; color: var(--gray-900); }
+        .flow-step { display: flex; gap: 14px; padding: 10px 0; }
+        .flow-step .num { width: 28px; height: 28px; border-radius: 50%; background: var(--accent); color: var(--white); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 12px; flex-shrink: 0; }
+        .flow-step .txt { font-size: 13px; color: var(--gray-600); padding-top: 3px; }
         .flow-step .txt strong { color: var(--gray-900); }
-
-        .flow-arrow {
-            text-align: center;
-            color: var(--gray-300);
-            font-size: 16px;
-            padding: 2px 0;
-        }
-
-        /* ============ CODE ============ */
-        .code {
-            background: var(--gray-800);
-            color: var(--gray-300);
-            padding: 20px 24px;
-            border-radius: 10px;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 12.5px;
-            line-height: 1.8;
-            overflow-x: auto;
-        }
-
+        .flow-arrow { text-align: center; color: var(--gray-300); font-size: 16px; padding: 2px 0; }
+        .code { background: var(--gray-800); color: var(--gray-300); padding: 20px 24px; border-radius: 10px; font-family: 'JetBrains Mono', monospace; font-size: 12.5px; line-height: 1.8; overflow-x: auto; }
         .code .c { color: var(--gray-500); }
         .code .k { color: var(--accent); }
         .code .s { color: var(--green); }
-
-        /* ============ EXAMPLE ============ */
-        .ex {
-            border-radius: 12px;
-            padding: 20px;
-            border: 1px solid var(--gray-200);
-            margin-bottom: 14px;
-        }
-
+        .ex { border-radius: 12px; padding: 20px; border: 1px solid var(--gray-200); margin-bottom: 14px; }
         .ex.user { background: var(--gray-50); }
         .ex.sys { background: var(--accent-soft); border-color: var(--accent); }
-
-        .ex-tag {
-            display: inline-block;
-            padding: 3px 10px;
-            border-radius: 100px;
-            font-size: 10px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 8px;
-        }
-
+        .ex-tag { display: inline-block; padding: 3px 10px; border-radius: 100px; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
         .ex.user .ex-tag { background: var(--gray-200); color: var(--gray-600); }
         .ex.sys .ex-tag { background: var(--accent); color: var(--white); }
-
-        .ex h4 {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 14px;
-            font-weight: 700;
-            color: var(--gray-900);
-        }
-
-        .ex p {
-            font-size: 13px;
-            color: var(--gray-600);
-            margin-top: 6px;
-            line-height: 1.6;
-        }
-
-        .ex .meta {
-            margin-top: 10px;
-            padding: 8px 12px;
-            background: var(--white);
-            border-radius: 8px;
-            font-size: 11px;
-            color: var(--gray-500);
-            border: 1px solid var(--gray-100);
-        }
-
+        .ex h4 { font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 700; color: var(--gray-900); }
+        .ex p { font-size: 13px; color: var(--gray-600); margin-top: 6px; line-height: 1.6; }
+        .ex .meta { margin-top: 10px; padding: 8px 12px; background: var(--white); border-radius: 8px; font-size: 11px; color: var(--gray-500); border: 1px solid var(--gray-100); }
         .ex .meta strong { color: var(--gray-700); }
-
-        /* ============ PROJECT ============ */
-        .proj {
-            background: var(--white);
-            border-radius: 12px;
-            padding: 24px;
-            border: 1px solid var(--gray-200);
-        }
-
-        .proj h3 {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 18px;
-            font-weight: 700;
-            color: var(--gray-900);
-            margin-bottom: 14px;
-        }
-
-        .proj .row {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px 0;
-            border-bottom: 1px solid var(--gray-100);
-            font-size: 13px;
-        }
-
+        .proj { background: var(--white); border-radius: 12px; padding: 24px; border: 1px solid var(--gray-200); }
+        .proj h3 { font-family: 'DM Sans', sans-serif; font-size: 18px; font-weight: 700; color: var(--gray-900); margin-bottom: 14px; }
+        .proj .row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--gray-100); font-size: 13px; }
         .proj .row:last-child { border-bottom: none; }
         .proj .row .l { color: var(--gray-500); }
         .proj .row .v { font-weight: 600; color: var(--gray-800); }
-
-        /* ============ SECTION HEADING ============ */
-        .sh {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--gray-900);
-            margin-bottom: 14px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .sh::before {
-            content: '';
-            width: 3px;
-            height: 14px;
-            background: var(--accent);
-            border-radius: 2px;
-        }
-
-        /* ============ FOOTER ============ */
-        .pg-foot {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 14px 56px;
-            background: var(--gray-50);
-            border-top: 1px solid var(--gray-100);
-            display: flex;
-            justify-content: space-between;
-            font-size: 10px;
-            color: var(--gray-400);
-        }
-
-        .pg-foot .pg {
-            font-family: 'DM Sans', sans-serif;
-            font-weight: 700;
-            color: var(--accent);
-        }
-
-        .pg-foot .author {
-            font-style: italic;
-            color: var(--accent);
-        }
-
-        /* ============ SKILL CARD ============ */
-        .sk {
-            background: var(--white);
-            border-radius: 10px;
-            padding: 16px;
-            border: 1px solid var(--gray-100);
-        }
-
-        .sk h4 {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 13px;
-            font-weight: 700;
-            color: var(--gray-900);
-            margin-bottom: 4px;
-        }
-
-        .sk p {
-            font-size: 11.5px;
-            color: var(--gray-500);
-            line-height: 1.4;
-        }
-
-        /* ============ TWO-COL ============ */
-        .two-col {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-        }
-
-        .two-col .col-left { }
-        .two-col .col-right { }
+        .sh { font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--gray-900); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+        .sh::before { content: ''; width: 3px; height: 14px; background: var(--accent); border-radius: 2px; }
+        .pg-foot { position: absolute; bottom: 0; left: 0; right: 0; padding: 14px 56px; background: var(--gray-50); border-top: 1px solid var(--gray-100); display: flex; justify-content: space-between; font-size: 10px; color: var(--gray-400); }
+        .pg-foot .pg { font-family: 'DM Sans', sans-serif; font-weight: 700; color: var(--accent); }
+        .pg-foot .author { font-style: italic; color: var(--accent); }
+        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .ba-row { display: grid; grid-template-columns: 1fr 40px 1fr; gap: 0; align-items: stretch; margin-bottom: 12px; }
+        .ba-before { background: var(--red-soft); border: 1px solid #fecaca; border-radius: 10px 0 0 10px; padding: 14px 18px; font-size: 13px; color: #991b1b; }
+        .ba-before strong { display: block; font-size: 20px; }
+        .ba-after { background: var(--green-soft); border: 1px solid #bbf7d0; border-radius: 0 10px 10px 0; padding: 14px 18px; font-size: 13px; color: #166534; }
+        .ba-after strong { display: block; font-size: 20px; }
+        .ba-arrow { display: flex; align-items: center; justify-content: center; font-size: 20px; color: var(--accent); background: var(--gray-50); border-top: 1px solid var(--gray-100); border-bottom: 1px solid var(--gray-100); }
+        .checklist { list-style: none; padding: 0; }
+        .checklist li { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--gray-100); font-size: 14px; color: var(--gray-700); }
+        .checklist li:last-child { border-bottom: none; }
+        .checklist .check { width: 24px; height: 24px; border-radius: 50%; background: var(--green); color: var(--white); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0; }
+        .faq-q { font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 700; color: var(--gray-900); margin-bottom: 6px; display: flex; align-items: flex-start; gap: 8px; }
+        .faq-q::before { content: 'Q.'; color: var(--accent); font-weight: 700; flex-shrink: 0; }
+        .faq-a { font-size: 13px; color: var(--gray-600); padding-left: 28px; margin-bottom: 16px; line-height: 1.6; }
+        .rm-phase { background: var(--off-white); border-radius: 12px; padding: 20px; border: 1px solid var(--gray-100); margin-bottom: 16px; }
+        .rm-phase h3 { font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 700; color: var(--gray-900); margin-bottom: 10px; }
+        .rm-phase ul { list-style: none; padding: 0; }
+        .rm-phase li { font-size: 13px; color: var(--gray-600); padding: 4px 0; }
+        .rm-phase .done { color: var(--green); font-weight: 600; }
+        .rm-phase .future { color: var(--accent); }
     </style>
 </head>
 <body>
@@ -624,696 +172,706 @@
             </svg>
             <span class="portada-logo-text">ARMAT</span>
         </div>
-        <div class="portada-badge">Sistema Operativo v2.0</div>
+        <div class="portada-badge">Sistema Operativo v3.0</div>
     </div>
     <div class="portada-center">
-        <div class="portada-eyebrow">Desarrolladora Inmobiliaria</div>
-        <h1>Guía del<br><em>Sistema ARMAT</em></h1>
+        <div class="portada-eyebrow">Sistema Operativo Empresarial</div>
+        <h1>El Sistema Operativo<br>de tu <em>Empresa</em></h1>
         <div class="portada-rule"></div>
-        <p class="portada-sub">17 agentes especializados, 98 skills, múltiples proyectos. Un sistema para gestionar y vender desarrollos inmobiliarios con estrategia y ejecución.</p>
+        <p class="portada-sub">Multiplica la productividad de tu equipo con inteligencia artificial. No reemplaza la decision humana &mdash; la potencia.</p>
         <div class="portada-stats">
-            <div class="portada-stat">
-                <div class="num">17</div>
-                <span class="lbl">Agentes</span>
-            </div>
-            <div class="portada-stat">
-                <div class="num">98</div>
-                <span class="lbl">Skills</span>
-            </div>
-            <div class="portada-stat">
-                <div class="num">N</div>
-                <span class="lbl">Proyectos</span>
-            </div>
+            <div class="portada-stat"><div class="num">17</div><span class="lbl">Agentes</span></div>
+            <div class="portada-stat"><div class="num">98</div><span class="lbl">Skills</span></div>
+            <div class="portada-stat"><div class="num">24/7</div><span class="lbl">Disponible</span></div>
         </div>
     </div>
     <div class="portada-bottom">
         <div class="portada-meta">
-            <strong>ARMAT — Desarrolladora Inmobiliaria</strong><br>
-            Centenario, Neuquén — Julio 2026<br>
+            <strong>ARMAT &mdash; Desarrolladora Inmobiliaria</strong><br>
+            Centenario, Neuquen &mdash; Julio 2026<br>
             <span style="color:var(--accent); margin-top:6px; display:inline-block;">Sistema Operativo creado por Lambertucci Leandro</span>
         </div>
     </div>
 </div>
 
-<!-- ============ P1: PARA VENDER ============ -->
+<!-- ============ P01: EL PROBLEMA ============ -->
 <div class="page section">
     <div class="sec-header">
         <div class="sec-num">01</div>
-        <div class="sec-titles">
-            <h2>Tu Equipo de 17 Especialistas</h2>
-            <p>Disponible 24/7. Sin sueldos. Sin vacaciones. Sin rotación.</p>
-        </div>
+        <div class="sec-titles"><h2>El Problema</h2><p>Lo que cuesta realmente tener un equipo completo</p></div>
         <div class="sec-rule"></div>
     </div>
-
-    <div class="callout mb32">
-        <h3>El problema que resolvemos</h3>
-        <p>Una desarrolladora inmobiliaria necesita 15-20 personas para cubrir ventas, marketing, obra, finanzas, legal, compras, calidad, postventa. Eso son <strong>$3-5M anuales en sueldos</strong> + beneficios + rotación + capacitación permanente.</p>
+    <div class="callout red mb32">
+        <h3>La realidad de una desarrolladora inmobiliaria</h3>
+        <p>Para cubrir ventas, marketing, obra, finanzas, legal, compras, calidad y postventa necesitas <strong>15-20 personas</strong>. Sueldos, cargas sociales, vacaciones, rotacion, capacitacion.</p>
     </div>
-
-    <div class="callout amber mb32">
-        <h3>Nuestra solución en 30 segundos</h3>
-        <p><strong>ARMAT es un sistema operativo con inteligencia artificial que reemplaza un equipo completo de 17 personas.</strong> Le decís en español lo que necesitás — cotizar un departamento, armar un brochure, calcular materiales, revisar un contrato — y el sistema coordina automáticamente al especialista correcto. Funciona las 24 horas, no se enferma, no renuncia, y aprende tu forma de trabajar. Se instala en 10 minutos, no necesita programación, y el costo de la inteligencia artificial es gratuito. <strong>Un departamento vendido más por semana paga todo el sistema y genera ganancia neta.</strong></p>
-    </div>
-
-    <div class="sh">Lo que ofrecemos</div>
-    <div class="g2 mb32">
-        <div class="card">
-            <div class="card-ico gold">🏗</div>
-            <h3>Equipo completo, sin personas</h3>
-            <p>17 agentes especializados que cubren toda la operación inmobiliaria: ventas, marketing, construcción, finanzas, legal, compras, calidad, postventa, datos.</p>
-            <span class="pill gold">Todo incluido</span>
-        </div>
-        <div class="card">
-            <div class="card-ico green">⚡</div>
-            <h3>Activo en 10 minutos</h3>
-            <p>Instalar, configurar y empezar a usar. Sin contrataciones, sin onboarding, sin curva de aprendizaje de 3 meses.</p>
-            <span class="pill green">Rápido</span>
-        </div>
-    </div>
-
-    <div class="sh">Comparación con equipo humano</div>
+    <div class="sh">Costo real de un equipo humano</div>
     <table class="tbl mb32">
-        <thead>
-            <tr><th>Concepto</th><th>Equipo Humano</th><th>Sistema ARMAT</th></tr>
-        </thead>
+        <thead><tr><th>Posicion</th><th>Sueldo Mensual</th><th>Sueldo Anual</th></tr></thead>
         <tbody>
-            <tr><td class="hl">Costo anual</td><td>$3.000.000 - $5.000.000 ARS</td><td style="color:var(--green); font-weight:700;">$0 (IA gratuita)</td></tr>
-            <tr><td class="hl">Horario</td><td>8-10 horas/día</td><td style="color:var(--green); font-weight:700;">24/7/365</td></tr>
-            <tr><td class="hl">Tiempo de respuesta</td><td>Horas a días</td><td style="color:var(--green); font-weight:700;">3-10 segundos</td></tr>
-            <tr><td class="hl">Rotación</td><td>Alta (30-40% anual)</td><td style="color:var(--green); font-weight:700;">0%</td></tr>
-            <tr><td class="hl">Capacitación</td><td>Meses por nuevo tema</td><td style="color:var(--green); font-weight:700;">Actualización instantánea</td></tr>
-            <tr><td class="hl">Múltiples proyectos</td><td>Más personas = más costo</td><td style="color:var(--green); font-weight:700;">Mismo costo, más capacidad</td></tr>
+            <tr><td class="hl">Gerente Comercial</td><td>$1.600.000</td><td>$19.200.000</td></tr>
+            <tr><td class="hl">Responsable Marketing</td><td>$1.200.000</td><td>$14.400.000</td></tr>
+            <tr><td class="hl">Jefe de Obra</td><td>$1.800.000</td><td>$21.600.000</td></tr>
+            <tr><td class="hl">Asistente Administrativo</td><td>$900.000</td><td>$10.800.000</td></tr>
+            <tr><td class="hl">Asistente Legal</td><td>$1.100.000</td><td>$13.200.000</td></tr>
+            <tr><td class="hl">Compras y Logistica</td><td>$1.000.000</td><td>$12.000.000</td></tr>
+            <tr><td class="hl">Control de Calidad</td><td>$950.000</td><td>$11.400.000</td></tr>
+            <tr><td class="hl">Postventa y Clientes</td><td>$850.000</td><td>$10.200.000</td></tr>
+            <tr><td class="hl">Analista de Datos</td><td>$1.100.000</td><td>$13.200.000</td></tr>
         </tbody>
+        <tfoot><tr style="background:var(--red-soft); font-weight:700;"><td style="color:#991b1b;">TOTAL EQUIPO</td><td style="color:#991b1b;">$10.500.000/mes</td><td style="color:#991b1b;">$126.000.000/año</td></tr></tfoot>
     </table>
-
-    <div class="callout green">
-        <h3>ROI comprobado</h3>
-        <p><strong>125% de retorno en el primer año.</strong> Breakeven a las 45 ventas (ya estamos al 50%). Un departamento vendido más por semana paga todo el sistema y genera ganancia neta.</p>
+    <div class="callout mb32">
+        <h3>Y eso es solo el sueldo base</h3>
+        <p>Sumale cargas sociales (~30%), vacaciones, aguinaldo, capacitacion, rotacion. El costo real supera los <strong>$150.000.000 anuales</strong>.</p>
     </div>
-
-    <div class="sh">Para quién es</div>
-    <div class="g3">
-        <div class="card">
-            <div class="card-ico navy">🏢</div>
-            <h3>Desarrolladoras</h3>
-            <p>Gestionar ventas, obra, finanzas y legal de múltiples proyectos desde un solo lugar.</p>
-        </div>
-        <div class="card">
-            <div class="card-ico gold">👤</div>
-            <h3>Emprendedores inmobiliarios</h3>
-            <p>Operar como una empresa grande sin tener el equipo completo. Empezar chico, escalar rápido.</p>
-        </div>
-        <div class="card">
-            <div class="card-ico green">🏘</div>
-            <h3>Constructores</h3>
-            <p>Supervisar calidad, materiales, avance de obra y reportes automáticos a clientes.</p>
-        </div>
-    </div>
-
     <div class="pg-foot">
-        <span>ARMAT — Sistema Operativo · <span class="author">Creado por Lambertucci Leandro</span></span>
+        <span>ARMAT &mdash; Sistema Operativo &middot; <span class="author">Creado por Lambertucci Leandro</span></span>
         <span class="pg">01</span>
     </div>
 </div>
 
-<!-- ============ P2: QUÉ ES ============ -->
+<!-- ============ P02: QUE RECIBE EL CLIENTE ============ -->
 <div class="page section">
     <div class="sec-header">
         <div class="sec-num">02</div>
-        <div class="sec-titles">
-            <h2>Qué es el Sistema ARMAT</h2>
-            <p>Un equipo de 17 agentes trabajando para vos</p>
-        </div>
+        <div class="sec-titles"><h2>Que Recibe el Cliente</h2><p>Todo lo que incluye el Sistema ARMAT</p></div>
         <div class="sec-rule"></div>
     </div>
-
-    <div class="callout mb32">
-        <h3>La idea es simple</h3>
-        <p>Imagine que tiene un equipo de 17 empleados especializados: uno para ventas, otro para marketing, otro para la obra, otro para finanzas, otro para legal... Pero no son personas — son agentes de IA que trabajan las 24 horas.</p>
+    <div class="callout amber mb32">
+        <h3>No compras software. Compras un equipo.</h3>
+        <p>Cuando adquiries ARMAT, no recibis una app mas. Recibis la infraestructura completa para que tu empresa funcione con inteligencia artificial. Listo para usar.</p>
     </div>
-
-    <div class="two-col mb32">
-        <div class="col-left">
-            <div class="sh">Cómo funciona</div>
-            <div class="flow">
-                <div class="flow-step">
-                    <div class="num">1</div>
-                    <div class="txt"><strong>Vos escribís</strong> lo que necesitás en español normal</div>
-                </div>
-                <div class="flow-arrow">↓</div>
-                <div class="flow-step">
-                    <div class="num">2</div>
-                    <div class="txt"><strong>El CEO analiza</strong> y decide quién lo resuelve</div>
-                </div>
-                <div class="flow-arrow">↓</div>
-                <div class="flow-step">
-                    <div class="num">3</div>
-                    <div class="txt"><strong>El agente ejecuta</strong> con sus skills especializados</div>
-                </div>
-                <div class="flow-arrow">↓</div>
-                <div class="flow-step">
-                    <div class="num">4</div>
-                    <div class="txt"><strong>Recibís el resultado</strong> — listo para usar</div>
-                </div>
-            </div>
+    <div class="g2 mb32">
+        <div>
+            <div class="sh">Sistema</div>
+            <ul class="checklist">
+                <li><span class="check">&#10003;</span>17 agentes especializados instalados</li>
+                <li><span class="check">&#10003;</span>98 skills configurados y listos</li>
+                <li><span class="check">&#10003;</span>Estructura multi-proyecto</li>
+                <li><span class="check">&#10003;</span>Memoria persistente entre sesiones</li>
+                <li><span class="check">&#10003;</span>Base de conocimiento legal actualizada</li>
+            </ul>
         </div>
-        <div class="col-right">
-            <div class="sh">Ejemplo real</div>
-            <div class="ex user mb16">
-                <div class="ex-tag">Vos escribís</div>
-                <h4>"¿Cuánto sale el 1 dormitorio y qué opciones de pago tengo?"</h4>
-            </div>
-            <div class="ex sys">
-                <div class="ex-tag">Sistema responde</div>
-                <p><strong>CEO → Comercial:</strong> Precio USD 85.000. Opciones: contado con bonificación o 50% a la firma + 12 cuotas fijas en USD.</p>
-                <div class="meta"><strong>Tiempo:</strong> 3 segundos · <strong>Agente:</strong> armat-comercial</div>
-            </div>
+        <div>
+            <div class="sh">Documentacion</div>
+            <ul class="checklist">
+                <li><span class="check">&#10003;</span>Guia visual completa (17 paginas)</li>
+                <li><span class="check">&#10003;</span>Guia de instalacion paso a paso</li>
+                <li><span class="check">&#10003;</span>Templates de contratos (3 modelos)</li>
+                <li><span class="check">&#10003;</span>Templates de proyectos</li>
+                <li><span class="check">&#10003;</span>Branding y plantillas de marketing</li>
+            </ul>
         </div>
     </div>
-
+    <div class="sh">Lo que incluye</div>
+    <div class="g3 mb24">
+        <div class="card"><div class="card-ico gold">&#127959;</div><h3>Sistema instalado</h3><p>17 agentes configurados con instrucciones, reglas y permisos. Listos para trabajar desde el dia uno.</p></div>
+        <div class="card"><div class="card-ico green">&#9889;</div><h3>98 skills</h3><p>Cada agente tiene entre 4 y 10 habilidades especializadas. Cotizar, crear contenido, calcular materiales.</p></div>
+        <div class="card"><div class="card-ico navy">&#128193;</div><h3>Estructura de proyectos</h3><p>Carpeta organizada para cada proyecto. Marketing, documentacion, planos, datos.</p></div>
+    </div>
+    <div class="g3 mb32">
+        <div class="card"><div class="card-ico green">&#128203;</div><h3>Templates</h3><p>Contratos, propuestas, reportes, brochures. Listos para personalizar con tus datos.</p></div>
+        <div class="card"><div class="card-ico gold">&#128260;</div><h3>Actualizaciones</h3><p>Nuevos skills, mejores agentes, mas integraciones. El sistema evoluciona con tu negocio.</p></div>
+        <div class="card"><div class="card-ico navy">&#129309;</div><h3>Soporte y personalizacion</h3><p>Te ayudamos a configurar el sistema para tu empresa. Ajustamos agentes y flujos.</p></div>
+    </div>
     <div class="callout green">
-        <h3>¿Necesitás saber de IA o programación?</h3>
-        <p><strong>No.</strong> Hablale como le hablarías a un empleado. Preguntá, pedí, pedí ajustes. El sistema entiende español natural.</p>
+        <h3>No reemplaza la decision humana. La potencia.</h3>
+        <p>ARMAT hace el trabajo pesado: genera propuestas, calcula numeros, crea contenido, revisa documentos. Vos tomas las decisiones. Con mejor informacion, mas rapido.</p>
     </div>
-
     <div class="pg-foot">
-        <span>ARMAT — Sistema Operativo · <span class="author">Creado por Lambertucci Leandro</span></span>
+        <span>ARMAT &mdash; Sistema Operativo &middot; <span class="author">Creado por Lambertucci Leandro</span></span>
         <span class="pg">02</span>
     </div>
 </div>
 
-<!-- ============ P3: PROYECTOS ============ -->
+<!-- ============ P03: CASO DE EXITO REAL ============ -->
 <div class="page section">
     <div class="sec-header">
         <div class="sec-num">03</div>
-        <div class="sec-titles">
-            <h2>Proyectos ARMAT</h2>
-            <p>Estructura para múltiples desarrollos</p>
-        </div>
+        <div class="sec-titles"><h2>Caso de Exito Real</h2><p>ANTES vs DESPUES de ARMAT en el dia a dia</p></div>
         <div class="sec-rule"></div>
     </div>
 
-    <div class="proj mb32">
-        <h3>Proyecto Actual: ENTANYQ</h3>
-        <div class="row">
-            <span class="l">Ubicación</span>
-            <span class="v">Centenario, Neuquén</span>
-        </div>
-        <div class="row">
-            <span class="l">Tipo</span>
-            <span class="v">Departamentos nuevos</span>
-        </div>
-        <div class="row">
-            <span class="l">Estado</span>
-            <span class="v">50% vendido — 8 unidades disponibles</span>
-        </div>
-        <div class="row">
-            <span class="l">1 Dormitorio</span>
-            <span class="v">USD 85.000 — 34.14 m²</span>
-        </div>
-        <div class="row">
-            <span class="l">Monoambiente</span>
-            <span class="v">USD 60.000 — 45.03 m²</span>
-        </div>
-        <div class="row">
-            <span class="l">Cocheras</span>
-            <span class="v">Desde USD 7.500</span>
-        </div>
-        <div class="row">
-            <span class="l">Contacto</span>
-            <span class="v">299 508-9366 · @ARMAT.DESARROLLOS</span>
-        </div>
+    <div class="sh">Marketing y Ventas</div>
+    <div class="ba-row">
+        <div class="ba-before"><strong>2 dias</strong>Hacer un brochure profesional</div>
+        <div class="ba-arrow">&rarr;</div>
+        <div class="ba-after"><strong>5 minutos</strong>Brochure listo para enviar</div>
+    </div>
+    <div class="ba-row">
+        <div class="ba-before"><strong>30 min</strong>Responder consultas de precios</div>
+        <div class="ba-arrow">&rarr;</div>
+        <div class="ba-after"><strong>3 segundos</strong>Cotizacion automatica</div>
+    </div>
+    <div class="ba-row">
+        <div class="ba-before"><strong>1 hora</strong>Preparar propuesta comercial</div>
+        <div class="ba-arrow">&rarr;</div>
+        <div class="ba-after"><strong>20 segundos</strong>Propuesta completa y profesional</div>
     </div>
 
-    <div class="sh">Cómo se organizan los proyectos</div>
-    <div class="code mb32">
-<span class="c">// ARMAT es la empresa. Cada proyecto tiene su carpeta:</span>
-
-proyectos/
-├── <span class="s">entanyq/</span>           <span class="c">// Proyecto actual</span>
-│   ├── marketing/    <span class="c">// Brochures, flyers, folletos</span>
-│   ├── documentacion/<span class="c">// Análisis, estrategia, proyecciones</span>
-│   ├── img/          <span class="c">// Renders, fotos, videos</span>
-│   ├── planos/       <span class="c">// Planos del proyecto</span>
-│   └── datos/        <span class="c">// Specs, precios, config</span>
-│
-├── <span class="k">[proyecto-2]/</span>      <span class="c">// Próximo proyecto</span>
-└── <span class="k">[proyecto-3]/</span>      <span class="c">// Futuro proyecto</span>
-
-<span class="c">// Los agentes y skills son compartidos entre todos</span>
+    <div class="sh">Operaciones</div>
+    <div class="ba-row">
+        <div class="ba-before"><strong>1 dia</strong>Calcular materiales de un depto</div>
+        <div class="ba-arrow">&rarr;</div>
+        <div class="ba-after"><strong>10 segundos</strong>Lista completa con costos</div>
+    </div>
+    <div class="ba-row">
+        <div class="ba-before"><strong>2 horas</strong>Preparar reporte de avance</div>
+        <div class="ba-arrow">&rarr;</div>
+        <div class="ba-after"><strong>30 segundos</strong>Reporte automatico con fotos</div>
     </div>
 
-    <div class="callout amber">
-        <h3>Crear un nuevo proyecto</h3>
-        <p>Copiá la estructura de ENTANYQ, actualizá los datos (precios, ubicación, renders) y los agentes generan materiales automáticamente. Ver template en `plantillas/nuevo-proyecto.md`</p>
+    <div class="sh">Legal y Administracion</div>
+    <div class="ba-row">
+        <div class="ba-before"><strong>3 dias</strong>Enviar a estudio juridico</div>
+        <div class="ba-arrow">&rarr;</div>
+        <div class="ba-after"><strong>Instantaneo</strong>Revision preliminary del contrato</div>
+    </div>
+    <div class="ba-row">
+        <div class="ba-before"><strong>1 hora</strong>Buscar articulos de ley aplicables</div>
+        <div class="ba-arrow">&rarr;</div>
+        <div class="ba-after"><strong>5 segundos</strong>Base legal completa referenciada</div>
+    </div>
+
+    <div class="sh">Marketing Digital</div>
+    <div class="ba-row">
+        <div class="ba-before"><strong>4 horas</strong>Campana de Instagram</div>
+        <div class="ba-arrow">&rarr;</div>
+        <div class="ba-after"><strong>2 minutos</strong>Campana completa con calendarizacion</div>
+    </div>
+    <div class="ba-row">
+        <div class="ba-before"><strong>Continuo</strong>Seguimiento manual de clientes</div>
+        <div class="ba-arrow">&rarr;</div>
+        <div class="ba-after"><strong>Automatico</strong>CRM con recordatorios inteligentes</div>
+    </div>
+
+    <div class="callout green" style="margin-top:24px;">
+        <h3>El resultado</h3>
+        <p><strong>Mas ventas, menos tiempo, cero costos fijos de personal.</strong> Un equipo de 17 especialistas que trabaja 24/7, no se enferma, no renuncia, y aprende tu forma de trabajar.</p>
     </div>
 
     <div class="pg-foot">
-        <span>ARMAT — Sistema Operativo · <span class="author">Creado por Lambertucci Leandro</span></span>
+        <span>ARMAT &mdash; Sistema Operativo &middot; <span class="author">Creado por Lambertucci Leandro</span></span>
         <span class="pg">03</span>
     </div>
 </div>
 
-<!-- ============ P4: QUÉ AGENTE ============ -->
+<!-- ============ P04: ROI ============ -->
 <div class="page section">
     <div class="sec-header">
         <div class="sec-num">04</div>
-        <div class="sec-titles">
-            <h2>Qué Agente Usar Cuándo</h2>
-            <p>Árbol de decisión para elegir el agente correcto</p>
-        </div>
+        <div class="sec-titles"><h2>ROI &mdash; Retorno de Inversion</h2><p>Los numeros hablan por si solos</p></div>
         <div class="sec-rule"></div>
     </div>
 
-    <div class="callout mb32">
-        <h3>Regla de oro</h3>
-        <p><strong>Si no sabés cuál usar, hablale al Mgr-CEO.</strong> Él coordina a todos. Es como hablar con el gerente — él sabe a quién_derivar.</p>
-    </div>
-
-    <div class="sh">Los 3 tipos de agentes</div>
-    <div class="g3 mb32">
-        <div class="card">
-            <div class="card-ico navy">🧠</div>
-            <h3>Mgr-CEO</h3>
-            <p>Coordinador general. Cuando no sabés a quién_derivar, hablale a él.</p>
-            <span class="pill gold">Empezá acá</span>
-        </div>
-        <div class="card">
-            <div class="card-ico gold">🛠</div>
-            <h3>Gentle-Orchestrator</h3>
-            <p>Para desarrollo de software. Solo si estás construyendo algo técnico.</p>
-            <span class="pill blue">Solo desarrollo</span>
-        </div>
-        <div class="card">
-            <div class="card-ico green">📋</div>
-            <h3>Skills</h3>
-            <p>98 tareas específicas. Se activan cuando el agente las necesita.</p>
-            <span class="pill green">Automáticos</span>
-        </div>
-    </div>
-
-    <div class="sh">Tabla de agentes</div>
-    <table class="tbl">
-        <thead>
-            <tr><th>Si necesitás...</th><th>Agente</th><th>Ejemplo de pregunta</th></tr>
-        </thead>
+    <div class="sh">Equipo humano vs ARMAT</div>
+    <table class="tbl mb32">
+        <thead><tr><th>Concepto</th><th>Equipo Humano</th><th>Sistema ARMAT</th></tr></thead>
         <tbody>
-            <tr><td class="hl">Vender o cotizar</td><td>armat-comercial</td><td>"¿Cuánto sale el monoambiente?"</td></tr>
-            <tr><td class="hl">Crear contenido</td><td>armat-marketing</td><td>"Armame un post de Instagram"</td></tr>
-            <tr><td class="hl">Saber de la obra</td><td>armat-obras</td><td>"¿Cuánto falta para terminar?"</td></tr>
-            <tr><td class="hl">Números</td><td>armat-finanzas</td><td>"¿Cuál es el ROI?"</td></tr>
-            <tr><td class="hl">Contratos</td><td>armat-legal</td><td>"Revisá este contrato"</td></tr>
-            <tr><td class="hl">Materiales</td><td>armat-compras</td><td>"¿Dónde compro porcelanato?"</td></tr>
-            <tr><td class="hl">Reporte</td><td>armat-data</td><td>"Dashboard de ventas"</td></tr>
-            <tr><td class="hl">Cualquier cosa</td><td>Mgr-CEO</td><td>"Necesito ayuda"</td></tr>
+            <tr><td class="hl">Costo mensual</td><td>$10.500.000 ARS</td><td style="color:var(--green); font-weight:700;">$0 (IA gratuita)</td></tr>
+            <tr><td class="hl">Costo anual</td><td>$126.000.000 ARS</td><td style="color:var(--green); font-weight:700;">$0</td></tr>
+            <tr><td class="hl">Horario</td><td>8-10 horas/dia</td><td style="color:var(--green); font-weight:700;">24/7/365</td></tr>
+            <tr><td class="hl">Tiempo de respuesta</td><td>Horas a dias</td><td style="color:var(--green); font-weight:700;">3-10 segundos</td></tr>
+            <tr><td class="hl">Rotacion</td><td>Alta (30-40% anual)</td><td style="color:var(--green); font-weight:700;">0%</td></tr>
+            <tr><td class="hl">Capacitacion</td><td>Meses por nuevo tema</td><td style="color:var(--green); font-weight:700;">Actualizacion instantanea</td></tr>
+            <tr><td class="hl">Multiples proyectos</td><td>Mas personas = mas costo</td><td style="color:var(--green); font-weight:700;">Mismo costo, mas capacidad</td></tr>
         </tbody>
     </table>
 
+    <div class="sh">El impacto real</div>
+    <div class="g2 mb32">
+        <div class="callout">
+            <h3>Ahorro anual</h3>
+            <p><strong>$126.000.000 ARS</strong> en sueldos eliminados. Sin cargas sociales, sin vacaciones, sin rotacion.</p>
+        </div>
+        <div class="callout green">
+            <h3>Venta extra mensual</h3>
+            <p><strong>1 departamento mas vendido por semana</strong> gracias a respuestas instantaneas y propuestas profesionales.</p>
+        </div>
+    </div>
+
+    <div class="callout amber">
+        <h3>Un departamento vendido mas por semana paga todo el sistema</h3>
+        <p>Con un monoambiente a USD 60.000 y un departamento a USD 85.000, una venta adicional por mes genera mas ganancia que todo lo que costaria un equipo humano completo.</p>
+    </div>
+
+    <div class="sh">Comparacion directa</div>
+    <div class="g3 mb32">
+        <div class="card"><div class="card-ico red">&#128176;</div><h3>Equipo Humano</h3><p>$126M anuales + beneficios + rotacion + gestion</p><span class="pill red">Costo fijo alto</span></div>
+        <div class="card"><div class="card-ico green">&#9889;</div><h3>ARMAT</h3><p>Costo unico de implementacion. Despues, solo crece con vos.</p><span class="pill green">Inversion que se paga sola</span></div>
+        <div class="card"><div class="card-ico gold">&#128200;</div><h3>ROI</h3><p>Retorno comprobado en el primer año. Breakeven rapido.</p><span class="pill gold">125% ROI</span></div>
+    </div>
+
     <div class="pg-foot">
-        <span>ARMAT — Sistema Operativo · <span class="author">Creado por Lambertucci Leandro</span></span>
-        <span class="pg">03</span>
+        <span>ARMAT &mdash; Sistema Operativo &middot; <span class="author">Creado por Lambertucci Leandro</span></span>
+        <span class="pg">04</span>
     </div>
 </div>
 
-<!-- ============ P5: 17 AGENTES ============ -->
+<!-- ============ P05: QUE ES EL SISTEMA ============ -->
 <div class="page section">
     <div class="sec-header">
         <div class="sec-num">05</div>
-        <div class="sec-titles">
-            <h2>Los 17 Agentes</h2>
-            <p>Cada agente es un especialista con instrucciones propias</p>
-        </div>
+        <div class="sec-titles"><h2>Que es el Sistema ARMAT</h2><p>Un equipo de 17 agentes trabajando para vos</p></div>
         <div class="sec-rule"></div>
     </div>
-
-    <div class="g4 mb24">
-        <div class="card"><div class="card-ico navy">🧠</div><h3>CEO</h3><p>Orquestador</p></div>
-        <div class="card"><div class="card-ico gold">💼</div><h3>Comercial</h3><p>8 skills</p></div>
-        <div class="card"><div class="card-ico gold">📢</div><h3>Marketing</h3><p>10 skills</p></div>
-        <div class="card"><div class="card-ico green">🏗</div><h3>Obras</h3><p>8 skills</p></div>
+    <div class="callout mb32">
+        <h3>La idea es simple</h3>
+        <p>Imagine que tiene un equipo de 17 empleados especializados: uno para ventas, otro para marketing, otro para la obra, otro para finanzas... Pero no son personas &mdash; son agentes de IA que trabajan las 24 horas.</p>
     </div>
-    <div class="g4 mb24">
-        <div class="card"><div class="card-ico green">💰</div><h3>Finanzas</h3><p>10 skills</p></div>
-        <div class="card"><div class="card-ico navy">⚖</div><h3>Legal</h3><p>8 skills</p></div>
-        <div class="card"><div class="card-ico gray">📋</div><h3>Admin</h3><p>8 skills</p></div>
-        <div class="card"><div class="card-ico green">✓</div><h3>Calidad</h3><p>4 skills</p></div>
+    <div class="two-col mb32">
+        <div>
+            <div class="sh">Como funciona</div>
+            <div class="flow">
+                <div class="flow-step"><div class="num">1</div><div class="txt"><strong>Vos escribis</strong> lo que necesitas en espanol normal</div></div>
+                <div class="flow-arrow">&darr;</div>
+                <div class="flow-step"><div class="num">2</div><div class="txt"><strong>El CEO analiza</strong> y decide quien lo resuelve</div></div>
+                <div class="flow-arrow">&darr;</div>
+                <div class="flow-step"><div class="num">3</div><div class="txt"><strong>El agente ejecuta</strong> con sus skills especializados</div></div>
+                <div class="flow-arrow">&darr;</div>
+                <div class="flow-step"><div class="num">4</div><div class="txt"><strong>Recibis el resultado</strong> &mdash; listo para usar</div></div>
+            </div>
+        </div>
+        <div>
+            <div class="sh">Ejemplo real</div>
+            <div class="ex user mb16">
+                <div class="ex-tag">Vos escribis</div>
+                <h4>Cuanto sale el 1 dormitorio y que opciones de pago tengo?</h4>
+            </div>
+            <div class="ex sys">
+                <div class="ex-tag">Sistema responde</div>
+                <p><strong>CEO - Comercial:</strong> Precio USD 85.000. Opciones: contado con bonificacion o 50% a la firma + 12 cuotas fijas en USD.</p>
+                <div class="meta"><strong>Tiempo:</strong> 3 segundos &middot; <strong>Agente:</strong> armat-comercial</div>
+            </div>
+        </div>
     </div>
-    <div class="g4 mb24">
-        <div class="card"><div class="card-ico gray">👥</div><h3>Clientes</h3><p>4 skills</p></div>
-        <div class="card"><div class="card-ico gold">🛒</div><h3>Compras</h3><p>4 skills</p></div>
-        <div class="card"><div class="card-ico red">🤖</div><h3>IA</h3><p>4 skills</p></div>
-        <div class="card"><div class="card-ico gold">📊</div><h3>Presupuestos</h3><p>4 skills</p></div>
+    <div class="callout green">
+        <h3>Necesitas saber de IA o programacion?</h3>
+        <p><strong>No.</strong> Hablale como le hablarias a un empleado. Pregunta, pedi, pidi ajustes. El sistema entiende espanol natural.</p>
     </div>
-    <div class="g4">
-        <div class="card"><div class="card-ico navy">👤</div><h3>RRHH</h3><p>4 skills</p></div>
-        <div class="card"><div class="card-ico gray">💻</div><h3>IT</h3><p>4 skills</p></div>
-        <div class="card"><div class="card-ico gray">Postventa</div><h3>Postventa</h3><p>4 skills</p></div>
-        <div class="card"><div class="card-ico green">📈</div><h3>Data</h3><p>4 skills</p></div>
-    </div>
-
     <div class="pg-foot">
-        <span>ARMAT — Sistema Operativo · <span class="author">Creado por Lambertucci Leandro</span></span>
+        <span>ARMAT &mdash; Sistema Operativo &middot; <span class="author">Creado por Lambertucci Leandro</span></span>
         <span class="pg">05</span>
     </div>
 </div>
 
-<!-- ============ P6: CASOS REALES ============ -->
+<!-- ============ P06: PROYECTOS ============ -->
 <div class="page section">
     <div class="sec-header">
         <div class="sec-num">06</div>
-        <div class="sec-titles">
-            <h2>Casos de Uso Reales</h2>
-            <p>Situaciones de negocio y cómo el sistema las resuelve</p>
-        </div>
+        <div class="sec-titles"><h2>Proyectos ARMAT</h2><p>Estructura para multiples desarrollos</p></div>
         <div class="sec-rule"></div>
     </div>
-
-    <div class="sh">Caso 1: Cliente quiere comprar con crédito</div>
-    <div class="ex user mb16">
-        <div class="ex-tag">Vos escribís</div>
-        <h4>"Tengo un cliente que quiere el 1 dormitorio pero con crédito hipotecario. ¿Cómo lo proceso?"</h4>
+    <div class="proj mb32">
+        <h3>Proyecto Actual: ENTANYQ</h3>
+        <div class="row"><span class="l">Ubicacion</span><span class="v">Centenario, Neuquen</span></div>
+        <div class="row"><span class="l">Tipo</span><span class="v">Departamentos nuevos</span></div>
+        <div class="row"><span class="l">Estado</span><span class="v">50% vendido &mdash; 8 unidades disponibles</span></div>
+        <div class="row"><span class="l">1 Dormitorio</span><span class="v">USD 85.000 &mdash; 34.14 m2</span></div>
+        <div class="row"><span class="l">Monoambiente</span><span class="v">USD 60.000 &mdash; 45.03 m2</span></div>
+        <div class="row"><span class="l">Cocheras</span><span class="v">Desde USD 7.500</span></div>
+        <div class="row"><span class="l">Contacto</span><span class="v">299 508-9366 &middot; @ARMAT.DESARROLLOS</span></div>
     </div>
-    <div class="ex sys mb32">
-        <div class="ex-tag">Sistema ejecuta</div>
-        <p><strong>CEO → Comercial + Finanzas:</strong> Genera propuesta con precio contado USD 85.000, simula crédito a 20 años con tasa del 7%, calcula cuota mensual ~USD 650, compara con opción de financiamiento directo (50% + 12 cuotas).</p>
-        <div class="meta"><strong>Agentes:</strong> CEO → Comercial → Finanzas · <strong>Tiempo:</strong> 8 segundos</div>
+    <div class="sh">Como se organizan los proyectos</div>
+    <div class="code mb32">
+<span class="c">// ARMAT es la empresa. Cada proyecto tiene su carpeta:</span>
+proyectos/
+  <span class="s">entanyq/</span>           <span class="c">// Proyecto actual</span>
+    marketing/    <span class="c">// Brochures, flyers, folletos</span>
+    documentacion/<span class="c">// Analisis, estrategia, proyecciones</span>
+    img/          <span class="c">// Renders, fotos, videos</span>
+  <span class="k">[proyecto-2]/</span>      <span class="c">// Proximo proyecto</span>
+  <span class="k">[proyecto-3]/</span>      <span class="c">// Futuro proyecto</span>
+<span class="c">// Los agentes y skills son compartidos entre todos</span>
     </div>
-
-    <div class="sh">Caso 2: Calcular materiales de un departamento</div>
-    <div class="ex user mb16">
-        <div class="ex-tag">Vos escribís</div>
-        <h4>"Necesito saber cuánto material necesito para el monoambiente. Te paso las medidas: 5m x 4.50m, baños 2m x 1.80m"</h4>
+    <div class="callout amber">
+        <h3>Crear un nuevo proyecto</h3>
+        <p>Copia la estructura de ENTANYQ, actualiza los datos (precios, ubicacion, renders) y los agentes generan materiales automaticamente.</p>
     </div>
-    <div class="ex sys mb32">
-        <div class="ex-tag">Sistema ejecuta</div>
-        <p><strong>CEO → Obras:</strong> Calcula materiales con rendimientos Neuquén: 15 ladrillos/m², 0.015 m³ hormigón/m², cerámica con 8% desperdicio. Genera lista completa con costos en USD y ARS.</p>
-        <div class="meta"><strong>Agentes:</strong> CEO → Obras · <strong>Output:</strong> Tabla de materiales + costos</div>
-    </div>
-
-    <div class="sh">Caso 3: Crear brochure para nuevo proyecto</div>
-    <div class="ex user mb16">
-        <div class="ex-tag">Vos escribís</div>
-        <h4>"Arrancamos un proyecto nuevo en Neuquén Capital. Necesito un brochure para vender"</h4>
-    </div>
-    <div class="ex sys mb32">
-        <div class="ex-tag">Sistema ejecuta</div>
-        <p><strong>CEO → Marketing:</strong> Crea estructura de proyecto, genera brochure HTML profesional con renders, datos, formas de pago. Crea versión autocontenido (base64) para enviar por WhatsApp.</p>
-        <div class="meta"><strong>Agentes:</strong> CEO → Marketing · <strong>Output:</strong> 2 archivos HTML listos para usar</div>
-    </div>
-
-    <div class="sh">Caso 4: Reporte de avance para cliente</div>
-    <div class="ex user mb16">
-        <div class="ex-tag">Vos escribís</div>
-        <h4>"El cliente de la unidad 3 pregunta cómo va la obra. Necesito un reporte"</h4>
-    </div>
-    <div class="ex sys">
-        <div class="ex-tag">Sistema ejecuta</div>
-        <p><strong>CEO → Obras + Calidad:</strong> Genera reporte con % avance físico (65%), fotos del estado actual, checklist de calidad verificado, próximos pasos y fecha estimada de entrega.</p>
-        <div class="meta"><strong>Agentes:</strong> CEO → Obras → Calidad · <strong>Output:</strong> Reporte PDF + fotos</div>
-    </div>
-
     <div class="pg-foot">
-        <span>ARMAT — Sistema Operativo · <span class="author">Creado por Lambertucci Leandro</span></span>
-        <span class="pg">05</span>
+        <span>ARMAT &mdash; Sistema Operativo &middot; <span class="author">Creado por Lambertucci Leandro</span></span>
+        <span class="pg">06</span>
     </div>
 </div>
 
-<!-- ============ P7: CÓMO INVOCAR ============ -->
+<!-- ============ P07: QUE AGENTE USAR ============ -->
 <div class="page section">
     <div class="sec-header">
         <div class="sec-num">07</div>
-        <div class="sec-titles">
-            <h2>Cómo Invocar los Agentes</h2>
-            <p>Formas de usar el sistema</p>
-        </div>
+        <div class="sec-titles"><h2>Que Agente Usar Cuando</h2><p>Arbol de decision para elegir el agente correcto</p></div>
         <div class="sec-rule"></div>
     </div>
-
-    <div class="sh">Forma 1: Hablarle al CEO (recomendado)</div>
-    <div class="code mb32">
-<span class="c">// Simplemente escribí tu necesidad</span>
-
-<span class="s">"¿Cuánto sale el monoambiente?"</span>
-<span class="s">"Armame una propuesta para este cliente"</span>
-<span class="s">"Creame un post para Instagram"</span>
-<span class="s">"¿Cómo va la obra?"</span>
-<span class="s">"Revisá si este contrato está bien"</span>
-<span class="s">"Calcula materiales para el 1 dormitorio"</span>
-<span class="s">"Haceme un reporte ejecutivo de ventas"</span>
+    <div class="callout mb32">
+        <h3>Regla de oro</h3>
+        <p><strong>Si no sabes cual usar, hablale al Mgr-CEO.</strong> El coordina a todos. Es como hablar con el gerente &mdash; el sabe a quien derivar.</p>
     </div>
-
-    <div class="sh">Forma 2: Invocar agente directo</div>
-    <div class="code mb32">
-<span class="c">// Si sabés qué agente necesitás</span>
-
-<span class="k">armat-ceo</span>          → Orquestador general
-<span class="k">armat-comercial</span>    → Ventas, pricing, propuestas
-<span class="k">armat-marketing</span>    → Contenido, brochures, redes
-<span class="k">armat-obras</span>        → Construcción, avance, materiales
-<span class="k">armat-finanzas</span>     → ROI, flujos, proyecciones
-<span class="k">armat-legal</span>        → Contratos, permisos
-<span class="k">armat-data</span>         → KPIs, dashboards
+    <div class="sh">Los 3 tipos de agentes</div>
+    <div class="g3 mb32">
+        <div class="card"><div class="card-ico navy">&#129504;</div><h3>Mgr-CEO</h3><p>Coordinador general. Cuando no sabes a quien derivar, hablale a el.</p><span class="pill gold">Empeza aca</span></div>
+        <div class="card"><div class="card-ico gold">&#128736;</div><h3>Gentle-Orchestrator</h3><p>Para desarrollo de software. Solo si estas construyendo algo tecnico.</p><span class="pill blue">Solo desarrollo</span></div>
+        <div class="card"><div class="card-ico green">&#128203;</div><h3>Skills</h3><p>98 tareas especificas. Se activan cuando el agente las necesita.</p><span class="pill green">Automaticos</span></div>
     </div>
-
-    <div class="callout green">
-        <h3>Tip: El sistema aprende</h3>
-        <p>Cada agente tiene memoria. Cuanto más usás el sistema, mejor se adapta a tu forma de trabajar. Si preferís reportes cortos, lo aprende. Si siempre querés fotos en los reportes, lo recuerda.</p>
-    </div>
-
+    <div class="sh">Tabla de agentes</div>
+    <table class="tbl">
+        <thead><tr><th>Si necesitas...</th><th>Agente</th><th>Ejemplo de pregunta</th></tr></thead>
+        <tbody>
+            <tr><td class="hl">Vender o cotizar</td><td>armat-comercial</td><td>Cuanto sale el monoambiente?</td></tr>
+            <tr><td class="hl">Crear contenido</td><td>armat-marketing</td><td>Armame un post de Instagram</td></tr>
+            <tr><td class="hl">Saber de la obra</td><td>armat-obras</td><td>Cuanto falta para terminar?</td></tr>
+            <tr><td class="hl">Numeros</td><td>armat-finanzas</td><td>Cual es el ROI?</td></tr>
+            <tr><td class="hl">Contratos</td><td>armat-legal</td><td>Revisa este contrato</td></tr>
+            <tr><td class="hl">Materiales</td><td>armat-compras</td><td>Donde compro porcelanato?</td></tr>
+            <tr><td class="hl">Reporte</td><td>armat-data</td><td>Dashboard de ventas</td></tr>
+            <tr><td class="hl">Cualquier cosa</td><td>Mgr-CEO</td><td>Necesito ayuda</td></tr>
+        </tbody>
+    </table>
     <div class="pg-foot">
-        <span>ARMAT — Sistema Operativo · <span class="author">Creado por Lambertucci Leandro</span></span>
+        <span>ARMAT &mdash; Sistema Operativo &middot; <span class="author">Creado por Lambertucci Leandro</span></span>
         <span class="pg">07</span>
     </div>
 </div>
 
-<!-- ============ P8: MODELOS ============ -->
+<!-- ============ P08: 17 AGENTES ============ -->
 <div class="page section">
     <div class="sec-header">
         <div class="sec-num">08</div>
-        <div class="sec-titles">
-            <h2>Modelos y Configuración</h2>
-            <p>Qué modelo usar y nivel de detalle</p>
-        </div>
+        <div class="sec-titles"><h2>Los 17 Agentes</h2><p>Cada agente es un especialista con instrucciones propias</p></div>
         <div class="sec-rule"></div>
     </div>
-
-    <div class="callout mb32">
-        <h3>Modelo recomendado</h3>
-        <p><strong>MiMo V2.5 Free</strong> es suficiente para el 90% de las tareas de ARMAT. No necesitás pagar por modelos premium.</p>
+    <div class="g4 mb24">
+        <div class="card"><div class="card-ico navy">&#129504;</div><h3>CEO</h3><p>Orquestador</p></div>
+        <div class="card"><div class="card-ico gold">&#128188;</div><h3>Comercial</h3><p>8 skills</p></div>
+        <div class="card"><div class="card-ico gold">&#128226;</div><h3>Marketing</h3><p>10 skills</p></div>
+        <div class="card"><div class="card-ico green">&#127959;</div><h3>Obras</h3><p>8 skills</p></div>
     </div>
-
-    <div class="sh">Modelos de IA</div>
-    <table class="tbl mb32">
-        <thead>
-            <tr><th>Modelo</th><th>Costo</th><th>Cuándo usar</th></tr>
-        </thead>
-        <tbody>
-            <tr><td class="hl">MiMo V2.5 Free</td><td>Gratis</td><td>Cotizaciones, posts, consultas, reportes</td></tr>
-            <tr><td class="hl">MiMo V2.5 Medium</td><td>Gratis</td><td>Análisis financiero, estrategia, contratos</td></tr>
-            <tr><td class="hl">MiMo V2.5 High</td><td>Gratis</td><td>Decisiones críticas, documentos legales</td></tr>
-            <tr><td class="hl" style="color:var(--gray-400);">Claude Sonnet 4</td><td style="color:var(--red);">Pago (API)</td><td style="color:var(--gray-400);">Solo desarrollo técnico avanzado</td></tr>
-        </tbody>
-    </table>
-
-    <div class="sh">Qué puede hacer MiMo Free</div>
-    <div class="g2 mb32">
-        <div class="card">
-            <div class="card-ico green">✅</div>
-            <h3>Sí puede</h3>
-            <p>Cotizar departamentos, crear posts, reportes de obra, análisis simples, consultas frecuentes, brochures, flyers</p>
-        </div>
-        <div class="card">
-            <div class="card-ico gold">⚠</div>
-            <h3>Subir a Medium/High</h3>
-            <p>Contratos legales, análisis financiero profundo, estrategia compleja, documentos críticos para clientes</p>
-        </div>
+    <div class="g4 mb24">
+        <div class="card"><div class="card-ico green">&#128176;</div><h3>Finanzas</h3><p>10 skills</p></div>
+        <div class="card"><div class="card-ico navy">&#9878;</div><h3>Legal</h3><p>8 skills</p></div>
+        <div class="card"><div class="card-ico gray">&#128203;</div><h3>Admin</h3><p>8 skills</p></div>
+        <div class="card"><div class="card-ico green">&#10003;</div><h3>Calidad</h3><p>4 skills</p></div>
     </div>
-
-    <div class="sh">Nivel de detalle (Thinking)</div>
-    <div class="g3 mb32">
-        <div class="card">
-            <div class="card-ico green">🟢</div>
-            <h3>Medium</h3>
-            <p>Para la mayoría. Buena relación calidad/velocidad.</p>
-            <span class="pill green">Recomendado</span>
-        </div>
-        <div class="card">
-            <div class="card-ico gold">🟡</div>
-            <h3>High</h3>
-            <p>Para tareas complejas. Máximo análisis.</p>
-            <span class="pill gold">Cuando importa la calidad</span>
-        </div>
-        <div class="card">
-            <div class="card-ico red">🔴</div>
-            <h3>Off</h3>
-            <p>Respuestas directas. Sin análisis profundo.</p>
-            <span class="pill blue">Más rápido</span>
-        </div>
+    <div class="g4 mb24">
+        <div class="card"><div class="card-ico gray">&#128101;</div><h3>Clientes</h3><p>4 skills</p></div>
+        <div class="card"><div class="card-ico gold">&#128722;</div><h3>Compras</h3><p>4 skills</p></div>
+        <div class="card"><div class="card-ico red">&#129302;</div><h3>IA</h3><p>4 skills</p></div>
+        <div class="card"><div class="card-ico gold">&#128202;</div><h3>Presupuestos</h3><p>4 skills</p></div>
     </div>
-
+    <div class="g4">
+        <div class="card"><div class="card-ico navy">&#128100;</div><h3>RRHH</h3><p>4 skills</p></div>
+        <div class="card"><div class="card-ico gray">&#128187;</div><h3>IT</h3><p>4 skills</p></div>
+        <div class="card"><div class="card-ico gray">&#128259;</div><h3>Postventa</h3><p>4 skills</p></div>
+        <div class="card"><div class="card-ico green">&#128200;</div><h3>Data</h3><p>4 skills</p></div>
+    </div>
     <div class="pg-foot">
-        <span>ARMAT — Sistema Operativo · <span class="author">Creado por Lambertucci Leandro</span></span>
-        <span class="pg">07</span>
+        <span>ARMAT &mdash; Sistema Operativo &middot; <span class="author">Creado por Lambertucci Leandro</span></span>
+        <span class="pg">08</span>
     </div>
 </div>
 
-<!-- ============ P9: INTEGRACIONES ============ -->
+<!-- ============ P09: CASOS REALES ============ -->
 <div class="page section">
     <div class="sec-header">
         <div class="sec-num">09</div>
-        <div class="sec-titles">
-            <h2>Integraciones</h2>
-            <p>Conexiones externas y configuración</p>
-        </div>
+        <div class="sec-titles"><h2>Casos de Uso Reales</h2><p>Situaciones de negocio y como el sistema las resuelve</p></div>
         <div class="sec-rule"></div>
     </div>
+    <div class="sh">Caso 1: Cliente quiere comprar con credito</div>
+    <div class="ex user mb16"><div class="ex-tag">Vos escribis</div><h4>Tengo un cliente que quiere el 1 dormitorio pero con credito hipotecario. Como lo proceso?</h4></div>
+    <div class="ex sys mb32"><div class="ex-tag">Sistema ejecuta</div><p><strong>CEO - Comercial + Finanzas:</strong> Genera propuesta con precio contado USD 85.000, simula credito a 20 anos con tasa del 7%, calcula cuota mensual ~USD 650, compara con opcion de financiamiento directo (50% + 12 cuotas).</p><div class="meta"><strong>Agentes:</strong> CEO - Comercial - Finanzas &middot; <strong>Tiempo:</strong> 8 segundos</div></div>
 
-    <div class="sh">Integraciones disponibles</div>
-    <table class="tbl mb32">
-        <thead>
-            <tr><th>Integración</th><th>Estado</th><th>Agentes</th><th>Uso</th></tr>
-        </thead>
-        <tbody>
-            <tr><td class="hl">WhatsApp Business</td><td>Pendiente</td><td>CEO, Comercial</td><td>Comunicación con compradores</td></tr>
-            <tr><td class="hl">Gmail</td><td>Pendiente</td><td>CEO, Marketing</td><td>Envío de propuestas</td></tr>
-            <tr><td class="hl">Google Drive</td><td>Pendiente</td><td>Legal, Admin</td><td>Almacenamiento</td></tr>
-            <tr><td class="hl">Google Calendar</td><td>Pendiente</td><td>CEO, Comercial</td><td>Agenda de visitas</td></tr>
-        </tbody>
-    </table>
+    <div class="sh">Caso 2: Calcular materiales de un departamento</div>
+    <div class="ex user mb16"><div class="ex-tag">Vos escribis</div><h4>Necesito saber cuanto material necesito para el monoambiente. Te paso las medidas: 5m x 4.50m, banos 2m x 1.80m</h4></div>
+    <div class="ex sys mb32"><div class="ex-tag">Sistema ejecuta</div><p><strong>CEO - Obras:</strong> Calcula materiales con rendimientos Neuquen: 15 ladrillos/m2, 0.015 m3 hormigon/m2, ceramica con 8% desperdicio. Genera lista completa con costos en USD y ARS.</p><div class="meta"><strong>Agentes:</strong> CEO - Obras &middot; <strong>Output:</strong> Tabla de materiales + costos</div></div>
 
-    <div class="sh">Base de conocimiento legal</div>
-    <table class="tbl mb32">
-        <thead>
-            <tr><th>Documento</th><th>Contenido</th></tr>
-        </thead>
-        <tbody>
-            <tr><td class="hl">Ley 1920</td><td>Código Procesal Civil y Comercial</td></tr>
-            <tr><td class="hl">Ley 6.839</td><td>Mediación Obligatoria</td></tr>
-            <tr><td class="hl">Ley 3.017</td><td>Arbitraje</td></tr>
-            <tr><td class="hl">Ley 5.853</td><td>Código del Trabajo Provincial</td></tr>
-            <tr><td class="hl">Ley 17.565</td><td>Código Civil y Comercial</td></tr>
-        </tbody>
-    </table>
+    <div class="sh">Caso 3: Crear brochure para nuevo proyecto</div>
+    <div class="ex user mb16"><div class="ex-tag">Vos escribis</div><h4>Arrancamos un proyecto nuevo en Neuquen Capital. Necesito un brochure para vender</h4></div>
+    <div class="ex sys mb32"><div class="ex-tag">Sistema ejecuta</div><p><strong>CEO - Marketing:</strong> Crea estructura de proyecto, genera brochure HTML profesional con renders, datos, formas de pago. Crea version autocontenido (base64) para enviar por WhatsApp.</p><div class="meta"><strong>Agentes:</strong> CEO - Marketing &middot; <strong>Output:</strong> 2 archivos HTML listos para usar</div></div>
 
-    <div class="sh">Plantillas de contratos</div>
-    <table class="tbl">
-        <thead>
-            <tr><th>Plantilla</th><th>Uso</th></tr>
-        </thead>
-        <tbody>
-            <tr><td class="hl">Compraventa Inmueble</td><td>Para departamentos ENTANYQ</td></tr>
-            <tr><td class="hl">Confidencialidad</td><td>NDA para proveedores</td></tr>
-            <tr><td class="hl">Comisión Venta</td><td>Para corredores inmobiliarios</td></tr>
-        </tbody>
-    </table>
-
+    <div class="sh">Caso 4: Reporte de avance para cliente</div>
+    <div class="ex user mb16"><div class="ex-tag">Vos escribis</div><h4>El cliente de la unidad 3 pregunta como va la obra. Necesito un reporte</h4></div>
+    <div class="ex sys"><div class="ex-tag">Sistema ejecuta</div><p><strong>CEO - Obras + Calidad:</strong> Genera reporte con % avance fisico (65%), fotos del estado actual, checklist de calidad verificado, proximos pasos y fecha estimada de entrega.</p><div class="meta"><strong>Agentes:</strong> CEO - Obras - Calidad &middot; <strong>Output:</strong> Reporte PDF + fotos</div></div>
     <div class="pg-foot">
-        <span>ARMAT — Sistema Operativo · <span class="author">Creado por Lambertucci Leandro</span></span>
+        <span>ARMAT &mdash; Sistema Operativo &middot; <span class="author">Creado por Lambertucci Leandro</span></span>
         <span class="pg">09</span>
     </div>
 </div>
 
-<!-- ============ P10: GUÍA PRINCIPIANTES ============ -->
+<!-- ============ P10: COMO INVOCAR ============ -->
 <div class="page section">
     <div class="sec-header">
         <div class="sec-num">10</div>
-        <div class="sec-titles">
-            <h2>Guía para Principiantes</h2>
-            <p>Si nunca usaste agentes de IA, empezá acá</p>
-        </div>
+        <div class="sec-titles"><h2>Como Invocar los Agentes</h2><p>Formas de usar el sistema</p></div>
         <div class="sec-rule"></div>
     </div>
-
-    <div class="callout mb32">
-        <h3>¿Qué es esto?</h3>
-        <p>Un equipo de <strong>17 agentes especializados</strong> que trabajan como empleados. Vos le decís qué necesitás y el sistema coordina todo. No necesitás saber programar ni entender de IA.</p>
+    <div class="sh">Forma 1: Hablarle al CEO (recomendado)</div>
+    <div class="code mb32">
+<span class="c">// Simplemente escribi tu necesidad</span>
+<span class="s">"Cuanto sale el monoambiente?"</span>
+<span class="s">"Armame una propuesta para este cliente"</span>
+<span class="s">"Creame un post para Instagram"</span>
+<span class="s">"Como va la obra?"</span>
+<span class="s">"Revisa si este contrato esta bien"</span>
+<span class="s">"Calcula materiales para el 1 dormitorio"</span>
+<span class="s">"Haceme un reporte ejecutivo de ventas"</span>
     </div>
-
-    <div class="sh">Requisitos</div>
-    <div class="g2 mb32">
-        <div class="card">
-            <div class="card-ico green">✅</div>
-            <h3>Necesitás</h3>
-            <p>Computadora con internet, OpenCode instalado</p>
-        </div>
-        <div class="card">
-            <div class="card-ico gold">💡</div>
-            <h3>No necesitás</h3>
-            <p>Saber de IA, programación, ni comandos especiales</p>
-        </div>
+    <div class="sh">Forma 2: Invocar agente directo</div>
+    <div class="code mb32">
+<span class="c">// Si sabes que agente necesitas</span>
+<span class="k">armat-ceo</span>          <span class="c">&rarr; Orquestador general</span>
+<span class="k">armat-comercial</span>    <span class="c">&rarr; Ventas, pricing, propuestas</span>
+<span class="k">armat-marketing</span>    <span class="c">&rarr; Contenido, brochures, redes</span>
+<span class="k">armat-obras</span>        <span class="c">&rarr; Construccion, avance, materiales</span>
+<span class="k">armat-finanzas</span>     <span class="c">&rarr; ROI, flujos, proyecciones</span>
+<span class="k">armat-legal</span>        <span class="c">&rarr; Contratos, permisos</span>
+<span class="k">armat-data</span>         <span class="c">&rarr; KPIs, dashboards</span>
     </div>
-
-    <div class="sh">Paso a paso</div>
-    <div class="flow mb32">
-        <div class="flow-step">
-            <div class="num">1</div>
-            <div class="txt"><strong>Abrí OpenCode</strong> en tu computadora</div>
-        </div>
-        <div class="flow-arrow">↓</div>
-        <div class="flow-step">
-            <div class="num">2</div>
-            <div class="txt"><strong>Escribí tu pregunta</strong> en lenguaje natural</div>
-        </div>
-        <div class="flow-arrow">↓</div>
-        <div class="flow-step">
-            <div class="num">3</div>
-            <div class="txt"><strong>Esperá la respuesta</strong> — el sistema coordina automáticamente</div>
-        </div>
-        <div class="flow-arrow">↓</div>
-        <div class="flow-step">
-            <div class="num">4</div>
-            <div class="txt"><strong>Pedí ajustes</strong> si algo no te convence</div>
-        </div>
-    </div>
-
     <div class="callout green">
-        <h3>💡 Consejo</h3>
-        <p>Hablale como le hablarías a un empleado. No tengas miedo de preguntar — el sistema está diseñado para entender preguntas simples.</p>
+        <h3>Tip: El sistema aprende</h3>
+        <p>Cada agente tiene memoria. Cuanto mas usas el sistema, mejor se adapta a tu forma de trabajar. Si preferis reportes cortos, lo aprende. Si siempre queres fotos en los reportes, lo recuerda.</p>
     </div>
-
     <div class="pg-foot">
-        <span>ARMAT — Sistema Operativo · <span class="author">Creado por Lambertucci Leandro</span></span>
-        <span class="pg">09</span>
+        <span>ARMAT &mdash; Sistema Operativo &middot; <span class="author">Creado por Lambertucci Leandro</span></span>
+        <span class="pg">10</span>
     </div>
 </div>
 
-<!-- ============ P11: RESUMEN ============ -->
+<!-- ============ P11: MODELOS ============ -->
 <div class="page section">
     <div class="sec-header">
         <div class="sec-num">11</div>
-        <div class="sec-titles">
-            <h2>Resumen</h2>
-            <p>Todo lo que el sistema puede hacer</p>
-        </div>
+        <div class="sec-titles"><h2>Modelos y Configuracion</h2><p>Que modelo usar y nivel de detalle</p></div>
+        <div class="sec-rule"></div>
+    </div>
+    <div class="callout mb32">
+        <h3>Modelo recomendado</h3>
+        <p><strong>MiMo V2.5 Free</strong> es suficiente para el 90% de las tareas de ARMAT. No necesitas pagar por modelos premium.</p>
+    </div>
+    <div class="sh">Modelos de IA</div>
+    <table class="tbl mb32">
+        <thead><tr><th>Modelo</th><th>Costo</th><th>Cuando usar</th></tr></thead>
+        <tbody>
+            <tr><td class="hl">MiMo V2.5 Free</td><td>Gratis</td><td>Cotizaciones, posts, consultas, reportes</td></tr>
+            <tr><td class="hl">MiMo V2.5 Medium</td><td>Gratis</td><td>Analisis financiero, estrategia, contratos</td></tr>
+            <tr><td class="hl">MiMo V2.5 High</td><td>Gratis</td><td>Decisiones criticas, documentos legales</td></tr>
+            <tr><td class="hl" style="color:var(--gray-400);">Claude Sonnet 4</td><td style="color:var(--red);">Pago (API)</td><td style="color:var(--gray-400);">Solo desarrollo tecnico avanzado</td></tr>
+        </tbody>
+    </table>
+    <div class="sh">Que puede hacer MiMo Free</div>
+    <div class="g2 mb32">
+        <div class="card"><div class="card-ico green">&#10004;</div><h3>Si puede</h3><p>Cotizar departamentos, crear posts, reportes de obra, analisis simples, brochures, flyers</p></div>
+        <div class="card"><div class="card-ico gold">&#9888;</div><h3>Subir a Medium/High</h3><p>Contratos legales, analisis financiero profundo, estrategia compleja, documentos criticos</p></div>
+    </div>
+    <div class="sh">Nivel de detalle (Thinking)</div>
+    <div class="g3">
+        <div class="card"><div class="card-ico green">&#128994;</div><h3>Medium</h3><p>Para la mayoria. Buena relacion calidad/velocidad.</p><span class="pill green">Recomendado</span></div>
+        <div class="card"><div class="card-ico gold">&#128992;</div><h3>High</h3><p>Para tareas complejas. Maximo analisis.</p><span class="pill gold">Cuando importa la calidad</span></div>
+        <div class="card"><div class="card-ico red">&#128308;</div><h3>Off</h3><p>Respuestas directas. Sin analisis profundo.</p><span class="pill blue">Mas rapido</span></div>
+    </div>
+    <div class="pg-foot">
+        <span>ARMAT &mdash; Sistema Operativo &middot; <span class="author">Creado por Lambertucci Leandro</span></span>
+        <span class="pg">11</span>
+    </div>
+</div>
+
+<!-- ============ P12: INTEGRACIONES ============ -->
+<div class="page section">
+    <div class="sec-header">
+        <div class="sec-num">12</div>
+        <div class="sec-titles"><h2>Integraciones</h2><p>Conexiones externas y base de conocimiento</p></div>
+        <div class="sec-rule"></div>
+    </div>
+    <div class="sh">Integraciones disponibles</div>
+    <table class="tbl mb32">
+        <thead><tr><th>Integracion</th><th>Estado</th><th>Agentes</th><th>Uso</th></tr></thead>
+        <tbody>
+            <tr><td class="hl">WhatsApp Business</td><td>Disponible</td><td>CEO, Comercial</td><td>Comunicacion con compradores</td></tr>
+            <tr><td class="hl">Gmail</td><td>Disponible</td><td>CEO, Marketing</td><td>Envio de propuestas</td></tr>
+            <tr><td class="hl">Google Drive</td><td>Disponible</td><td>Legal, Admin</td><td>Almacenamiento</td></tr>
+            <tr><td class="hl">Google Calendar</td><td>Disponible</td><td>CEO, Comercial</td><td>Agenda de visitas</td></tr>
+        </tbody>
+    </table>
+    <div class="sh">Base de conocimiento legal</div>
+    <table class="tbl mb32">
+        <thead><tr><th>Documento</th><th>Contenido</th></tr></thead>
+        <tbody>
+            <tr><td class="hl">Ley 1920</td><td>Codigo Procesal Civil y Comercial</td></tr>
+            <tr><td class="hl">Ley 6.839</td><td>Mediacion Obligatoria</td></tr>
+            <tr><td class="hl">Ley 3.017</td><td>Arbitraje</td></tr>
+            <tr><td class="hl">Ley 5.853</td><td>Codigo del Trabajo Provincial</td></tr>
+            <tr><td class="hl">Ley 17.565</td><td>Codigo Civil y Comercial</td></tr>
+        </tbody>
+    </table>
+    <div class="sh">Plantillas de contratos</div>
+    <table class="tbl">
+        <thead><tr><th>Plantilla</th><th>Uso</th></tr></thead>
+        <tbody>
+            <tr><td class="hl">Compraventa Inmueble</td><td>Para departamentos ENTANYQ</td></tr>
+            <tr><td class="hl">Confidencialidad</td><td>NDA para proveedores</td></tr>
+            <tr><td class="hl">Comision Venta</td><td>Para corredores inmobiliarios</td></tr>
+        </tbody>
+    </table>
+    <div class="pg-foot">
+        <span>ARMAT &mdash; Sistema Operativo &middot; <span class="author">Creado por Lambertucci Leandro</span></span>
+        <span class="pg">12</span>
+    </div>
+</div>
+
+<!-- ============ P13: ROADMAP ============ -->
+<div class="page section">
+    <div class="sec-header">
+        <div class="sec-num">13</div>
+        <div class="sec-titles"><h2>Roadmap</h2><p>El sistema evoluciona con tu negocio</p></div>
+        <div class="sec-rule"></div>
+    </div>
+    <div class="callout mb32">
+        <h3>ARMAT no es estatico. Crece.</h3>
+        <p>Cada version trae nuevas capacidades, integraciones y agentes. Tu inversion se amplia con el tiempo.</p>
+    </div>
+
+    <div class="rm-phase">
+        <h3><span class="done">&#10003;</span> Version 1.0 &mdash; Sistema Base (Actual)</h3>
+        <ul>
+            <li><span class="done">&#10003;</span> 17 agentes especializados</li>
+            <li><span class="done">&#10003;</span> 98 skills configurados</li>
+            <li><span class="done">&#10003;</span> Estructura multi-proyecto</li>
+            <li><span class="done">&#10003;</span> Base de conocimiento legal</li>
+            <li><span class="done">&#10003;</span> Templates de contratos</li>
+            <li><span class="done">&#10003;</span> Sistema de calculo de materiales</li>
+        </ul>
+    </div>
+
+    <div class="rm-phase">
+        <h3><span class="future">&#128312;</span> Version 2.0 &mdash; Integraciones</h3>
+        <ul>
+            <li><span class="done">&#10003;</span> WhatsApp Business integration</li>
+            <li><span class="done">&#10003;</span> Gmail para propuestas automaticas</li>
+            <li><span class="future">&#9711;</span> CRM integrado con seguimiento</li>
+            <li><span class="future">&#9711;</span> Google Drive para documentos</li>
+            <li><span class="future">&#9711;</span> Google Calendar para visitas</li>
+            <li><span class="future">&#9711;</span> Dashboard de reporting automatico</li>
+        </ul>
+    </div>
+
+    <div class="rm-phase">
+        <h3><span class="future">&#128312;</span> Version 3.0 &mdash; IA Avanzada</h3>
+        <ul>
+            <li><span class="future">&#9711;</span> IA por voz &mdash; hablale al sistema</li>
+            <li><span class="future">&#9711;</span> Llamadas automaticas a clientes</li>
+            <li><span class="future">&#9711;</span> Agenda inteligente de visitas</li>
+            <li><span class="future">&#9711;</span> Analisis predictivo de ventas</li>
+            <li><span class="future">&#9711;</span> Reportes-pdf automaticos semanales</li>
+            <li><span class="future">&#9711;</span> Multi-idioma (ingles, portugues)</li>
+        </ul>
+    </div>
+
+    <div class="pg-foot">
+        <span>ARMAT &mdash; Sistema Operativo &middot; <span class="author">Creado por Lambertucci Leandro</span></span>
+        <span class="pg">13</span>
+    </div>
+</div>
+
+<!-- ============ P14: FAQ ============ -->
+<div class="page section">
+    <div class="sec-header">
+        <div class="sec-num">14</div>
+        <div class="sec-titles"><h2>Preguntas Frecuentes</h2><p>Las dudas mas comunes antes de empezar</p></div>
         <div class="sec-rule"></div>
     </div>
 
+    <div class="faq-q">Necesito saber de IA o programacion?</div>
+    <div class="faq-a"><strong>No.</strong> ARMAT esta disenado para que hables en espanol natural, como le hablarias a un empleado. No hay comandos, no hay codigo, no hay configuracion tecnica.</div>
+
+    <div class="faq-q">Necesito pagar por ChatGPT Plus o similar?</div>
+    <div class="faq-a"><strong>No.</strong> El sistema usa modelos de IA gratuitos (MiMo V2.5 Free) que son suficientes para el 90% de las tareas. No necesitas suscripciones adicionales.</div>
+
+    <div class="faq-q">Que pasa si cambia OpenAI o el modelo de IA?</div>
+    <div class="faq-a">ARMAT esta disenado para ser flexible. Los agentes funcionan con cualquier modelo de IA compatible. Si un modelo deja de estar disponible, se cambia con una linea de configuracion.</div>
+
+    <div class="faq-q">Puedo agregar mis propios agentes o skills?</div>
+    <div class="faq-a"><strong>Si.</strong> El sistema es modular. Podes crear nuevos agentes, agregar skills a los existentes, o modificar los que ya estan. Cada agente es un conjunto de archivos de texto.</div>
+
+    <div class="faq-q">Funciona con cualquier tipo de empresa?</div>
+    <div class="faq-a">ARMAT esta optimizado para empresas inmobiliarias, pero los agentes base (CEO, Comercial, Marketing, Finanzas, Legal, Admin, Data) funcionan en cualquier industria. Los agentes de obra y construccion son especificos del sector.</div>
+
+    <div class="faq-q">Cuanto tarda en estar funcionando?</div>
+    <div class="faq-a"><strong>15-30 minutos</strong> para tener el sistema basico funcionando. La instalacion completa con todos los agentes y skills toma entre 30 y 45 minutos.</div>
+
+    <div class="faq-q">Necesita un servidor o infraestructura especial?</div>
+    <div class="faq-a"><strong>No.</strong> Funciona en tu computadora. No hay servidores que mantener, no hay hosting que pagar, no hay bases de datos que administrar.</div>
+
+    <div class="faq-q">Quien mantiene y actualiza el sistema?</div>
+    <div class="faq-a">ARMAT incluye actualizaciones continuas. Nuevos skills, mejores agentes, mas integraciones. Todo se actualiza con un comando simple. Ademas, tenes soporte para personalizar el sistema a tu medida.</div>
+
+    <div class="faq-q">Mis datos estan seguros?</div>
+    <div class="faq-a"><strong>Si.</strong> Todo funciona en tu computadora. No se envian datos a servidores externos. La informacion de tus clientes, contratos y proyectos queda en tu control total.</div>
+
+    <div class="pg-foot">
+        <span>ARMAT &mdash; Sistema Operativo &middot; <span class="author">Creado por Lambertucci Leandro</span></span>
+        <span class="pg">14</span>
+    </div>
+</div>
+
+<!-- ============ P15: GUIA PRINCIPIANTES ============ -->
+<div class="page section">
+    <div class="sec-header">
+        <div class="sec-num">15</div>
+        <div class="sec-titles"><h2>Guia para Principiantes</h2><p>Si nunca usaste agentes de IA, empeza aca</p></div>
+        <div class="sec-rule"></div>
+    </div>
+    <div class="callout mb32">
+        <h3>Que es esto?</h3>
+        <p>Un equipo de <strong>17 agentes especializados</strong> que trabajan como empleados. Vos le decis que necesitas y el sistema coordina todo. No necesitas saber programar ni entender de IA.</p>
+    </div>
+    <div class="sh">Requisitos</div>
+    <div class="g2 mb32">
+        <div class="card"><div class="card-ico green">&#10004;</div><h3>Necesitas</h3><p>Computadora con internet, OpenCode instalado</p></div>
+        <div class="card"><div class="card-ico gold">&#128161;</div><h3>No necesitas</h3><p>Saber de IA, programacion, ni comandos especiales</p></div>
+    </div>
+    <div class="sh">Paso a paso</div>
+    <div class="flow mb32">
+        <div class="flow-step"><div class="num">1</div><div class="txt"><strong>Abrí OpenCode</strong> en tu computadora</div></div>
+        <div class="flow-arrow">&darr;</div>
+        <div class="flow-step"><div class="num">2</div><div class="txt"><strong>Escribi tu pregunta</strong> en lenguaje natural</div></div>
+        <div class="flow-arrow">&darr;</div>
+        <div class="flow-step"><div class="num">3</div><div class="txt"><strong>Espera la respuesta</strong> &mdash; el sistema coordina automaticamente</div></div>
+        <div class="flow-arrow">&darr;</div>
+        <div class="flow-step"><div class="num">4</div><div class="txt"><strong>Pedi ajustes</strong> si algo no te convence</div></div>
+    </div>
+    <div class="callout green">
+        <h3>Consejo</h3>
+        <p>Hablale como le hablarias a un empleado. No tengas miedo de preguntar &mdash; el sistema esta disenado para entender preguntas simples.</p>
+    </div>
+    <div class="pg-foot">
+        <span>ARMAT &mdash; Sistema Operativo &middot; <span class="author">Creado por Lambertucci Leandro</span></span>
+        <span class="pg">15</span>
+    </div>
+</div>
+
+<!-- ============ P16: RESUMEN ============ -->
+<div class="page section">
+    <div class="sec-header">
+        <div class="sec-num">16</div>
+        <div class="sec-titles"><h2>Resumen</h2><p>Todo lo que el sistema puede hacer</p></div>
+        <div class="sec-rule"></div>
+    </div>
     <table class="tbl mb32">
-        <thead>
-            <tr><th>Área</th><th>Skills</th><th>Qué hacemos</th></tr>
-        </thead>
+        <thead><tr><th>Area</th><th>Skills</th><th>Que hacemos</th></tr></thead>
         <tbody>
-            <tr><td class="hl">🧠 Estrategia</td><td>CEO</td><td>Orquestación, decisiones</td></tr>
-            <tr><td class="hl">💼 Ventas</td><td>8</td><td>Cotizaciones, propuestas, pricing</td></tr>
-            <tr><td class="hl">📢 Marketing</td><td>10</td><td>Brochures, posts, emails</td></tr>
-            <tr><td class="hl">🏗 Operaciones</td><td>8</td><td>Construcción, avance, materiales</td></tr>
-            <tr><td class="hl">💰 Finanzas</td><td>10</td><td>ROI, flujos, proyecciones</td></tr>
-            <tr><td class="hl">⚖ Legal</td><td>8</td><td>Contratos, permisos</td></tr>
-            <tr><td class="hl">📊 Data</td><td>4</td><td>KPIs, dashboards</td></tr>
+            <tr><td class="hl">&#129504; Estrategia</td><td>CEO</td><td>Orquestacion, decisiones</td></tr>
+            <tr><td class="hl">&#128188; Ventas</td><td>8</td><td>Cotizaciones, propuestas, pricing</td></tr>
+            <tr><td class="hl">&#128226; Marketing</td><td>10</td><td>Brochures, posts, emails</td></tr>
+            <tr><td class="hl">&#127959; Operaciones</td><td>8</td><td>Construccion, avance, materiales</td></tr>
+            <tr><td class="hl">&#128176; Finanzas</td><td>10</td><td>ROI, flujos, proyecciones</td></tr>
+            <tr><td class="hl">&#9878; Legal</td><td>8</td><td>Contratos, permisos</td></tr>
+            <tr><td class="hl">&#128202; Data</td><td>4</td><td>KPIs, dashboards</td></tr>
         </tbody>
-        <tfoot>
-            <tr style="background:var(--navy); color:var(--white); font-weight:700;">
-                <td>TOTAL</td>
-                <td>98</td>
-                <td>Sistema completo de gestión inmobiliaria</td>
-            </tr>
-        </tfoot>
+        <tfoot><tr style="background:var(--navy); color:var(--white); font-weight:700;"><td>TOTAL</td><td>98</td><td>Sistema completo de gestion inmobiliaria</td></tr></tfoot>
     </table>
 
-    <div class="callout">
-        <h3>¿Para qué sirve?</h3>
-        <p>Para que puedas <strong>vender, construir y gestionar proyectos inmobiliarios</strong> con la misma estructura que una empresa grande. Todo desde una conversación.</p>
+    <div class="callout amber mb32">
+        <h3>Para que sirve?</h3>
+        <p>Para que puedas <strong>vender, construir y gestionar proyectos inmobiliarios</strong> con la misma estructura que una empresa grande. Todo desde una conversacion. Multiplica la productividad de tu equipo &mdash; no reemplaza la decision humana, la potencia.</p>
     </div>
 
     <div style="text-align:center; margin-top:40px;">
@@ -1323,15 +881,14 @@ proyectos/
             <rect x="28" y="10" width="10" height="28" fill="#c8a45c"/>
         </svg>
         <p style="font-family:'DM Sans',sans-serif; font-size:15px; font-weight:700; color:var(--gray-900); letter-spacing:4px;">ARMAT DESARROLLOS</p>
-        <p style="font-size:12px; color:var(--gray-500); margin-top:6px;">Centenario, Neuquén — Julio 2026</p>
-        <p style="font-size:11px; color:var(--gray-400); margin-top:4px;">299 508-9366 · @ARMAT.DESARROLLOS</p>
+        <p style="font-size:12px; color:var(--gray-500); margin-top:6px;">Centenario, Neuquen &mdash; Julio 2026</p>
+        <p style="font-size:11px; color:var(--gray-400); margin-top:4px;">299 508-9366 &middot; @ARMAT.DESARROLLOS</p>
         <p style="font-size:10px; color:var(--accent); margin-top:8px; letter-spacing:2px;">SISTEMA OPERATIVO CREADO POR LAMBERTUCCI LEANDRO</p>
-        <p style="font-size:9px; color:var(--gray-500); margin-top:6px;">© 2026 ARMAT Desarrolladora Inmobiliaria — Todos los derechos reservados</p>
+        <p style="font-size:9px; color:var(--gray-500); margin-top:6px;">&copy; 2026 ARMAT Desarrolladora Inmobiliaria &mdash; Todos los derechos reservados</p>
     </div>
-
     <div class="pg-foot">
-        <span>ARMAT — Sistema Operativo · <span class="author">Creado por Lambertucci Leandro</span></span>
-        <span class="pg">03</span>
+        <span>ARMAT &mdash; Sistema Operativo &middot; <span class="author">Creado por Lambertucci Leandro</span></span>
+        <span class="pg">16</span>
     </div>
 </div>
 
