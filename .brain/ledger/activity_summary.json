@@ -1,14 +1,14 @@
 {
   "last_event": {
-    "event_id": "evt-1783512737-70d88e4e",
-    "timestamp": "2026-07-08T12:12:17.713394Z",
+    "event_id": "evt-1783804789-f79f4eac",
+    "timestamp": "2026-07-11T21:19:49.074783Z",
     "type": "session_started",
     "emitter": "mcp_server",
     "data": {
-      "session_id": "mcp-1783512737-6fa02827"
+      "session_id": "mcp-1783804789-bab5bc96"
     },
     "description": ""
   },
-  "updated_at": "2026-07-08T12:12:17.713394Z",
-  "event_count": 5
+  "updated_at": "2026-07-11T21:19:49.074783Z",
+  "event_count": 7
 }
