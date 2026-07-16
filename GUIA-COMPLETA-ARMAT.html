@@ -433,12 +433,33 @@ proyectos/
         <h3>Regla de oro</h3>
         <p><strong>Si no sabés cual usar, hablale al Mgr-CEO.</strong> El coordina a todos. Es como hablar con el gerente &mdash; el sabe a quien derivar.</p>
     </div>
-    <div class="sh">Los 3 tipos de agentes</div>
-    <div class="g3 mb32">
-        <div class="card"><div class="card-ico navy">&#129504;</div><h3>Mgr-CEO</h3><p>Coordinador general. Cuando no sabés a quien derivar, hablale a el.</p><span class="pill gold">Empeza aca</span></div>
-        <div class="card"><div class="card-ico gold">&#128736;</div><h3>Gentle-Orchestrator</h3><p>Para desarrollo de software. Solo si estas construyendo algo técnico.</p><span class="pill blue">Solo desarrollo</span></div>
-        <div class="card"><div class="card-ico green">&#128203;</div><h3>Skills</h3><p>98 táreas especificas. Se activan cuando el agente las necesita.</p><span class="pill green">Automaticos</span></div>
+    <div class="sh">Los 4 comandos principales</div>
+    <div class="g2 mb24">
+        <div class="card"><div class="card-ico navy">&#129504;</div><h3>Mgr-CEO</h3><p><strong>Director Ejecutivo.</strong> Orquesta los 16 agentes de gestion (ventas, finanzas, obras, legal, etc.). Cuando no sabes a quien derivar, hablale a el. Es como hablar con el gerente general.</p><span class="pill gold">Gestion de negocio</span></div>
+        <div class="card"><div class="card-ico gold">&#128736;</div><h3>Gentle-Orchestrator</h3><p><strong>Coordinador de Desarrollo.</strong> Para construir o modificar software. Coordina agentes sdd-design, sdd-spec, sdd-apply. Solo se usa si estas creando algo tecnico.</p><span class="pill blue">Desarrollo de software</span></div>
     </div>
+    <div class="g2 mb32">
+        <div class="card"><div class="card-ico green">&#128203;</div><h3>Plan</h3><p><strong>Skill de planificacion.</strong> No es un agente, es una herramienta que usan los agentes. Estructura un plan formal antes de ejecutar. Util para decisiones complejas.</p><span class="pill green">Antes de actuar</span></div>
+        <div class="card"><div class="card-ico red">&#128296;</div><h3>sdd-apply (Build)</h3><p><strong>Ejecutor de codigo.</strong> Implementa lo que el orchestrator definio. No piensa, ejecuta. Es la fase de construccion del desarrollo.</p><span class="pill red">Ejecucion</span></div>
+    </div>
+
+    <div class="sh">Flujo de cada uno</div>
+    <div class="code mb24">
+<span class="c">// Mgr-CEO: Gestion de negocio</span>
+<span class="k">Usuario</span> &rarr; <span class="s">Mgr-CEO</span> &rarr; <span class="v">mgr-comercial / mgr-finanzas / mgr-obras / ...</span>
+
+<span class="c">// Gentle-Orchestrator: Desarrollo de software</span>
+<span class="k">Usuario</span> &rarr; <span class="s">Gentle-Orchestrator</span> &rarr; <span class="v">sdd-design &rarr; sdd-spec &rarr; sdd-tasks &rarr; sdd-apply</span>
+
+<span class="c">// Plan: Documentar antes de ejecutar</span>
+<span class="k">Cualquier agente</span> &rarr; <span class="s">Plan</span> &rarr; <span class="v">Documento formal con pasos</span>
+    </div>
+
+    <div class="callout amber mb32">
+        <h3>Regla de oro</h3>
+        <p><strong>Si no sabes cual usar, hablale al Mgr-CEO.</strong> El coordina a todos y sabe a quien derivar. Si el detecta que necesitas desarrollo tecnico, te deriva al Gentle-Orchestrator.</p>
+    </div>
+
     <div class="sh">Tabla de agentes</div>
     <table class="tbl">
         <thead><tr><th>Si necesitás...</th><th>Agente</th><th>Ejemplo de preguntá</th></tr></thead>
@@ -451,6 +472,8 @@ proyectos/
             <tr><td class="hl">Materiales</td><td>armat-compras</td><td>¿Dónde compro porcelanato?</td></tr>
             <tr><td class="hl">Reporte</td><td>armat-data</td><td>Dashboard de ventas</td></tr>
             <tr><td class="hl">Cualquier cosa</td><td>Mgr-CEO</td><td>Necesito ayuda</td></tr>
+            <tr><td class="hl">Construir/modificar software</td><td>Gentle-Orchestrator</td><td>Quiero crear una app</td></tr>
+            <tr><td class="hl">Planificar antes de actuar</td><td>Plan (skill)</td><td>Arma un plan primero</td></tr>
         </tbody>
     </table>
     <div class="pg-foot">
